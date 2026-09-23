@@ -45,7 +45,7 @@
 | 14:15 | *Pause* | | |
 | 14:30 | **Plan-Ist** | Excel-Kreuztabelle entpivotieren · zweite Faktentabelle · Granularität | [Ü11](uebungen/tag2.md#übung-11--plan-ist-aus-einer-excel-kreuztabelle-35-min) |
 | 15:15 | **Teilen** | Veröffentlichen, Workspace, App, Aktualisierung, Gateway, Lizenzen (Demo) | [Ü12](uebungen/tag2.md#übung-12--teilen--was-nach-dem-desktop-kommt-demo-30-min) |
-| 15:45 | **Wie geht's weiter?** | Checkliste · [Videoempfehlungen](videos.md) · eigene Projektideen | – |
+| 15:45 | **Wie geht's weiter?** | Checkliste · [Videoempfehlungen](videos.md) · [Claude-Skills](skills.md) für den eigenen Report · eigene Projektideen | – |
 | 16:15 | **Feedback & Ende** | | |
 
 ⭐ **Extras für Schnelle:** `Umsatz Vormonat` und `Δ Vormonat %` · Top-5-Produkte nach Deckungsbeitrag · Tooltip-Seite mit Marge je Kategorie · Datenschnitt `Segment` (Privat/Gewerbe).
