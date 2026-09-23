@@ -1,0 +1,15 @@
+// Alternative zur M-Kalendertabelle: Kalender als berechnete Tabelle in DAX
+// Modellierung → Neue Tabelle → einfügen. Danach als Datumstabelle markieren.
+Kalender =
+ADDCOLUMNS (
+    CALENDAR ( DATE ( 2025, 1, 1 ), DATE ( 2025, 12, 31 ) ),
+    "Jahr", YEAR ( [Date] ),
+    "Quartal", "Q" & QUARTER ( [Date] ),
+    "MonatNr", MONTH ( [Date] ),
+    "Monat", FORMAT ( [Date], "MMM", "de-DE" ),
+    "Monatsanfang", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ),
+    "WochentagNr", WEEKDAY ( [Date], 2 ),
+    "Wochentag", FORMAT ( [Date], "ddd", "de-DE" )
+)
+// Hinweis: Die Datumsspalte heißt hier [Date] (so benennt CALENDAR sie).
+// In den Measures dann Kalender[Date] statt Kalender[Datum] verwenden – oder umbenennen.

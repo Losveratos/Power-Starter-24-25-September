@@ -1,0 +1,47 @@
+// Tag 2 · Basis-Measures für das Rad-&-Tat-Modell
+// Tipp: eigene leere Tabelle "_Measures" anlegen (Start → Daten eingeben → leer → Laden)
+// und alle Measures dort hineinlegen. Formatierung jeweils im Reiter "Measuretools" setzen.
+
+// ── Grundgrößen ─────────────────────────────────────────────
+Umsatz =
+SUMX (
+    fakt_verkaeufe,
+    fakt_verkaeufe[Menge] * RELATED ( dim_produkt[Listenpreis] ) * ( 1 - fakt_verkaeufe[Rabatt] )
+)
+
+Kosten =
+SUMX ( fakt_verkaeufe, fakt_verkaeufe[Menge] * RELATED ( dim_produkt[Einstandspreis] ) )
+
+Menge = SUM ( fakt_verkaeufe[Menge] )
+
+Belege = COUNTROWS ( fakt_verkaeufe )
+
+Kunden aktiv = DISTINCTCOUNT ( fakt_verkaeufe[KundeID] )
+
+// ── Abgeleitete Kennzahlen: immer aus Measures, nie aus Spalten mitteln ──
+Deckungsbeitrag = [Umsatz] - [Kosten]
+
+// Format: Prozent, 1 Nachkommastelle
+Marge % = DIVIDE ( [Deckungsbeitrag], [Umsatz] )
+
+Ø Bon = DIVIDE ( [Umsatz], [Belege] )
+
+// ── CALCULATE: Filter verändern ─────────────────────────────
+Umsatz E-Bikes = CALCULATE ( [Umsatz], dim_produkt[Kategorie] = "E-Bikes" )
+
+Anteil am Gesamtumsatz % =
+DIVIDE ( [Umsatz], CALCULATE ( [Umsatz], ALLSELECTED ( dim_filiale ) ) )
+
+// ── Zeit (braucht die markierte Kalendertabelle) ────────────
+Umsatz kumuliert = CALCULATE ( [Umsatz], DATESYTD ( Kalender[Datum] ) )
+
+Umsatz Vormonat = CALCULATE ( [Umsatz], DATEADD ( Kalender[Datum], -1, MONTH ) )
+
+Δ Vormonat % = DIVIDE ( [Umsatz] - [Umsatz Vormonat], [Umsatz Vormonat] )
+
+// ── Plan-Ist (braucht die Abfrage "Plan" aus Übung 8) ────────
+Plan = SUM ( Plan[Plan] )
+
+Δ Plan = [Umsatz] - [Plan]
+
+Δ Plan % = DIVIDE ( [Δ Plan], [Plan] )

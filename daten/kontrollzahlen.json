@@ -1,0 +1,131 @@
+{
+  "zeilen_roh_datei_inkl_kopf_und_leer": 2885,
+  "zeilen_nach_bereinigung": 2877,
+  "umsatz_gesamt": 1244017.12,
+  "umsatz_gesamt_sumx_ungerundet": 1244017.93,
+  "kosten_gesamt": 846334.1,
+  "marge_gesamt_pct": 32.0,
+  "marge_falsch_mittelwert_der_zeilen_pct": 44.9,
+  "menge_gesamt": 4215,
+  "belege": 2877,
+  "kunden": 161,
+  "je_filiale": {
+    "Hamburg": {
+      "Umsatz": 371601.23,
+      "Kosten": 248499.5,
+      "Marge_pct": 33.1
+    },
+    "Köln": {
+      "Umsatz": 276561.74,
+      "Kosten": 204692.6,
+      "Marge_pct": 26.0
+    },
+    "München": {
+      "Umsatz": 411510.78,
+      "Kosten": 270231.5,
+      "Marge_pct": 34.3
+    },
+    "Leipzig": {
+      "Umsatz": 184343.37,
+      "Kosten": 122910.5,
+      "Marge_pct": 33.3
+    }
+  },
+  "je_kategorie": {
+    "Bekleidung": {
+      "Umsatz": 39088.6,
+      "Kosten": 18661.5,
+      "Marge_pct": 52.3
+    },
+    "E-Bikes": {
+      "Umsatz": 724796.87,
+      "Kosten": 529770.0,
+      "Marge_pct": 26.9
+    },
+    "Fahrräder": {
+      "Umsatz": 309384.76,
+      "Kosten": 207895.0,
+      "Marge_pct": 32.8
+    },
+    "Werkstatt": {
+      "Umsatz": 48094.62,
+      "Kosten": 29267.0,
+      "Marge_pct": 39.1
+    },
+    "Zubehör": {
+      "Umsatz": 122652.27,
+      "Kosten": 60740.6,
+      "Marge_pct": 50.5
+    }
+  },
+  "koeln_vor_und_ab_juni": {
+    "Jan–Mai": {
+      "Umsatz": 117236.37,
+      "Kosten": 78232.7,
+      "Marge_pct": 33.3
+    },
+    "Jun–Dez": {
+      "Umsatz": 159325.37,
+      "Kosten": 126459.9,
+      "Marge_pct": 20.6
+    }
+  },
+  "je_monat": {
+    "01": 50841.84,
+    "02": 53197.97,
+    "03": 101103.63,
+    "04": 131275.57,
+    "05": 162340.95,
+    "06": 141688.13,
+    "07": 141478.09,
+    "08": 119537.61,
+    "09": 118820.31,
+    "10": 75080.06,
+    "11": 55589.96,
+    "12": 93063.0
+  },
+  "plan_gesamt": 1288000,
+  "plan_je_filiale": {
+    "Hamburg": 389000,
+    "Köln": 282000,
+    "München": 422000,
+    "Leipzig": 195000
+  },
+  "abweichung_ist_plan": -43982.88,
+  "tag2_dax": {
+    "Umsatz": 1244017.93,
+    "Kosten": 846334.1,
+    "Marge_pct": 32.0,
+    "Belege": 2877,
+    "Kunden_aktiv": 161,
+    "Kunden_ohne_Kauf": 0,
+    "Oe_Bon": 432.4,
+    "Umsatz_E_Bikes": 724796.87,
+    "je_segment": {
+      "Privat": {
+        "Umsatz": 1014791.46,
+        "Kosten": 685076.5,
+        "Marge_pct": 32.5
+      },
+      "Gewerbe": {
+        "Umsatz": 229226.48,
+        "Kosten": 161257.6,
+        "Marge_pct": 29.7
+      }
+    },
+    "koeln_jun_dez": {
+      "Umsatz": 159325.56,
+      "Kosten": 126459.9,
+      "Marge_pct": 20.6
+    },
+    "umsatz_kumuliert_bis_30_06": 640448.56,
+    "plan_abweichung": -43982.07,
+    "plan_abweichung_pct": -3.4,
+    "plan_abweichung_je_filiale": {
+      "Hamburg": -17398.54,
+      "Köln": -5437.97,
+      "München": -10489.06,
+      "Leipzig": -10656.49
+    }
+  }
+}
