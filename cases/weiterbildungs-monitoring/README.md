@@ -250,6 +250,7 @@ Bau die Seite nach dem [Mockup](mockup/page-1-uberblick.png). Die Kachel-Liste m
 - **Nur mit Bordmitteln:** KPI-Kacheln als *Karte (neu)* mit Referenzbeschriftung, Balken und Säulen als *Gruppiertes Balken-/Säulendiagramm* mit Ist und Ziel.
 - **Mit ChartKitchen:** Die Kacheln mit Szenario-Notation (Ist vs. Ziel, Abweichung) sind im Mockup für das Visual
   [ChartKitchen byDatenWG](https://datenwgknowledgekitchen.com/chartkitchen-schnellstart.html) vorgesehen.
+- **Lösung ansehen:** Das fertige Power-BI-Projekt liegt in [`pbip/Weiterbildungs-Monitoring/`](../../pbip/Weiterbildungs-Monitoring/) – `.pbip` öffnen, aktualisieren, vergleichen.
 - **Mit Claude Code:** Speichere dein Modell als **PBIP** und sag im Repo: *„Setz das Mockup `cases/weiterbildungs-monitoring/mockup/mockup-spec.json` in meinem Bericht um."* – der Skill `mockup-to-powerbi` baut die Seite (siehe [skills.md](../../skills.md)).
 - **Weiterskizzieren:** [MockupKitchen](https://datenwgknowledgekitchen.com/mockup-kitchen.html) öffnen → **Öffnen** → [`weiterbildungs-monitoring.mockup.json`](mockup/weiterbildungs-monitoring.mockup.json). Dort kannst du Kacheln ändern oder eine Detailseite ergänzen.
 

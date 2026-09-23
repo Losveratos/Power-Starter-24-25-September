@@ -1,0 +1,34 @@
+/// Organisationsbereiche
+table dim_bereich
+
+	column BereichID
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: BereichID
+
+	column Bereich
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Bereich
+
+	column Ressort
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ressort
+
+	column Kostenstelle
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Kostenstelle
+
+	partition dim_bereich = m
+		mode: import
+		source =
+				let
+				    Quelle = Csv.Document(Web.Contents(DatenQuelle, [RelativePath = "anreicherung/dim_bereich.csv"]), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Ueberschriften = Table.PromoteHeaders(Quelle, [PromoteAllScalars = true]),
+				    Typen = Table.TransformColumnTypes(Ueberschriften, {{"BereichID", type text}, {"Bereich", type text}, {"Ressort", type text}, {"Kostenstelle", type text}})
+				in
+				    Typen
+

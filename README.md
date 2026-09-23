@@ -16,6 +16,7 @@ Nach dem Training kommen hier weitere Snippets und Dateien dazu – einfach wied
 | ✂️ [**Snippets**](snippets/) | Power-Query- und DAX-Code zum Kopieren |
 | 🎬 [**Videos**](videos.md) | Daten-WG-Videos zum Vertiefen, sortiert nach Thema |
 | 🧩 [**Fall: Weiterbildungs-Monitoring**](cases/weiterbildungs-monitoring/) | Zum Selbermachen: Rohdaten, Anreicherung, Ziele-Kreuztabelle, Skripte, Anleitung und Seiten-Mockup |
+| 📊 [**Power-BI-Projekt**](pbip/Weiterbildungs-Monitoring/) | Fertige Lösung zum Weiterbildungs-Fall als PBIP (Modell + Berichtsseite) |
 | 🤖 [**Claude-Skills**](skills.md) | Die ChartKitchen-Skills für Claude Code – Report, Design, Deneb, P&L, Mockup |
 
 ## ⚡ Schnellstart
@@ -38,9 +39,11 @@ daten/                 Übungsdaten + kontrollzahlen.json
   tag1/                  unordentlicher Kassen-Export
   tag2/                  Sternschema + Plan (Excel)
 snippets/              Power Query (.pq) und DAX (.dax) zum Kopieren
+pbip/                  fertige Power-BI-Projekte (PBIP) als Lösungen
 cases/                 Fälle zum Selbermachen (je Fall: daten/, skripte/, mockup/, README)
 tools/generate_data.py erzeugt die Übungsdaten neu
 tools/sync_kitchen_skills.sh  holt die Skills aus der Kitchen
+tools/pbip/            erzeugt und prüft die PBIP-Projekte (TOM + Microsoft-Schemas)
 .claude/skills/        Claude-Skills aus der ChartKitchen (siehe skills.md)
 CLAUDE.md              Hinweise für Claude Code in diesem Repo
 ```

@@ -1,0 +1,38 @@
+{
+  "name": "Weiterbildung",
+  "dataColors": [
+    "#404040",
+    "#A6B1B8",
+    "#1E8F9E",
+    "#D64541",
+    "#C25A2D",
+    "#7A8C99",
+    "#2F6B8A",
+    "#C9A227"
+  ],
+  "foreground": "#0F1E2E",
+  "foregroundNeutralSecondary": "#6B7280",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F4F4F1",
+  "tableAccent": "#1E8F9E",
+  "good": "#1E8F9E",
+  "bad": "#D64541",
+  "neutral": "#A6B1B8",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#0F1E2E"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 9,
+      "color": "#0F1E2E"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 24,
+      "color": "#0F1E2E"
+    }
+  }
+}

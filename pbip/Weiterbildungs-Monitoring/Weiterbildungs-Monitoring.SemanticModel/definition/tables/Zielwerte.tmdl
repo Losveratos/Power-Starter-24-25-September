@@ -1,0 +1,34 @@
+/// Zielwerte je Bereich und Kennzahl (entpivotiert)
+table Zielwerte
+
+	column Bereich
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Bereich
+
+	column Kennzahl
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Kennzahl
+
+	column Zielwert
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: Zielwert
+
+	partition Zielwerte = m
+		mode: import
+		source =
+				let
+				    Quelle = Excel.Workbook(Web.Contents(DatenQuelle, [RelativePath = "ziele/ziele_2025.xlsx"]), null, true),
+				    Blatt = Quelle{[Item = "Zielwerte 2025", Kind = "Sheet"]}[Data],
+				    OhneTitel = Table.Skip(Blatt, 2),
+				    Ueberschriften = Table.PromoteHeaders(OhneTitel, [PromoteAllScalars = true]),
+				    Entpivotiert = Table.UnpivotOtherColumns(Ueberschriften, {"Bereich"}, "Kennzahl", "Zielwert"),
+				    Typen = Table.TransformColumnTypes(Entpivotiert, {{"Bereich", type text}, {"Kennzahl", type text}, {"Zielwert", type number}})
+				in
+				    Typen
+

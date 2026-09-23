@@ -1,0 +1,28 @@
+relationship 85384593-df29-5ef5-bb3b-5a88c5dde041
+	fromColumn: fakt_buchungen.Personalnr
+	toColumn: dim_mitarbeitende.Personalnr
+
+relationship 9b827ad4-3e4d-5703-be16-656775b622a6
+	fromColumn: fakt_buchungen.Kursnr
+	toColumn: dim_kurs.Kursnr
+
+relationship acfddbc3-ffbe-52d0-b890-e6e3c212c606
+	fromColumn: fakt_buchungen.Kursbeginn
+	toColumn: Kalender.Datum
+
+relationship c0ada908-c04a-5b65-98be-56cbe45fc06b
+	fromColumn: dim_mitarbeitende.BereichID
+	toColumn: dim_bereich.BereichID
+
+relationship 00a6b2f4-f587-55fc-b3f7-597f88fdd44f
+	fromColumn: Budget.Bereich
+	toColumn: dim_bereich.Bereich
+
+relationship 339ad245-995e-5a2b-8883-4dd779276d82
+	fromColumn: Budget.Quartalsanfang
+	toColumn: Kalender.Datum
+
+relationship 82ec015c-84ae-5104-8257-0af9484ec9f4
+	fromColumn: Zielwerte.Bereich
+	toColumn: dim_bereich.Bereich
+

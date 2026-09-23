@@ -1,0 +1,183 @@
+/// Alle Kennzahlen
+table _Measures
+
+	/// Personen im HR-Stamm
+	measure Headcount = COUNTROWS ( dim_mitarbeitende )
+		formatString: #,0
+		displayFolder: 1 Grundgrößen
+
+	/// Vollzeitäquivalente
+	measure FTE = SUM ( dim_mitarbeitende[FTE] )
+		formatString: #,0.0
+		displayFolder: 1 Grundgrößen
+
+	/// alle Buchungen, jeder Status
+	measure Buchungen = COUNTROWS ( fakt_buchungen )
+		formatString: #,0
+		displayFolder: 1 Grundgrößen
+
+	/// abgeschlossene Buchungen
+	measure Teilnahmen = CALCULATE ( [Buchungen], fakt_buchungen[Status] = "abgeschlossen" )
+		formatString: #,0
+		displayFolder: 1 Grundgrößen
+
+	/// Weiterbildungsstunden
+	measure Stunden = CALCULATE ( SUM ( fakt_buchungen[Stunden] ), fakt_buchungen[Status] = "abgeschlossen" )
+		formatString: #,0
+		displayFolder: 1 Grundgrößen
+
+	/// inkl. No-Show und Stornogebühren
+	measure Kosten = SUM ( fakt_buchungen[Kosten] )
+		formatString: #,0 €
+		displayFolder: 1 Grundgrößen
+
+	/// Nenner: alle Personen im HR-Stamm
+	measure 'Ø Stunden je MA' = DIVIDE ( [Stunden], [Headcount] )
+		formatString: #,0.0
+		displayFolder: 2 Quoten
+
+	measure 'Kosten je MA' = DIVIDE ( [Kosten], [Headcount] )
+		formatString: #,0 €
+		displayFolder: 2 Quoten
+
+	measure Stornoquote = DIVIDE ( CALCULATE ( [Buchungen], fakt_buchungen[Status] = "storniert" ), [Buchungen] )
+		formatString: 0.0 %
+		displayFolder: 2 Quoten
+
+	measure No-Show-Quote = DIVIDE ( CALCULATE ( [Buchungen], fakt_buchungen[Status] = "No-Show" ), [Buchungen] )
+		formatString: 0.0 %
+		displayFolder: 2 Quoten
+
+	/// Personen mit ≥ 1 abgeschlossener freiwilliger Weiterbildung
+	measure 'Teilnehmende freiwillig' =
+			CALCULATE (
+			    DISTINCTCOUNT ( fakt_buchungen[Personalnr] ),
+			    fakt_buchungen[Status] = "abgeschlossen",
+			    dim_kurs[Pflicht] = "Nein"
+			)
+		formatString: #,0
+		displayFolder: 2 Quoten
+
+	measure Teilnahmequote = DIVIDE ( [Teilnehmende freiwillig], [Headcount] )
+		formatString: 0.0 %
+		displayFolder: 2 Quoten
+
+	/// Personen, die alle Pflichtkurse abgeschlossen haben
+	measure 'Pflicht erfüllt' =
+			VAR AnzahlPflichtkurse =
+			    CALCULATE ( COUNTROWS ( dim_kurs ), REMOVEFILTERS ( dim_kurs ), dim_kurs[Pflicht] = "Ja" )
+			RETURN
+			    COUNTROWS (
+			        FILTER (
+			            dim_mitarbeitende,
+			            CALCULATE (
+			                DISTINCTCOUNT ( fakt_buchungen[Kursnr] ),
+			                fakt_buchungen[Status] = "abgeschlossen",
+			                REMOVEFILTERS ( dim_kurs ),         // Kursfilter (z. B. Kategorie) gelten hier nicht
+			                dim_kurs[Pflicht] = "Ja"
+			            ) = AnzahlPflichtkurse
+			        )
+			    )
+		formatString: #,0
+		displayFolder: 2 Quoten
+
+	measure Pflichtquote = DIVIDE ( [Pflicht erfüllt], [Headcount] )
+		formatString: 0.0 %
+		displayFolder: 2 Quoten
+
+	/// Mittelwert der Bewertungen 1–5
+	measure 'Ø Zufriedenheit' = AVERAGE ( fakt_buchungen[Feedback] )
+		formatString: 0.00
+		displayFolder: 2 Quoten
+
+	measure Budget = SUM ( Budget[Budget] )
+		formatString: #,0 €
+		displayFolder: 3 Ziele & Budget
+
+	/// Kosten − Budget
+	measure 'Δ Budget' = [Kosten] - [Budget]
+		formatString: +#,0 €;-#,0 €;0 €
+		displayFolder: 3 Ziele & Budget
+
+	measure Budget-Ausschöpfung = DIVIDE ( [Kosten], [Budget] )
+		formatString: 0.0 %
+		displayFolder: 3 Ziele & Budget
+
+	/// nach Headcount gewichtet
+	measure 'Ziel Ø Stunden je MA' =
+			VAR Summe =
+			    SUMX (
+			        VALUES ( dim_bereich[Bereich] ),
+			        CALCULATE ( SUM ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Ø Stunden je MA" ) * [Headcount]
+			    )
+			RETURN
+			    DIVIDE ( Summe, [Headcount] )
+		formatString: #,0.0
+		displayFolder: 3 Ziele & Budget
+
+	/// nach Headcount gewichtet
+	measure 'Ziel Teilnahmequote' =
+			VAR Summe =
+			    SUMX (
+			        VALUES ( dim_bereich[Bereich] ),
+			        CALCULATE ( SUM ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Teilnahmequote" ) * [Headcount]
+			    )
+			RETURN
+			    DIVIDE ( Summe, [Headcount] )
+		formatString: 0.0 %
+		displayFolder: 3 Ziele & Budget
+
+	/// nach Headcount gewichtet
+	measure 'Ziel Pflichtquote' =
+			VAR Summe =
+			    SUMX (
+			        VALUES ( dim_bereich[Bereich] ),
+			        CALCULATE ( SUM ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Pflichtquote" ) * [Headcount]
+			    )
+			RETURN
+			    DIVIDE ( Summe, [Headcount] )
+		formatString: 0.0 %
+		displayFolder: 3 Ziele & Budget
+
+	measure 'Ziel Zufriedenheit' = CALCULATE ( AVERAGE ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Zufriedenheit" )
+		formatString: 0.0
+		displayFolder: 3 Ziele & Budget
+
+	measure 'Δ Pflichtquote' = [Pflichtquote] - [Ziel Pflichtquote]
+		formatString: +0.0 %;-0.0 %;0.0 %
+		displayFolder: 3 Ziele & Budget
+
+	measure 'Δ Teilnahmequote' = [Teilnahmequote] - [Ziel Teilnahmequote]
+		formatString: +0.0 %;-0.0 %;0.0 %
+		displayFolder: 3 Ziele & Budget
+
+	measure 'Text Teilnahmequote' = "Ziel " & FORMAT ( [Ziel Teilnahmequote], "0.0 %" ) & "  ·  Δ " & FORMAT ( [Δ Teilnahmequote] * 100, "+0.0;-0.0" ) & " Pp"
+		displayFolder: 9 Beschriftungen
+
+	measure 'Text Stunden' = "Ziel " & FORMAT ( [Ziel Ø Stunden je MA], "0.0" ) & " h  ·  Δ " & FORMAT ( [Ø Stunden je MA] - [Ziel Ø Stunden je MA], "+0.0;-0.0" ) & " h"
+		displayFolder: 9 Beschriftungen
+
+	measure 'Text Pflichtquote' = "Ziel " & FORMAT ( [Ziel Pflichtquote], "0.0 %" ) & "  ·  Δ " & FORMAT ( [Δ Pflichtquote] * 100, "+0.0;-0.0" ) & " Pp"
+		displayFolder: 9 Beschriftungen
+
+	measure 'Text Kosten' = "Budget " & FORMAT ( [Budget], "#,0 €" ) & "  ·  " & FORMAT ( [Budget-Ausschöpfung], "0.0 %" ) & " ausgeschöpft"
+		displayFolder: 9 Beschriftungen
+
+	measure 'Text Zufriedenheit' = "Ziel " & FORMAT ( [Ziel Zufriedenheit], "0.0" ) & "  ·  " & FORMAT ( COUNT ( fakt_buchungen[Feedback] ), "#,0" ) & " Bewertungen"
+		displayFolder: 9 Beschriftungen
+
+	column Measures
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Measures
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    // leere Hilfstabelle, die nur die Measures trägt
+				    Quelle = #table(type table [Measures = text], {})
+				in
+				    Quelle
+

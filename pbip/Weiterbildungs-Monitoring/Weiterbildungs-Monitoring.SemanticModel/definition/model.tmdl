@@ -1,0 +1,17 @@
+model Model
+	culture: de-DE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: de-DE
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table fakt_buchungen
+ref table dim_mitarbeitende
+ref table dim_bereich
+ref table dim_kurs
+ref table Kalender
+ref table Budget
+ref table Zielwerte
+ref table _Measures
+

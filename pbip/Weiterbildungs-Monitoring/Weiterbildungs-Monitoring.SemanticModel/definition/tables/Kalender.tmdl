@@ -1,0 +1,59 @@
+/// Kalender 2025 (als Datumstabelle markiert)
+table Kalender
+	dataCategory: Time
+
+	column Datum
+		dataType: dateTime
+		isKey
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Datum
+
+	column Jahr
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Jahr
+
+	column Quartal
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Quartal
+
+	column MonatNr
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: MonatNr
+
+	column Monat
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Monat
+		sortByColumn: MonatNr
+
+	column Monatsanfang
+		dataType: dateTime
+		isHidden
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Monatsanfang
+
+	partition Kalender = m
+		mode: import
+		source =
+				let
+				    Start = #date(2025, 1, 1),
+				    Ende = #date(2025, 12, 31),
+				    Liste = List.Dates(Start, Duration.Days(Ende - Start) + 1, #duration(1, 0, 0, 0)),
+				    Tabelle = Table.FromList(Liste, Splitter.SplitByNothing(), {"Datum"}),
+				    Datum = Table.TransformColumnTypes(Tabelle, {{"Datum", type date}}),
+				    Jahr = Table.AddColumn(Datum, "Jahr", each Date.Year([Datum]), Int64.Type),
+				    Quartal = Table.AddColumn(Jahr, "Quartal", each "Q" & Text.From(Date.QuarterOfYear([Datum])), type text),
+				    MonatNr = Table.AddColumn(Quartal, "MonatNr", each Date.Month([Datum]), Int64.Type),
+				    Monat = Table.AddColumn(MonatNr, "Monat", each Date.ToText([Datum], [Format = "MMM", Culture = "de-DE"]), type text),
+				    Monatsanfang = Table.AddColumn(Monat, "Monatsanfang", each Date.StartOfMonth([Datum]), type date)
+				in
+				    Monatsanfang
+

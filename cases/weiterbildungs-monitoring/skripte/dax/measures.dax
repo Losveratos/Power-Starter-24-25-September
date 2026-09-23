@@ -51,6 +51,7 @@ RETURN
             CALCULATE (
                 DISTINCTCOUNT ( fakt_buchungen[Kursnr] ),
                 fakt_buchungen[Status] = "abgeschlossen",
+                REMOVEFILTERS ( dim_kurs ),         // Kursfilter (z. B. Kategorie) gelten hier nicht
                 dim_kurs[Pflicht] = "Ja"
             ) = AnzahlPflichtkurse
         )

@@ -58,6 +58,13 @@ ziele + `kontrollzahlen.json`), `skripte/` (Power Query + DAX zum Überspringen)
 `tools/` (Generatoren). Kontrollzahlen nie von Hand ändern – Generator laufen lassen und Anleitung abgleichen.
 Das Mockup `cases/weiterbildungs-monitoring/mockup/mockup-spec.json` ist eine gültige Eingabe für `mockup-to-powerbi`.
 
+## Power-BI-Projekte (`pbip/`)
+
+`pbip/Weiterbildungs-Monitoring/` wird von `tools/pbip/build_weiterbildung_pbip.py` erzeugt – nicht von Hand ändern,
+sondern das Skript anpassen und neu laufen lassen. Das Skript prüft das Modell mit TOM (`tools/pbip/TmdlCheck`, .NET 8);
+danach `tools/pbip/validate_pbir.py` (Microsoft-Schemas + Feldbezüge). Wenn `te`/`pbir` verfügbar sind,
+zusätzlich `pbip/Weiterbildungs-Monitoring/pruefen.ps1` – die CLIs haben Vorrang vor den eigenen Prüfungen.
+
 ## Konventionen im Repo
 
 - Sprache Deutsch, Anrede „du".

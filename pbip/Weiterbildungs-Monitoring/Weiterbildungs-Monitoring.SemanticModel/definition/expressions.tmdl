@@ -1,0 +1,4 @@
+expression DatenQuelle = "https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/cases/weiterbildungs-monitoring/daten/" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+
+	annotation PBI_ResultType = Text
+

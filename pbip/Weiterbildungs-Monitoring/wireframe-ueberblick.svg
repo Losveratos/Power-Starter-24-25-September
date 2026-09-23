@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="838" viewBox="0 0 1536 838" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1536" height="838" fill="#FFFFFF"/>
+<text x="24" y="42" font-size="17" font-weight="600" fill="#0F1E2E">Überblick</text>
+<text x="24" y="58" font-size="11" fill="#475569">ueberblick · 1280×720 px · 18 Visual(s)</text>
+<rect x="24" y="68" width="1280" height="720" fill="#FAFAF7" stroke="#475569" stroke-width="1"/>
+<path d="M104 68V788M184 68V788M264 68V788M344 68V788M424 68V788M504 68V788M584 68V788M664 68V788M744 68V788M824 68V788M904 68V788M984 68V788M1064 68V788M1144 68V788M1224 68V788M24 148H1304M24 228H1304M24 308H1304M24 388H1304M24 468H1304M24 548H1304M24 628H1304M24 708H1304" stroke="#DDDBD3" stroke-width="1" fill="none"/>
+<rect x="24" y="68" width="1280" height="56" fill="#EFEEE8" stroke="#B3AFA4" stroke-width="1"/>
+<text x="32" y="84" font-size="11" fill="#0F1E2E">textbox · kopfband</text>
+<text x="32" y="96" font-size="9" fill="#475569">1280×56</text>
+<rect x="1282" y="72" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1291" y="82.5" font-size="9" text-anchor="middle" fill="#FFFFFF">0</text>
+<rect x="40" y="764" width="1248" height="24" fill="#EFEEE8" stroke="#B3AFA4" stroke-width="1"/>
+<text x="48" y="780" font-size="11" fill="#0F1E2E">textbox · fussleiste</text>
+<rect x="1266" y="768" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1275" y="778.5" font-size="9" text-anchor="middle" fill="#FFFFFF">1</text>
+<rect x="40" y="140" width="204" height="117" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="48" y="156" font-size="11" fill="#0F1E2E">card · mk_wbt01</text>
+<text x="48" y="168" font-size="9" fill="#475569">204×117</text>
+<rect x="222" y="144" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="231" y="154.5" font-size="9" text-anchor="middle" fill="#FFFFFF">10</text>
+<rect x="256" y="140" width="204" height="117" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="264" y="156" font-size="11" fill="#0F1E2E">card · mk_wbt02</text>
+<text x="264" y="168" font-size="9" fill="#475569">204×117</text>
+<rect x="438" y="144" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="447" y="154.5" font-size="9" text-anchor="middle" fill="#FFFFFF">11</text>
+<rect x="472" y="140" width="204" height="117" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="480" y="156" font-size="11" fill="#0F1E2E">card · mk_wbt03</text>
+<text x="480" y="168" font-size="9" fill="#475569">204×117</text>
+<rect x="654" y="144" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="663" y="154.5" font-size="9" text-anchor="middle" fill="#FFFFFF">12</text>
+<rect x="688" y="140" width="204" height="117" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="696" y="156" font-size="11" fill="#0F1E2E">card · mk_wbt04</text>
+<text x="696" y="168" font-size="9" fill="#475569">204×117</text>
+<rect x="870" y="144" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="879" y="154.5" font-size="9" text-anchor="middle" fill="#FFFFFF">13</text>
+<rect x="904" y="140" width="204" height="117" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="912" y="156" font-size="11" fill="#0F1E2E">card · mk_wbt05</text>
+<text x="912" y="168" font-size="9" fill="#475569">204×117</text>
+<rect x="1086" y="144" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1095" y="154.5" font-size="9" text-anchor="middle" fill="#FFFFFF">14</text>
+<rect x="40" y="269" width="348" height="233" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="48" y="285" font-size="11" fill="#0F1E2E">clusteredColumnChart · mk_wbt07</text>
+<text x="48" y="297" font-size="9" fill="#475569">348×233</text>
+<rect x="366" y="273" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="375" y="283.5" font-size="9" text-anchor="middle" fill="#FFFFFF">20</text>
+<rect x="400" y="269" width="348" height="233" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="408" y="285" font-size="11" fill="#0F1E2E">clusteredBarChart · mk_wbt08</text>
+<text x="408" y="297" font-size="9" fill="#475569">348×233</text>
+<rect x="726" y="273" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="735" y="283.5" font-size="9" text-anchor="middle" fill="#FFFFFF">21</text>
+<rect x="760" y="269" width="348" height="233" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="768" y="285" font-size="11" fill="#0F1E2E">clusteredBarChart · mk_wbt09</text>
+<text x="768" y="297" font-size="9" fill="#475569">348×233</text>
+<rect x="1086" y="273" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1095" y="283.5" font-size="9" text-anchor="middle" fill="#FFFFFF">22</text>
+<rect x="40" y="514" width="348" height="234" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="48" y="530" font-size="11" fill="#0F1E2E">lineChart · mk_wbt11</text>
+<text x="48" y="542" font-size="9" fill="#475569">348×234</text>
+<rect x="366" y="518" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="375" y="528.5" font-size="9" text-anchor="middle" fill="#FFFFFF">23</text>
+<rect x="400" y="514" width="348" height="234" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="408" y="530" font-size="11" fill="#0F1E2E">clusteredBarChart · mk_wbt12</text>
+<text x="408" y="542" font-size="9" fill="#475569">348×234</text>
+<rect x="726" y="518" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="735" y="528.5" font-size="9" text-anchor="middle" fill="#FFFFFF">24</text>
+<rect x="760" y="514" width="348" height="234" fill="#E6EDE9" stroke="#6E9184" stroke-width="1"/>
+<text x="768" y="530" font-size="11" fill="#0F1E2E">tableEx · mk_wbt13</text>
+<text x="768" y="542" font-size="9" fill="#475569">348×234</text>
+<rect x="1086" y="518" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1095" y="528.5" font-size="9" text-anchor="middle" fill="#FFFFFF">25</text>
+<rect x="1132" y="132" width="164" height="28" fill="#EFEEE8" stroke="#B3AFA4" stroke-width="1"/>
+<text x="1140" y="148" font-size="11" fill="#0F1E2E">textbox · filter_titel</text>
+<rect x="1274" y="136" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1283" y="146.5" font-size="9" text-anchor="middle" fill="#FFFFFF">30</text>
+<rect x="1132" y="164" width="164" height="56" fill="#E9EFF6" stroke="#7C9DBD" stroke-width="1"/>
+<text x="1140" y="180" font-size="11" fill="#0F1E2E">slicer · slicer_standort</text>
+<text x="1140" y="192" font-size="9" fill="#475569">164×56</text>
+<rect x="1274" y="168" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1283" y="178.5" font-size="9" text-anchor="middle" fill="#FFFFFF">31</text>
+<rect x="1132" y="228" width="164" height="56" fill="#E9EFF6" stroke="#7C9DBD" stroke-width="1"/>
+<text x="1140" y="244" font-size="11" fill="#0F1E2E">slicer · slicer_bereich</text>
+<text x="1140" y="256" font-size="9" fill="#475569">164×56</text>
+<rect x="1274" y="232" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1283" y="242.5" font-size="9" text-anchor="middle" fill="#FFFFFF">32</text>
+<rect x="1132" y="292" width="164" height="56" fill="#E9EFF6" stroke="#7C9DBD" stroke-width="1"/>
+<text x="1140" y="308" font-size="11" fill="#0F1E2E">slicer · slicer_beschae…</text>
+<text x="1140" y="320" font-size="9" fill="#475569">164×56</text>
+<rect x="1274" y="296" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1283" y="306.5" font-size="9" text-anchor="middle" fill="#FFFFFF">33</text>
+<rect x="1132" y="356" width="164" height="56" fill="#E9EFF6" stroke="#7C9DBD" stroke-width="1"/>
+<text x="1140" y="372" font-size="11" fill="#0F1E2E">slicer · slicer_kategor…</text>
+<text x="1140" y="384" font-size="9" fill="#475569">164×56</text>
+<rect x="1274" y="360" width="18" height="14" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1283" y="370.5" font-size="9" text-anchor="middle" fill="#FFFFFF">34</text>
+<text x="1320" y="82" font-size="11" font-weight="600" fill="#0F1E2E">Legende</text>
+<rect x="1320" y="87" width="16" height="12" fill="#EFEEE8" stroke="#B3AFA4"/>
+<text x="1344" y="96" font-size="10" fill="#475569">Chrome (3)</text>
+<rect x="1320" y="107" width="16" height="12" fill="#E9EFF6" stroke="#7C9DBD"/>
+<text x="1344" y="116" font-size="10" fill="#475569">Slicer (4)</text>
+<rect x="1320" y="127" width="16" height="12" fill="#E6EDE9" stroke="#6E9184"/>
+<text x="1344" y="136" font-size="10" fill="#475569">Daten-Visual (11)</text>
+<rect x="1320" y="147" width="16" height="12" fill="none" stroke="#9A958A" stroke-dasharray="5 3"/>
+<text x="1344" y="156" font-size="10" fill="#475569">Gruppe (0)</text>
+<rect x="1320" y="171" width="16" height="12" rx="3" fill="#0F1E2E" fill-opacity="0.75"/>
+<text x="1344" y="180" font-size="10" fill="#475569">tabOrder</text>
+<text x="24" y="820" font-size="10" fill="#475569">Rasterlinien alle 80 px (Power-BI-Basisraster 8 px — exakte Prüfung: bulk_restyle.py --check) · Zeichenreihenfolge nach z (hinten → vorne)</text>
+</svg>

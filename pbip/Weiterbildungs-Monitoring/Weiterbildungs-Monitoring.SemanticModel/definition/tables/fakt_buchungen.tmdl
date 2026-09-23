@@ -1,0 +1,86 @@
+/// Eine Zeile je Kursbuchung aus dem LMS (bereinigt)
+table fakt_buchungen
+
+	column BuchungsID
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: BuchungsID
+
+	column Personalnr
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Personalnr
+
+	column Kursnr
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Kursnr
+
+	column Buchungsdatum
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Buchungsdatum
+
+	column Kursbeginn
+		dataType: dateTime
+		isHidden
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Kursbeginn
+
+	column Kursende
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Kursende
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column Stunden
+		dataType: double
+		isHidden
+		formatString: #,0.0
+		summarizeBy: none
+		sourceColumn: Stunden
+
+	column Kosten
+		dataType: decimal
+		isHidden
+		formatString: #,0.00 €
+		summarizeBy: none
+		sourceColumn: Kosten
+
+	column Feedback
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Feedback
+
+	partition fakt_buchungen = m
+		mode: import
+		source =
+				let
+				    // LMS-Export: Windows-1252, Semikolon, deutsche Zahlen (Lösung zu Schritt 2)
+				    Quelle = Csv.Document(Web.Contents(DatenQuelle, [RelativePath = "roh/weiterbildung_buchungen_2025.csv"]), [Delimiter = ";", Columns = 11, Encoding = 1252, QuoteStyle = QuoteStyle.None]),
+				    Ueberschriften = Table.PromoteHeaders(Quelle, [PromoteAllScalars = true]),
+				    OhneSummenzeile = Table.RemoveLastN(Ueberschriften, 1),
+				    OhneDuplikate = Table.Distinct(OhneSummenzeile),
+				    OhneKurstitel = Table.RemoveColumns(OhneDuplikate, {"Kurstitel"}),
+				    Personalnr = Table.TransformColumns(OhneKurstitel, {{"Personalnr", each Text.PadStart(Text.Trim(_), 5, "0"), type text}}),
+				    StatusBereinigt = Table.TransformColumns(Personalnr, {{"Status", each Text.Lower(Text.Trim(_)), type text}}),
+				    StatusSynonyme = Table.TransformColumns(StatusBereinigt, {{"Status", each if _ = "teilgenommen" then "abgeschlossen" else if List.Contains({"no-show", "no show", "nicht erschienen"}, _) then "No-Show" else _, type text}}),
+				    OhneEuro = Table.ReplaceValue(StatusSynonyme, " €", "", Replacer.ReplaceText, {"Kosten"}),
+				    FeedbackLeer = Table.ReplaceValue(OhneEuro, "", null, Replacer.ReplaceValue, {"Feedback"}),
+				    Typen = Table.TransformColumnTypes(FeedbackLeer, {{"BuchungsID", Int64.Type}, {"Kursnr", type text}, {"Buchungsdatum", type date}, {"Kursbeginn", type date}, {"Kursende", type date}, {"Stunden", type number}, {"Kosten", Currency.Type}, {"Feedback", Int64.Type}}, "de-DE")
+				in
+				    Typen
+
