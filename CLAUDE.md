@@ -51,6 +51,13 @@ Passende Abbildungen:
 - **GuV-Light** (Umsatz → Kosten → Deckungsbeitrag) → `pnl-report`, reine Hierarchie
 - Kontrollzahlen zum Gegenprüfen: `daten/kontrollzahlen.json`
 
+## Fälle (`cases/`)
+
+Jeder Fall ist in sich geschlossen: `README.md` (Anleitung mit Kontrollzahlen), `daten/` (roh · anreicherung ·
+ziele + `kontrollzahlen.json`), `skripte/` (Power Query + DAX zum Überspringen), `mockup/` (MockupKitchen-Export),
+`tools/` (Generatoren). Kontrollzahlen nie von Hand ändern – Generator laufen lassen und Anleitung abgleichen.
+Das Mockup `cases/weiterbildungs-monitoring/mockup/mockup-spec.json` ist eine gültige Eingabe für `mockup-to-powerbi`.
+
 ## Konventionen im Repo
 
 - Sprache Deutsch, Anrede „du".

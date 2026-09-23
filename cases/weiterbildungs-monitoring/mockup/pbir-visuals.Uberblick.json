@@ -1,0 +1,96 @@
+[
+  {
+    "visual_type": "lineChart",
+    "name": "mk_wbt11",
+    "title": "Weiterbildungsstunden je Monat",
+    "x": 16,
+    "y": 446,
+    "width": 348,
+    "height": 234,
+    "fields": {
+      "Category": "Kalender.Monat",
+      "Y": "_Measures.Stunden"
+    }
+  },
+  {
+    "visual_type": "clusteredBarChart",
+    "name": "mk_wbt12",
+    "title": "Vollzeit vs. Teilzeit",
+    "x": 376,
+    "y": 446,
+    "width": 348,
+    "height": 234,
+    "fields": {
+      "Category": "dim_mitarbeitende.Beschaeftigung",
+      "Y": [
+        "_Measures.Teilnahmequote",
+        "_Measures.Ø Stunden je MA"
+      ]
+    }
+  },
+  {
+    "visual_type": "pivotTable",
+    "name": "mk_wbt13",
+    "title": "Top-Kurse nach Kosten",
+    "x": 736,
+    "y": 446,
+    "width": 348,
+    "height": 234,
+    "fields": {
+      "Rows": "dim_kurs.Kurstitel",
+      "Values": [
+        "_Measures.Teilnahmen",
+        "_Measures.Kosten",
+        "_Measures.Ø Zufriedenheit"
+      ]
+    }
+  },
+  {
+    "visual_type": "slicer",
+    "name": "mk_slicer_Standort_p1",
+    "title": "Standort",
+    "fields": {
+      "Values": "dim_mitarbeitende.Standort"
+    },
+    "x": 1108,
+    "y": 96,
+    "width": 164,
+    "height": 56
+  },
+  {
+    "visual_type": "slicer",
+    "name": "mk_slicer_Bereich_p1",
+    "title": "Bereich",
+    "fields": {
+      "Values": "dim_bereich.Bereich"
+    },
+    "x": 1108,
+    "y": 160,
+    "width": 164,
+    "height": 56
+  },
+  {
+    "visual_type": "slicer",
+    "name": "mk_slicer_Beschaeftigung_p1",
+    "title": "Beschaeftigung",
+    "fields": {
+      "Values": "dim_mitarbeitende.Beschaeftigung"
+    },
+    "x": 1108,
+    "y": 224,
+    "width": 164,
+    "height": 56
+  },
+  {
+    "visual_type": "slicer",
+    "name": "mk_slicer_Kategorie_p1",
+    "title": "Kategorie",
+    "fields": {
+      "Values": "dim_kurs.Kategorie"
+    },
+    "x": 1108,
+    "y": 288,
+    "width": 164,
+    "height": 56
+  }
+]

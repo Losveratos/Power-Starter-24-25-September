@@ -1,0 +1,8 @@
+BereichID,Bereich,Ressort,Kostenstelle
+B01,Produktion,Technik,4100
+B02,Logistik,Technik,4300
+B03,Entwicklung,Technik,5100
+B04,Service,Technik,4500
+B05,Vertrieb,Kaufmännisch,6100
+B06,IT,Kaufmännisch,7100
+B07,Verwaltung,Kaufmännisch,7300

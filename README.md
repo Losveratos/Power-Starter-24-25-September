@@ -15,6 +15,7 @@ Nach dem Training kommen hier weitere Snippets und Dateien dazu – einfach wied
 | 📦 [**Daten**](daten/) | Übungsdaten der fiktiven Rad & Tat GmbH (CSV + Excel) |
 | ✂️ [**Snippets**](snippets/) | Power-Query- und DAX-Code zum Kopieren |
 | 🎬 [**Videos**](videos.md) | Daten-WG-Videos zum Vertiefen, sortiert nach Thema |
+| 🧩 [**Fall: Weiterbildungs-Monitoring**](cases/weiterbildungs-monitoring/) | Zum Selbermachen: Rohdaten, Anreicherung, Ziele-Kreuztabelle, Skripte, Anleitung und Seiten-Mockup |
 | 🤖 [**Claude-Skills**](skills.md) | Die ChartKitchen-Skills für Claude Code – Report, Design, Deneb, P&L, Mockup |
 
 ## ⚡ Schnellstart
@@ -37,6 +38,7 @@ daten/                 Übungsdaten + kontrollzahlen.json
   tag1/                  unordentlicher Kassen-Export
   tag2/                  Sternschema + Plan (Excel)
 snippets/              Power Query (.pq) und DAX (.dax) zum Kopieren
+cases/                 Fälle zum Selbermachen (je Fall: daten/, skripte/, mockup/, README)
 tools/generate_data.py erzeugt die Übungsdaten neu
 tools/sync_kitchen_skills.sh  holt die Skills aus der Kitchen
 .claude/skills/        Claude-Skills aus der ChartKitchen (siehe skills.md)

@@ -1,0 +1,104 @@
+// Weiterbildungs-Monitoring · alle Measures (Schritt 6–8 der Anleitung)
+// Voraussetzung: Tabellen fakt_buchungen, dim_mitarbeitende, dim_bereich, dim_kurs, Kalender, Budget, Zielwerte
+// und die Beziehungen aus Schritt 5. Measures in eine leere Tabelle "_Measures" legen.
+// Kontrollzahlen stehen jeweils dahinter (Gesamt, ohne Filter).
+
+// ── Schritt 6 · Grundgrößen ─────────────────────────────────
+Headcount = COUNTROWS ( dim_mitarbeitende )                                   // 420
+
+FTE = SUM ( dim_mitarbeitende[FTE] )
+
+Buchungen = COUNTROWS ( fakt_buchungen )                                      // 1.712
+
+Teilnahmen =
+CALCULATE ( [Buchungen], fakt_buchungen[Status] = "abgeschlossen" )           // 1.587
+
+Stunden =
+CALCULATE ( SUM ( fakt_buchungen[Stunden] ), fakt_buchungen[Status] = "abgeschlossen" )   // 6.894
+
+Kosten = SUM ( fakt_buchungen[Kosten] )                                       // 272.678,91 €
+
+// ── Schritt 7 · Quoten: immer Zähler ÷ Nenner, nie Mittelwert von Quoten ──
+// Nenner ist der Headcount aus dem HR-Stamm – auch wer gar keine Weiterbildung hatte, zählt mit!
+Ø Stunden je MA = DIVIDE ( [Stunden], [Headcount] )                           // 16,41
+
+Kosten je MA = DIVIDE ( [Kosten], [Headcount] )                               // 649,24 €
+
+Stornoquote =
+DIVIDE ( CALCULATE ( [Buchungen], fakt_buchungen[Status] = "storniert" ), [Buchungen] )   // 4,0 %
+
+No-Show-Quote =
+DIVIDE ( CALCULATE ( [Buchungen], fakt_buchungen[Status] = "No-Show" ), [Buchungen] )     // 3,1 %
+
+// Teilnahmequote: Anteil der Belegschaft mit mindestens einer abgeschlossenen freiwilligen Weiterbildung
+Teilnehmende freiwillig =
+CALCULATE (
+    DISTINCTCOUNT ( fakt_buchungen[Personalnr] ),
+    fakt_buchungen[Status] = "abgeschlossen",
+    dim_kurs[Pflicht] = "Nein"
+)                                                                             // 266
+
+Teilnahmequote = DIVIDE ( [Teilnehmende freiwillig], [Headcount] )           // 63,3 %
+
+// Pflichtquote: Anteil der Belegschaft, die ALLE Pflichtkurse abgeschlossen hat
+Pflicht erfüllt =
+VAR AnzahlPflichtkurse =
+    CALCULATE ( COUNTROWS ( dim_kurs ), REMOVEFILTERS ( dim_kurs ), dim_kurs[Pflicht] = "Ja" )
+RETURN
+    COUNTROWS (
+        FILTER (
+            dim_mitarbeitende,
+            CALCULATE (
+                DISTINCTCOUNT ( fakt_buchungen[Kursnr] ),
+                fakt_buchungen[Status] = "abgeschlossen",
+                dim_kurs[Pflicht] = "Ja"
+            ) = AnzahlPflichtkurse
+        )
+    )                                                                         // 334
+
+Pflichtquote = DIVIDE ( [Pflicht erfüllt], [Headcount] )                      // 79,5 %
+
+// Zufriedenheit: hier IST der Mittelwert richtig – jede Bewertung zählt gleich viel
+Ø Zufriedenheit = AVERAGE ( fakt_buchungen[Feedback] )                        // 3,78
+
+// ── Schritt 8 · Ziele und Budget aus den entpivotierten Kreuztabellen ──
+Budget = SUM ( Budget[Budget] )                                               // 274.500 €
+
+Δ Budget = [Kosten] - [Budget]                                                // −1.821 € (unter Budget – aber Vertrieb +21,7 %)
+
+Budget-Ausschöpfung = DIVIDE ( [Kosten], [Budget] )                           // 99,3 %
+
+// Ziele je Bereich; für mehrere Bereiche nach Headcount gewichtet
+Ziel Ø Stunden je MA =
+VAR Summe =
+    SUMX (
+        VALUES ( dim_bereich[Bereich] ),
+        CALCULATE ( SUM ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Ø Stunden je MA" ) * [Headcount]
+    )
+RETURN
+    DIVIDE ( Summe, [Headcount] )                                             // 16,5
+
+Ziel Teilnahmequote =
+VAR Summe =
+    SUMX (
+        VALUES ( dim_bereich[Bereich] ),
+        CALCULATE ( SUM ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Teilnahmequote" ) * [Headcount]
+    )
+RETURN
+    DIVIDE ( Summe, [Headcount] )                                             // 75,0 %
+
+Ziel Pflichtquote =
+VAR Summe =
+    SUMX (
+        VALUES ( dim_bereich[Bereich] ),
+        CALCULATE ( SUM ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Pflichtquote" ) * [Headcount]
+    )
+RETURN
+    DIVIDE ( Summe, [Headcount] )                                             // 95,0 %
+
+Ziel Zufriedenheit =
+CALCULATE ( AVERAGE ( Zielwerte[Zielwert] ), Zielwerte[Kennzahl] = "Zufriedenheit" )   // 4,0
+
+Δ Pflichtquote = [Pflichtquote] - [Ziel Pflichtquote]                         // −15,5 Prozentpunkte
+
+Δ Teilnahmequote = [Teilnahmequote] - [Ziel Teilnahmequote]                   // −11,7 Prozentpunkte

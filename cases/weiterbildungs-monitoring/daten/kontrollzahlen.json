@@ -1,0 +1,352 @@
+{
+  "roh_zeilen_inkl_kopf_und_summe": 1738,
+  "roh_duplikate": 24,
+  "buchungen_nach_bereinigung": 1712,
+  "status_verteilung": {
+    "abgeschlossen": 1587,
+    "storniert": 69,
+    "No-Show": 53,
+    "angemeldet": 3
+  },
+  "gesamt": {
+    "Headcount": 420,
+    "Buchungen": 1712,
+    "Teilnahmen": 1587,
+    "Stunden": 6894.0,
+    "Kosten": 272678.91,
+    "Oe_Stunden_je_MA": 16.41,
+    "Teilnahmequote_pct": 63.3,
+    "Pflichtquote_pct": 79.5,
+    "Stornoquote_pct": 4.0,
+    "NoShow_Quote_pct": 3.1,
+    "Oe_Zufriedenheit": 3.78,
+    "Kosten_je_MA": 649.24
+  },
+  "budget_gesamt": 274500,
+  "budget_je_quartal": {
+    "Q1": 66000,
+    "Q2": 77000,
+    "Q3": 49000,
+    "Q4": 82500
+  },
+  "kosten_je_quartal": {
+    "Q1": 54495.51,
+    "Q2": 116223.03,
+    "Q3": 35186.64,
+    "Q4": 66773.73
+  },
+  "vertrieb_q2": {
+    "Kosten": 39542.8,
+    "Budget": 10500
+  },
+  "je_bereich": {
+    "Produktion": {
+      "Headcount": 150,
+      "Buchungen": 616,
+      "Teilnahmen": 559,
+      "Stunden": 2673.0,
+      "Kosten": 99768.03,
+      "Oe_Stunden_je_MA": 17.82,
+      "Teilnahmequote_pct": 65.3,
+      "Pflichtquote_pct": 71.3,
+      "Stornoquote_pct": 4.9,
+      "NoShow_Quote_pct": 4.2,
+      "Oe_Zufriedenheit": 3.84,
+      "Kosten_je_MA": 665.12,
+      "Budget": 107500,
+      "Budget_Ausschoepfung_pct": 92.8
+    },
+    "Logistik": {
+      "Headcount": 55,
+      "Buchungen": 225,
+      "Teilnahmen": 200,
+      "Stunden": 910.0,
+      "Kosten": 24766.61,
+      "Oe_Stunden_je_MA": 16.55,
+      "Teilnahmequote_pct": 67.3,
+      "Pflichtquote_pct": 60.0,
+      "Stornoquote_pct": 6.7,
+      "NoShow_Quote_pct": 4.4,
+      "Oe_Zufriedenheit": 3.82,
+      "Kosten_je_MA": 450.3,
+      "Budget": 25000,
+      "Budget_Ausschoepfung_pct": 99.1
+    },
+    "Entwicklung": {
+      "Headcount": 60,
+      "Buchungen": 245,
+      "Teilnahmen": 233,
+      "Stunden": 940.0,
+      "Kosten": 37509.05,
+      "Oe_Stunden_je_MA": 15.67,
+      "Teilnahmequote_pct": 58.3,
+      "Pflichtquote_pct": 95.0,
+      "Stornoquote_pct": 3.3,
+      "NoShow_Quote_pct": 1.2,
+      "Oe_Zufriedenheit": 3.76,
+      "Kosten_je_MA": 625.15,
+      "Budget": 39500,
+      "Budget_Ausschoepfung_pct": 95.0
+    },
+    "Service": {
+      "Headcount": 45,
+      "Buchungen": 177,
+      "Teilnahmen": 165,
+      "Stunden": 582.0,
+      "Kosten": 14470.21,
+      "Oe_Stunden_je_MA": 12.93,
+      "Teilnahmequote_pct": 53.3,
+      "Pflichtquote_pct": 80.0,
+      "Stornoquote_pct": 3.4,
+      "NoShow_Quote_pct": 2.8,
+      "Oe_Zufriedenheit": 3.69,
+      "Kosten_je_MA": 321.56,
+      "Budget": 14500,
+      "Budget_Ausschoepfung_pct": 99.8
+    },
+    "Vertrieb": {
+      "Headcount": 45,
+      "Buchungen": 172,
+      "Teilnahmen": 164,
+      "Stunden": 630.0,
+      "Kosten": 45039.47,
+      "Oe_Stunden_je_MA": 14.0,
+      "Teilnahmequote_pct": 55.6,
+      "Pflichtquote_pct": 93.3,
+      "Stornoquote_pct": 3.5,
+      "NoShow_Quote_pct": 1.2,
+      "Oe_Zufriedenheit": 3.8,
+      "Kosten_je_MA": 1000.88,
+      "Budget": 37000,
+      "Budget_Ausschoepfung_pct": 121.7
+    },
+    "IT": {
+      "Headcount": 25,
+      "Buchungen": 111,
+      "Teilnahmen": 104,
+      "Stunden": 539.0,
+      "Kosten": 31897.04,
+      "Oe_Stunden_je_MA": 21.56,
+      "Teilnahmequote_pct": 72.0,
+      "Pflichtquote_pct": 92.0,
+      "Stornoquote_pct": 0.9,
+      "NoShow_Quote_pct": 5.4,
+      "Oe_Zufriedenheit": 3.65,
+      "Kosten_je_MA": 1275.88,
+      "Budget": 31500,
+      "Budget_Ausschoepfung_pct": 101.3
+    },
+    "Verwaltung": {
+      "Headcount": 40,
+      "Buchungen": 166,
+      "Teilnahmen": 162,
+      "Stunden": 620.0,
+      "Kosten": 19228.5,
+      "Oe_Stunden_je_MA": 15.5,
+      "Teilnahmequote_pct": 72.5,
+      "Pflichtquote_pct": 90.0,
+      "Stornoquote_pct": 1.8,
+      "NoShow_Quote_pct": 0.6,
+      "Oe_Zufriedenheit": 3.71,
+      "Kosten_je_MA": 480.71,
+      "Budget": 19500,
+      "Budget_Ausschoepfung_pct": 98.6
+    }
+  },
+  "je_standort": {
+    "Zentrale Hannover": {
+      "Headcount": 156,
+      "Buchungen": 643,
+      "Teilnahmen": 612,
+      "Stunden": 2534.0,
+      "Kosten": 122312.53,
+      "Oe_Stunden_je_MA": 16.24,
+      "Teilnahmequote_pct": 64.1,
+      "Pflichtquote_pct": 92.3,
+      "Stornoquote_pct": 2.8,
+      "NoShow_Quote_pct": 1.9,
+      "Oe_Zufriedenheit": 3.74,
+      "Kosten_je_MA": 784.05
+    },
+    "Werk Kassel": {
+      "Headcount": 119,
+      "Buchungen": 497,
+      "Teilnahmen": 461,
+      "Stunden": 2032.0,
+      "Kosten": 72688.63,
+      "Oe_Stunden_je_MA": 17.08,
+      "Teilnahmequote_pct": 63.0,
+      "Pflichtquote_pct": 88.2,
+      "Stornoquote_pct": 3.8,
+      "NoShow_Quote_pct": 3.2,
+      "Oe_Zufriedenheit": 3.76,
+      "Kosten_je_MA": 610.83
+    },
+    "Werk Ulm": {
+      "Headcount": 145,
+      "Buchungen": 572,
+      "Teilnahmen": 514,
+      "Stunden": 2328.0,
+      "Kosten": 77677.75,
+      "Oe_Stunden_je_MA": 16.06,
+      "Teilnahmequote_pct": 62.8,
+      "Pflichtquote_pct": 58.6,
+      "Stornoquote_pct": 5.6,
+      "NoShow_Quote_pct": 4.4,
+      "Oe_Zufriedenheit": 3.84,
+      "Kosten_je_MA": 535.71
+    }
+  },
+  "je_beschaeftigung": {
+    "Vollzeit": {
+      "Headcount": 345,
+      "Buchungen": 1454,
+      "Teilnahmen": 1342,
+      "Stunden": 6160.0,
+      "Kosten": 243495.83,
+      "Oe_Stunden_je_MA": 17.86,
+      "Teilnahmequote_pct": 69.0,
+      "Pflichtquote_pct": 78.6,
+      "Stornoquote_pct": 4.4,
+      "NoShow_Quote_pct": 3.1,
+      "Oe_Zufriedenheit": 3.79,
+      "Kosten_je_MA": 705.79
+    },
+    "Teilzeit": {
+      "Headcount": 75,
+      "Buchungen": 258,
+      "Teilnahmen": 245,
+      "Stunden": 734.0,
+      "Kosten": 29183.08,
+      "Oe_Stunden_je_MA": 9.79,
+      "Teilnahmequote_pct": 37.3,
+      "Pflichtquote_pct": 84.0,
+      "Stornoquote_pct": 1.9,
+      "NoShow_Quote_pct": 3.1,
+      "Oe_Zufriedenheit": 3.74,
+      "Kosten_je_MA": 389.11
+    }
+  },
+  "je_rolle": {
+    "Mitarbeitende": {
+      "Headcount": 368,
+      "Buchungen": 1468,
+      "Teilnahmen": 1366,
+      "Stunden": 5840.0,
+      "Kosten": 224365.78,
+      "Oe_Stunden_je_MA": 15.87,
+      "Teilnahmequote_pct": 61.7,
+      "Pflichtquote_pct": 79.6,
+      "Stornoquote_pct": 3.8,
+      "NoShow_Quote_pct": 2.9,
+      "Oe_Zufriedenheit": 3.79,
+      "Kosten_je_MA": 609.69
+    },
+    "Führungskraft": {
+      "Headcount": 38,
+      "Buchungen": 182,
+      "Teilnahmen": 163,
+      "Stunden": 811.0,
+      "Kosten": 40377.07,
+      "Oe_Stunden_je_MA": 21.34,
+      "Teilnahmequote_pct": 73.7,
+      "Pflichtquote_pct": 71.1,
+      "Stornoquote_pct": 6.0,
+      "NoShow_Quote_pct": 4.4,
+      "Oe_Zufriedenheit": 3.69,
+      "Kosten_je_MA": 1062.55
+    },
+    "Auszubildende": {
+      "Headcount": 14,
+      "Buchungen": 62,
+      "Teilnahmen": 58,
+      "Stunden": 243.0,
+      "Kosten": 7936.06,
+      "Oe_Stunden_je_MA": 17.36,
+      "Teilnahmequote_pct": 78.6,
+      "Pflichtquote_pct": 100.0,
+      "Stornoquote_pct": 3.2,
+      "NoShow_Quote_pct": 3.2,
+      "Oe_Zufriedenheit": 3.88,
+      "Kosten_je_MA": 566.86
+    }
+  },
+  "pflichtkurs_quote_pct": {
+    "K-001": 85.2,
+    "K-002": 95.5,
+    "K-003": 97.1
+  },
+  "ulm_produktion_logistik_datenschutz_pct": 62.3,
+  "kosten_je_kategorie": {
+    "Arbeitssicherheit": 17851.76,
+    "Fachlich": 158793.69,
+    "Führung": 23409.81,
+    "IT & Digital": 51852.83,
+    "Pflicht & Compliance": 0.0,
+    "Sprachen": 20770.82
+  },
+  "stunden_je_monat": {
+    "01": 385.0,
+    "02": 602.0,
+    "03": 520.0,
+    "04": 853.0,
+    "05": 773.0,
+    "06": 749.0,
+    "07": 241.0,
+    "08": 195.0,
+    "09": 871.0,
+    "10": 716.0,
+    "11": 760.0,
+    "12": 229.0
+  },
+  "zielwerte": {
+    "Produktion": {
+      "Ø Stunden je MA": 14,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    },
+    "Logistik": {
+      "Ø Stunden je MA": 12,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    },
+    "Entwicklung": {
+      "Ø Stunden je MA": 20,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    },
+    "Service": {
+      "Ø Stunden je MA": 16,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    },
+    "Vertrieb": {
+      "Ø Stunden je MA": 22,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    },
+    "IT": {
+      "Ø Stunden je MA": 28,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    },
+    "Verwaltung": {
+      "Ø Stunden je MA": 14,
+      "Teilnahmequote": 0.75,
+      "Pflichtquote": 0.95,
+      "Zufriedenheit": 4.0
+    }
+  },
+  "ziel_gesamt_gewichtet": {
+    "Ø Stunden je MA": 16.5,
+    "Teilnahmequote": 0.75,
+    "Pflichtquote": 0.95
+  },
+  "budget_ausschoepfung_gesamt_pct": 99.3
+}

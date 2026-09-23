@@ -1,0 +1,421 @@
+Personalnr,BereichID,Standort,Rolle,Beschaeftigung,FTE,Altersgruppe,Eintritt
+00001,B01,Werk Ulm,Führungskraft,Teilzeit,0.50,unter 30,2016-03-01
+00002,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2008-09-01
+00003,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2023-04-01
+00004,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2021-04-01
+00005,B01,Werk Ulm,Mitarbeitende,Teilzeit,0.80,30–44,2017-10-01
+00006,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2021-04-01
+00007,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2019-06-01
+00008,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2007-02-01
+00009,B01,Werk Ulm,Mitarbeitende,Teilzeit,0.50,55+,2024-01-01
+00010,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2020-11-01
+00011,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,1998-07-01
+00012,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,1999-07-01
+00013,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,45–54,1998-01-01
+00014,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2004-07-01
+00015,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2012-06-01
+00016,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2005-03-01
+00017,B01,Werk Kassel,Auszubildende,Vollzeit,1.00,unter 30,2024-09-01
+00018,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2012-06-01
+00019,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2017-07-01
+00020,B01,Werk Ulm,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00021,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2011-07-01
+00022,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2016-01-01
+00023,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2016-07-01
+00024,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2006-06-01
+00025,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,30–44,2011-03-01
+00026,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2023-05-01
+00027,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2020-06-01
+00028,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.60,45–54,2015-04-01
+00029,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.75,30–44,2017-10-01
+00030,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2016-11-01
+00031,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2000-03-01
+00032,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,1992-05-01
+00033,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2017-05-01
+00034,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2020-01-01
+00035,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2004-07-01
+00036,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2021-09-01
+00037,B01,Werk Kassel,Führungskraft,Vollzeit,1.00,30–44,2022-06-01
+00038,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2018-04-01
+00039,B01,Werk Ulm,Mitarbeitende,Teilzeit,0.50,55+,2021-06-01
+00040,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,1998-03-01
+00041,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2005-06-01
+00042,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2017-09-01
+00043,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2020-01-01
+00044,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2022-10-01
+00045,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2003-09-01
+00046,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,1998-02-01
+00047,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2023-03-01
+00048,B01,Werk Kassel,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00049,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,30–44,2023-01-01
+00050,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2007-01-01
+00051,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2016-12-01
+00052,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2020-12-01
+00053,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2017-10-01
+00054,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2024-03-01
+00055,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2013-08-01
+00056,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2008-06-01
+00057,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2010-03-01
+00058,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2024-10-01
+00059,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2010-11-01
+00060,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2009-05-01
+00061,B01,Werk Kassel,Führungskraft,Vollzeit,1.00,45–54,2021-09-01
+00062,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.75,55+,1990-01-01
+00063,B01,Werk Ulm,Mitarbeitende,Teilzeit,0.80,30–44,2004-11-01
+00064,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2005-11-01
+00065,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2019-09-01
+00066,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2003-11-01
+00067,B01,Werk Ulm,Mitarbeitende,Teilzeit,0.60,30–44,2024-03-01
+00068,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2011-06-01
+00069,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2019-10-01
+00070,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2021-01-01
+00071,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2015-07-01
+00072,B01,Werk Kassel,Auszubildende,Vollzeit,1.00,unter 30,2024-09-01
+00073,B01,Werk Kassel,Führungskraft,Vollzeit,1.00,30–44,2009-01-01
+00074,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2018-08-01
+00075,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2023-05-01
+00076,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2010-04-01
+00077,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2018-05-01
+00078,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2016-09-01
+00079,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2021-09-01
+00080,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2007-11-01
+00081,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2022-03-01
+00082,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,1999-11-01
+00083,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2018-04-01
+00084,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2023-02-01
+00085,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,45–54,2010-09-01
+00086,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2018-07-01
+00087,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2005-12-01
+00088,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2024-06-01
+00089,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2021-04-01
+00090,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2023-08-01
+00091,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2023-01-01
+00092,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2008-12-01
+00093,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2011-04-01
+00094,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2016-04-01
+00095,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2014-07-01
+00096,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2021-02-01
+00097,B01,Werk Kassel,Führungskraft,Vollzeit,1.00,45–54,2023-10-01
+00098,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2004-05-01
+00099,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,1999-11-01
+00100,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2014-08-01
+00101,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2002-08-01
+00102,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2011-06-01
+00103,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.80,unter 30,2019-03-01
+00104,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2010-09-01
+00105,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2000-03-01
+00106,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2019-03-01
+00107,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.50,55+,2024-10-01
+00108,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2014-12-01
+00109,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,unter 30,2016-09-01
+00110,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2018-05-01
+00111,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.60,unter 30,2018-09-01
+00112,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.60,30–44,2019-12-01
+00113,B01,Werk Kassel,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00114,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2013-09-01
+00115,B01,Werk Ulm,Auszubildende,Vollzeit,1.00,unter 30,2024-09-01
+00116,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.60,30–44,2016-02-01
+00117,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2012-02-01
+00118,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,1994-10-01
+00119,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2006-05-01
+00120,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2016-05-01
+00121,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,30–44,2010-02-01
+00122,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2020-02-01
+00123,B01,Werk Ulm,Mitarbeitende,Teilzeit,0.50,unter 30,2016-11-01
+00124,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2007-03-01
+00125,B01,Werk Ulm,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00126,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2022-12-01
+00127,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2021-10-01
+00128,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2022-08-01
+00129,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2015-06-01
+00130,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2009-04-01
+00131,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2006-04-01
+00132,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,1995-12-01
+00133,B01,Werk Ulm,Führungskraft,Vollzeit,1.00,unter 30,2022-09-01
+00134,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2010-08-01
+00135,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,1991-02-01
+00136,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2021-08-01
+00137,B01,Werk Kassel,Auszubildende,Vollzeit,1.00,unter 30,2024-09-01
+00138,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2012-06-01
+00139,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2004-06-01
+00140,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2004-06-01
+00141,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2005-02-01
+00142,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2003-06-01
+00143,B01,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2015-11-01
+00144,B01,Werk Kassel,Mitarbeitende,Teilzeit,0.50,30–44,2005-12-01
+00145,B01,Werk Kassel,Führungskraft,Vollzeit,1.00,30–44,2005-03-01
+00146,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2021-07-01
+00147,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2022-07-01
+00148,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2023-02-01
+00149,B01,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,1997-02-01
+00150,B01,Werk Kassel,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00151,B02,Werk Ulm,Führungskraft,Vollzeit,1.00,30–44,2010-08-01
+00152,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2017-03-01
+00153,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2023-05-01
+00154,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2022-05-01
+00155,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2003-04-01
+00156,B02,Werk Ulm,Mitarbeitende,Teilzeit,0.60,30–44,2015-06-01
+00157,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2023-04-01
+00158,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,1996-12-01
+00159,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,1996-11-01
+00160,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2011-09-01
+00161,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2006-09-01
+00162,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2023-05-01
+00163,B02,Werk Ulm,Führungskraft,Vollzeit,1.00,30–44,2020-08-01
+00164,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2024-10-01
+00165,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2021-07-01
+00166,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2017-01-01
+00167,B02,Werk Ulm,Mitarbeitende,Teilzeit,0.75,unter 30,2023-06-01
+00168,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2018-08-01
+00169,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2016-10-01
+00170,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2016-04-01
+00171,B02,Werk Ulm,Mitarbeitende,Teilzeit,0.80,30–44,2007-02-01
+00172,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2012-01-01
+00173,B02,Werk Ulm,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00174,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,1998-07-01
+00175,B02,Werk Ulm,Führungskraft,Teilzeit,0.50,55+,2003-12-01
+00176,B02,Werk Kassel,Mitarbeitende,Teilzeit,0.75,30–44,2010-05-01
+00177,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2007-12-01
+00178,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2018-12-01
+00179,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2022-07-01
+00180,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2013-05-01
+00181,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2012-07-01
+00182,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2011-12-01
+00183,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2024-03-01
+00184,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2004-05-01
+00185,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2021-08-01
+00186,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2018-03-01
+00187,B02,Werk Ulm,Führungskraft,Vollzeit,1.00,45–54,2001-04-01
+00188,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2020-05-01
+00189,B02,Werk Kassel,Mitarbeitende,Teilzeit,0.60,45–54,2024-08-01
+00190,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2016-02-01
+00191,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2023-02-01
+00192,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2008-10-01
+00193,B02,Werk Ulm,Mitarbeitende,Teilzeit,0.75,45–54,2009-05-01
+00194,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2017-11-01
+00195,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2012-11-01
+00196,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2004-03-01
+00197,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2018-04-01
+00198,B02,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2022-04-01
+00199,B02,Werk Ulm,Führungskraft,Vollzeit,1.00,55+,2015-02-01
+00200,B02,Werk Ulm,Auszubildende,Vollzeit,1.00,unter 30,2024-09-01
+00201,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2016-02-01
+00202,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,1994-01-01
+00203,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2015-12-01
+00204,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2016-01-01
+00205,B02,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2008-03-01
+00206,B03,Zentrale Hannover,Führungskraft,Vollzeit,1.00,30–44,2021-01-01
+00207,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2021-10-01
+00208,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2005-10-01
+00209,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2005-05-01
+00210,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1998-05-01
+00211,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2020-10-01
+00212,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2017-04-01
+00213,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2011-06-01
+00214,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2013-10-01
+00215,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1997-10-01
+00216,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2007-02-01
+00217,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2016-07-01
+00218,B03,Zentrale Hannover,Führungskraft,Vollzeit,1.00,55+,2018-05-01
+00219,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2008-01-01
+00220,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,45–54,2003-07-01
+00221,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2017-06-01
+00222,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2022-08-01
+00223,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1999-02-01
+00224,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2001-09-01
+00225,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1994-04-01
+00226,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2023-12-01
+00227,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2018-09-01
+00228,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2017-05-01
+00229,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2006-11-01
+00230,B03,Zentrale Hannover,Führungskraft,Vollzeit,1.00,30–44,2014-11-01
+00231,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2002-08-01
+00232,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2024-02-01
+00233,B03,Werk Kassel,Mitarbeitende,Teilzeit,0.60,45–54,2009-04-01
+00234,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2000-08-01
+00235,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2021-04-01
+00236,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2022-09-01
+00237,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2018-08-01
+00238,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2023-08-01
+00239,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,45–54,2023-07-01
+00240,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1991-08-01
+00241,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,30–44,2008-06-01
+00242,B03,Zentrale Hannover,Führungskraft,Teilzeit,0.80,45–54,2016-05-01
+00243,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,45–54,2024-10-01
+00244,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,55+,2022-06-01
+00245,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2005-04-01
+00246,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2004-09-01
+00247,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2017-06-01
+00248,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2018-07-01
+00249,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2022-10-01
+00250,B03,Werk Kassel,Mitarbeitende,Teilzeit,0.75,55+,2012-02-01
+00251,B03,Werk Kassel,Mitarbeitende,Teilzeit,0.80,45–54,2005-08-01
+00252,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2018-07-01
+00253,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2024-07-01
+00254,B03,Werk Kassel,Führungskraft,Teilzeit,0.60,30–44,2010-07-01
+00255,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,30–44,2019-10-01
+00256,B03,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,55+,2018-12-01
+00257,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2021-11-01
+00258,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2016-10-01
+00259,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2019-12-01
+00260,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2019-09-01
+00261,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2020-10-01
+00262,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2017-06-01
+00263,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2017-10-01
+00264,B03,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2010-09-01
+00265,B03,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2013-08-01
+00266,B04,Werk Ulm,Führungskraft,Vollzeit,1.00,unter 30,2016-12-01
+00267,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2018-02-01
+00268,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,unter 30,2021-01-01
+00269,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,1996-09-01
+00270,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2010-05-01
+00271,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2007-05-01
+00272,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2020-01-01
+00273,B04,Werk Ulm,Mitarbeitende,Teilzeit,0.50,55+,2024-01-01
+00274,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2007-09-01
+00275,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2021-08-01
+00276,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2010-10-01
+00277,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2006-05-01
+00278,B04,Werk Kassel,Führungskraft,Vollzeit,1.00,55+,2012-09-01
+00279,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2018-11-01
+00280,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2011-11-01
+00281,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.75,30–44,2015-10-01
+00282,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2011-08-01
+00283,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2004-11-01
+00284,B04,Werk Ulm,Mitarbeitende,Teilzeit,0.80,30–44,2021-11-01
+00285,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2020-11-01
+00286,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2018-01-01
+00287,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.80,unter 30,2017-02-01
+00288,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2015-12-01
+00289,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,2002-01-01
+00290,B04,Werk Kassel,Führungskraft,Teilzeit,0.80,45–54,2014-04-01
+00291,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.50,45–54,1998-11-01
+00292,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.50,30–44,2006-12-01
+00293,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2015-05-01
+00294,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2015-06-01
+00295,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,55+,2006-06-01
+00296,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2004-11-01
+00297,B04,Werk Ulm,Mitarbeitende,Teilzeit,0.75,30–44,2014-11-01
+00298,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2023-11-01
+00299,B04,Werk Kassel,Mitarbeitende,Vollzeit,1.00,45–54,2004-09-01
+00300,B04,Werk Ulm,Mitarbeitende,Teilzeit,0.60,45–54,2017-05-01
+00301,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2019-07-01
+00302,B04,Werk Kassel,Führungskraft,Teilzeit,0.50,30–44,2004-06-01
+00303,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2001-10-01
+00304,B04,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2024-10-01
+00305,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.80,30–44,2005-04-01
+00306,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.50,unter 30,2023-03-01
+00307,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2011-07-01
+00308,B04,Werk Kassel,Mitarbeitende,Teilzeit,0.60,45–54,2023-12-01
+00309,B04,Werk Ulm,Mitarbeitende,Teilzeit,0.50,45–54,2019-12-01
+00310,B04,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1992-01-01
+00311,B05,Zentrale Hannover,Führungskraft,Vollzeit,1.00,unter 30,2021-12-01
+00312,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2018-11-01
+00313,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2006-02-01
+00314,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2003-05-01
+00315,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,30–44,2024-02-01
+00316,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.75,45–54,2023-08-01
+00317,B05,Werk Ulm,Mitarbeitende,Teilzeit,0.80,45–54,1997-05-01
+00318,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2024-05-01
+00319,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.75,30–44,2011-05-01
+00320,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.75,55+,2021-09-01
+00321,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2014-02-01
+00322,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2005-09-01
+00323,B05,Zentrale Hannover,Führungskraft,Vollzeit,1.00,45–54,2000-10-01
+00324,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2023-07-01
+00325,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,unter 30,2024-08-01
+00326,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,55+,2021-10-01
+00327,B05,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2019-06-01
+00328,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1992-02-01
+00329,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2004-04-01
+00330,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2018-02-01
+00331,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,30–44,2016-09-01
+00332,B05,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2019-08-01
+00333,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,unter 30,2024-01-01
+00334,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2013-04-01
+00335,B05,Werk Kassel,Führungskraft,Vollzeit,1.00,45–54,2000-02-01
+00336,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2006-04-01
+00337,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2017-10-01
+00338,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2015-05-01
+00339,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2021-10-01
+00340,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2011-08-01
+00341,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2021-07-01
+00342,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2008-02-01
+00343,B05,Werk Kassel,Mitarbeitende,Vollzeit,1.00,55+,1990-04-01
+00344,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,55+,1997-07-01
+00345,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2001-10-01
+00346,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,unter 30,2018-04-01
+00347,B05,Zentrale Hannover,Führungskraft,Teilzeit,0.80,45–54,2016-11-01
+00348,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,30–44,2011-02-01
+00349,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2005-11-01
+00350,B05,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,30–44,2024-04-01
+00351,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2009-12-01
+00352,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2009-08-01
+00353,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2024-12-01
+00354,B05,Werk Ulm,Mitarbeitende,Vollzeit,1.00,30–44,2023-06-01
+00355,B05,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2019-10-01
+00356,B06,Zentrale Hannover,Führungskraft,Vollzeit,1.00,30–44,2004-09-01
+00357,B06,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,55+,2018-10-01
+00358,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2018-02-01
+00359,B06,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,30–44,2004-08-01
+00360,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2018-02-01
+00361,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2001-05-01
+00362,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2020-05-01
+00363,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2020-01-01
+00364,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2006-05-01
+00365,B06,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,30–44,2022-12-01
+00366,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2021-01-01
+00367,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2006-11-01
+00368,B06,Zentrale Hannover,Führungskraft,Vollzeit,1.00,unter 30,2016-08-01
+00369,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2006-12-01
+00370,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2005-12-01
+00371,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2020-12-01
+00372,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2005-10-01
+00373,B06,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,30–44,2004-08-01
+00374,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2000-11-01
+00375,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2015-10-01
+00376,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2022-06-01
+00377,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2022-09-01
+00378,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2005-10-01
+00379,B06,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,1997-11-01
+00380,B06,Zentrale Hannover,Führungskraft,Vollzeit,1.00,30–44,2008-01-01
+00381,B07,Zentrale Hannover,Führungskraft,Teilzeit,0.50,55+,2003-01-01
+00382,B07,Werk Kassel,Mitarbeitende,Vollzeit,1.00,30–44,2013-12-01
+00383,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2018-02-01
+00384,B07,Zentrale Hannover,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00385,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2014-06-01
+00386,B07,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2012-05-01
+00387,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2022-04-01
+00388,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2016-01-01
+00389,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.75,30–44,2007-03-01
+00390,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2019-04-01
+00391,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2004-10-01
+00392,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2010-05-01
+00393,B07,Zentrale Hannover,Führungskraft,Vollzeit,1.00,30–44,2005-10-01
+00394,B07,Zentrale Hannover,Auszubildende,Vollzeit,1.00,unter 30,2024-09-01
+00395,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2006-02-01
+00396,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2008-06-01
+00397,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2017-05-01
+00398,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2024-02-01
+00399,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,unter 30,2024-05-01
+00400,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2024-06-01
+00401,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2021-01-01
+00402,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2024-01-01
+00403,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,55+,2002-11-01
+00404,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2014-05-01
+00405,B07,Zentrale Hannover,Führungskraft,Vollzeit,1.00,55+,2022-03-01
+00406,B07,Werk Ulm,Mitarbeitende,Vollzeit,1.00,45–54,2018-02-01
+00407,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2001-03-01
+00408,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2018-08-01
+00409,B07,Werk Ulm,Mitarbeitende,Vollzeit,1.00,unter 30,2022-03-01
+00410,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,30–44,2024-08-01
+00411,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,unter 30,2019-06-01
+00412,B07,Zentrale Hannover,Auszubildende,Vollzeit,1.00,unter 30,2023-09-01
+00413,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.50,30–44,2015-03-01
+00414,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,55+,2009-08-01
+00415,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.80,55+,2017-09-01
+00416,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,2014-04-01
+00417,B07,Werk Ulm,Führungskraft,Vollzeit,1.00,30–44,2005-05-01
+00418,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,45–54,1998-08-01
+00419,B07,Zentrale Hannover,Mitarbeitende,Vollzeit,1.00,30–44,2018-11-01
+00420,B07,Zentrale Hannover,Mitarbeitende,Teilzeit,0.60,45–54,1998-12-01
