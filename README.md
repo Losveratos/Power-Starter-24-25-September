@@ -4,6 +4,20 @@ Alles für das zweitägige Einsteiger-Training an einem Ort: Ablauf, Übungen mi
 Übungsdaten zum direkten Laden in Power BI, Code-Snippets und Videos zum Weiterlernen.
 Nach dem Training kommen hier weitere Snippets und Dateien dazu – einfach wieder vorbeischauen.
 
+## ⬇️ Herunterladen – ein Klick, kein GitHub-Wissen nötig
+
+| | Paket | Was drin ist |
+|---|---|---|
+| 📘 | **[Tag 1 herunterladen (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Starter-Training-Tag1.zip)** | Übungen als PDF, Übungsdaten, Lösung, Handout, Agenda |
+| 📗 | **[Tag 2 herunterladen (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Starter-Training-Tag2.zip)** | Übungen als PDF, Daten (CSV + Excel), Lösungen, Handout, Agenda |
+| 📄 | [Handout (PDF)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Handout.pdf) · [Agenda (PDF)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Agenda.pdf) | zum direkten Öffnen oder Ausdrucken |
+| 🧩 | [Fall Weiterbildungs-Monitoring (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Fall-Weiterbildungs-Monitoring.zip) | Anleitung als PDF, Rohdaten, Ziele-Excel, Lösungsskripte, Mockup |
+| 📊 | [Fertige Lösung als Power-BI-Datei (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Loesung-Weiterbildungs-Monitoring-PowerBI.zip) | Power-BI-Projekt zum Doppelklicken |
+| 📦 | [Alles auf einmal (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/archive/refs/heads/main.zip) | das komplette Repo |
+
+**So geht's:** Link anklicken → die Datei landet im Ordner *Downloads* → **Rechtsklick → „Alle extrahieren…" → „Extrahieren"** →
+im entpackten Ordner zuerst `LIESMICH.txt` öffnen. Wichtig: nicht direkt aus der ZIP heraus arbeiten.
+
 ## 🧭 Wo finde ich was?
 
 | | Inhalt |

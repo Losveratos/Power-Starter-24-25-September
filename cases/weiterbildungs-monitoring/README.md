@@ -10,6 +10,8 @@ die **Ziele als Excel-Kreuztabelle**. Daraus baust du ein Modell und eine Übers
 Du übst dabei alles aus den beiden Trainingstagen noch einmal – plus vier neue Handgriffe:
 **Datei-Codierung**, **Duplikate**, **kaputte Schlüssel** (führende Nullen) und **Quoten mit dem richtigen Nenner**.
 
+> ⬇️ **Alles in einem Paket:** [Anleitung als PDF + Daten + Skripte (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Fall-Weiterbildungs-Monitoring.zip)
+
 > **Hängst du fest?** Zu jedem Schritt gibt es ein fertiges Skript in [`skripte/`](skripte/). Einfügen,
 > Kontrollzahl prüfen, weiter. Alle Zahlen stehen auch in [`daten/kontrollzahlen.json`](daten/kontrollzahlen.json).
 

@@ -20,6 +20,9 @@ https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/
 ```
 …plus Dateiname, z. B. `…/daten/tag2/fakt_verkaeufe.csv`.
 
+
+> ⬇️ **Lieber alles auf dem eigenen Rechner?** [Dieses Übungsblatt als PDF mit allen Daten und Lösungen (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Starter-Training-Tag2.zip)
+
 ---
 
 ## Übung 7 · Vier Tabellen laden (25 min)

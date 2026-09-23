@@ -65,6 +65,12 @@ sondern das Skript anpassen und neu laufen lassen. Das Skript prüft das Modell 
 danach `tools/pbip/validate_pbir.py` (Microsoft-Schemas + Feldbezüge). Wenn `te`/`pbir` verfügbar sind,
 zusätzlich `pbip/Weiterbildungs-Monitoring/pruefen.ps1` – die CLIs haben Vorrang vor den eigenen Prüfungen.
 
+## Download-Pakete (`downloads/`)
+
+ZIPs und PDFs für Teilnehmende ohne GitHub-Kenntnisse, erzeugt von `tools/build_downloads.py`
+(PDFs aus den Markdown-Dateien). **Nach jeder Änderung an Übungen, Handout, Agenda, Daten, Fall oder PBIP
+neu bauen**, sonst laden Teilnehmende einen alten Stand. Die Links auf der Startseite zeigen auf `raw/main/downloads/…`.
+
 ## Konventionen im Repo
 
 - Sprache Deutsch, Anrede „du".

@@ -12,6 +12,9 @@ Du bekommst dafür einen Export aus dem Kassensystem. Er ist, wie Exporte eben s
 > Stimmt sie nicht, steht darunter die häufigste Ursache. Die Lösung als M-Code liegt in
 > [`snippets/powerquery/tag1_verkaeufe_bereinigen.pq`](../snippets/powerquery/tag1_verkaeufe_bereinigen.pq).
 
+
+> ⬇️ **Lieber alles auf dem eigenen Rechner?** [Dieses Übungsblatt als PDF mit allen Daten und Lösungen (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Starter-Training-Tag1.zip)
+
 ---
 
 ## Übung 0 · Setup-Check (10 min)

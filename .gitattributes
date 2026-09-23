@@ -6,3 +6,5 @@
 *.xlsx binary
 *.png binary
 *.pbiviz binary
+*.zip binary
+*.pdf binary

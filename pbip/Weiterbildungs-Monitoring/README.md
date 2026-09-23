@@ -6,7 +6,7 @@ nach dem [Mockup](../../cases/weiterbildungs-monitoring/mockup/page-1-uberblick.
 
 ## Öffnen
 
-1. Ordner herunterladen (ganzes Repo als ZIP oder `git clone`) – **alle** Unterordner werden gebraucht.
+1. [**Projekt als ZIP herunterladen**](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/downloads/Loesung-Weiterbildungs-Monitoring-PowerBI.zip) → Rechtsklick → *Alle extrahieren* – **alle** Unterordner werden gebraucht, nicht aus der ZIP heraus öffnen.
 2. `Weiterbildungs-Monitoring.pbip` doppelklicken → öffnet sich in Power BI Desktop (aktuelle Version, Windows).
 3. Das Projekt enthält **keine Daten**, nur die Bauanleitung. Also: **Start → Aktualisieren**.
    Bei der Frage nach Anmeldedaten für `raw.githubusercontent.com` → **Anonym** → **Verbinden**.
