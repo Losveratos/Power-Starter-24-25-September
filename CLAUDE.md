@@ -16,7 +16,7 @@ Kitchen** (`.claude/skills/`), damit Teilnehmende und Trainer:innen sie direkt i
 | `vega-charts` | Vega/Vega-Lite/Deneb-Specs bauen und debuggen |
 
 **Nicht hier ändern.** Quelle der Wahrheit ist das Repo `Losveratos/PowerBI-Kitchen-`. Änderungen
-dort machen, dann `tools/sync_kitchen_skills.sh` laufen lassen. Nach dem Sync die Selbsttests prüfen:
+dort machen, dann `_Werkzeuge/sync_kitchen_skills.sh` laufen lassen. Nach dem Sync die Selbsttests prüfen:
 `python3 .claude/skills/mockup-to-powerbi/tests/run_tests.py`.
 
 ## Dateien, die die Skills in der Kitchen erwarten
@@ -39,7 +39,7 @@ Zum Lesen von `capabilities.json` o. ä. reicht die Raw-Adresse
 ## Trainingsdaten als Beispiel für die Skills
 
 Wenn jemand einen Skill ausprobieren will und kein eigenes Modell hat, das Trainingsmodell der
-**Rad & Tat GmbH** aus Tag 2 vorschlagen (`uebungen/tag2.md`, Daten in `daten/tag2/`). Wer das
+**Rad & Tat GmbH** aus Tag 2 vorschlagen (`02-Tag-2/README.md`, Daten in `02-Tag-2/Daten/`). Wer das
 Modell in Power BI Desktop als **PBIP** speichert (*Datei → Speichern unter → Power BI-Projekt*),
 hat die Grundlage, die `chartkitchen-report`, `deploy-to-powerbi`, `pnl-report`,
 `powerbi-design-framework` und `mockup-to-powerbi` erwarten.
@@ -49,31 +49,32 @@ Passende Abbildungen:
 - **Filialvergleich** (`dim_filiale[Filiale]` × `Umsatz`/`Plan`) → Balken-Struktur · `bars_structure`
 - **Marge je Filiale/Kategorie** (`Marge %`, `Deckungsbeitrag`) → Monatsreport- oder Sales-Analyse-Blaupause
 - **GuV-Light** (Umsatz → Kosten → Deckungsbeitrag) → `pnl-report`, reine Hierarchie
-- Kontrollzahlen zum Gegenprüfen: `daten/kontrollzahlen.json`
+- Kontrollzahlen zum Gegenprüfen: `_Werkzeuge/kontrollzahlen-tag1-tag2.json`
 
-## Fälle (`cases/`)
+## Ordnerstruktur (nicht ohne Rückfrage ändern – alle Raw-Links hängen daran)
 
-Jeder Fall ist in sich geschlossen: `README.md` (Anleitung mit Kontrollzahlen), `daten/` (roh · anreicherung ·
-ziele + `kontrollzahlen.json`), `skripte/` (Power Query + DAX zum Überspringen), `mockup/` (MockupKitchen-Export),
-`tools/` (Generatoren). Kontrollzahlen nie von Hand ändern – Generator laufen lassen und Anleitung abgleichen.
-Das Mockup `cases/weiterbildungs-monitoring/mockup/mockup-spec.json` ist eine gültige Eingabe für `mockup-to-powerbi`.
+```
+00-Downloads/          ZIPs + PDFs für Teilnehmende (erzeugt)
+01-Tag-1/              README = Übungen · Daten/ · Loesungen/
+02-Tag-2/              README = Übungen · Daten/ · Loesungen/
+03-Fall-Weiterbildung/ README = Anleitung · Daten/{1-Rohdaten,2-Anreicherung,3-Ziele} · Loesungen/{PowerQuery,DAX} · Mockup/ · PowerBI-Loesung/
+04-Material/           Agenda · Handout · Videos · Claude-Skills · Snippets/
+_Werkzeuge/            Generatoren, PBIP-Bau und -Prüfung, Download-Bau, Skill-Sync (nur Trainer)
+```
 
-## Power-BI-Projekte (`pbip/`)
+Jeder Ordner hat eine `README.md` – GitHub zeigt sie beim Öffnen an. Neue Inhalte in dieses Schema einsortieren;
+ein neuer Fall wird `05-Fall-<Name>/` mit derselben Innenstruktur wie der Weiterbildungs-Fall.
 
-`pbip/Weiterbildungs-Monitoring/` wird von `tools/pbip/build_weiterbildung_pbip.py` erzeugt – nicht von Hand ändern,
-sondern das Skript anpassen und neu laufen lassen. Das Skript prüft das Modell mit TOM (`tools/pbip/TmdlCheck`, .NET 8);
-danach `tools/pbip/validate_pbir.py` (Microsoft-Schemas + Feldbezüge). Wenn `te`/`pbir` verfügbar sind,
-zusätzlich `pbip/Weiterbildungs-Monitoring/pruefen.ps1` – die CLIs haben Vorrang vor den eigenen Prüfungen.
+## Erzeugte Dateien
 
-## Download-Pakete (`downloads/`)
-
-ZIPs und PDFs für Teilnehmende ohne GitHub-Kenntnisse, erzeugt von `tools/build_downloads.py`
-(PDFs aus den Markdown-Dateien). **Nach jeder Änderung an Übungen, Handout, Agenda, Daten, Fall oder PBIP
-neu bauen**, sonst laden Teilnehmende einen alten Stand. Die Links auf der Startseite zeigen auf `raw/main/downloads/…`.
+- **Daten:** nur über `_Werkzeuge/tag-daten_erzeugen.py` bzw. `_Werkzeuge/fall-weiterbildung/generate_data.py` ändern, danach Kontrollzahlen in den Anleitungen abgleichen.
+- **Mockup:** `_Werkzeuge/fall-weiterbildung/build_mockup.py` (braucht einen Klon der Kitchen daneben). `03-Fall-Weiterbildung/Mockup/mockup-spec.json` ist eine gültige Eingabe für `mockup-to-powerbi`.
+- **PBIP:** `03-Fall-Weiterbildung/PowerBI-Loesung/` erzeugt `_Werkzeuge/pbip/build_weiterbildung_pbip.py` – Modell per TOM geprüft (`_Werkzeuge/pbip/TmdlCheck`, .NET 8), Bericht per `_Werkzeuge/pbip/validate_pbir.py` (Microsoft-Schemas + Feldbezüge). Wenn `te`/`pbir` verfügbar sind, zusätzlich `PowerBI-Loesung/pruefen.ps1` – die CLIs haben Vorrang.
+- **Downloads:** `_Werkzeuge/downloads_bauen.py` – **nach jeder Änderung an Übungen, Material, Daten, Fall oder PBIP neu bauen**, sonst laden Teilnehmende einen alten Stand.
 
 ## Konventionen im Repo
 
 - Sprache Deutsch, Anrede „du".
-- Neue Snippets nach `snippets/` (Regeln in `snippets/README.md`), Daten nach `daten/`.
-- Übungsdaten nur über `tools/generate_data.py` ändern und danach Kontrollzahlen in den Übungsblättern abgleichen.
+- Änderungen direkt auf `main` pushen (Wunsch des Repo-Owners).
+- Neue Snippets nach `04-Material/Snippets/` (Regeln in der README dort).
 - Keine echten Firmen- oder Personendaten einchecken – das Repo ist öffentlich.

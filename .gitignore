@@ -1,5 +1,5 @@
 __pycache__/
 *.pyc
-tools/pbip/.schema-cache/
-tools/pbip/TmdlCheck/bin/
-tools/pbip/TmdlCheck/obj/
+_Werkzeuge/pbip/.schema-cache/
+_Werkzeuge/pbip/TmdlCheck/bin/
+_Werkzeuge/pbip/TmdlCheck/obj/

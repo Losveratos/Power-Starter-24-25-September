@@ -1,0 +1,2062 @@
+{
+  "meta": {
+    "tool": "MockupKitchen byDatenWG",
+    "version": "0.4",
+    "specVersion": 3,
+    "specHash": "cb7b3760",
+    "name": "Weiterbildungs-Monitoring 2025",
+    "lang": "de",
+    "exportedAt": "2026-09-23T17:32:12.342Z",
+    "skill": "mockup-to-powerbi"
+  },
+  "report": {
+    "name": "Weiterbildungs-Monitoring 2025",
+    "audience": "Geschäftsführung, Personalentwicklung, Betriebsrat",
+    "purpose": "Monatlicher Blick, ob die Weiterbildungsziele 2025 erreicht werden und das Budget hält.",
+    "decision": "Wo steuern wir nach: Pflichtschulungen nachholen (Werk Ulm), Budget umschichten (Vertrieb), Kursangebot für Teilzeit öffnen?",
+    "participants": "Personalentwicklung, Controlling, Betriebsrat (Datenschutz), Standortleitungen",
+    "version": "0.1",
+    "dataDate": "monatlich, LMS-Export zum Monatsersten"
+  },
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "preset": "1280x720",
+    "uiScale": 1
+  },
+  "spacing": {
+    "margin": 16,
+    "gutter": 12,
+    "tilePadding": 8,
+    "base": {
+      "margin": 16,
+      "gutter": 12,
+      "tilePadding": 8
+    }
+  },
+  "design": {
+    "cornerRadius": 8,
+    "tileStyle": "border",
+    "pageBackground": "#F4F4F1",
+    "tileBackground": "#FFFFFF",
+    "headerStyle": "dark",
+    "accent": "#C25A2D",
+    "variancePalette": "teal",
+    "varianceColors": {
+      "good": "#1E8F9E",
+      "bad": "#D64541"
+    },
+    "colors": {
+      "pageBackground": "#F4F4F1",
+      "tileBackground": "#FFFFFF",
+      "ink": "#0F1E2E",
+      "headerBackground": "#0F1E2E",
+      "headerInk": "#FFFFFF"
+    },
+    "darkMode": false,
+    "fontScale": 1
+  },
+  "zones": {
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 56,
+      "style": "dark",
+      "logoPos": "left",
+      "title": "Weiterbildungs-Monitoring 2025",
+      "subtitle": "Muster Maschinenbau GmbH · Personalentwicklung",
+      "nav": [],
+      "navOn": false,
+      "navAuto": true,
+      "burger": false
+    },
+    "footer": {
+      "x": 0,
+      "y": 696,
+      "w": 1280,
+      "h": 24,
+      "text": "Quelle: LMS-Export + HR-Stamm · Stand: Monatsende · fiktive Trainingsdaten"
+    },
+    "filter": {
+      "x": 1100,
+      "y": 56,
+      "w": 180,
+      "h": 640,
+      "mode": "right",
+      "side": "right",
+      "collapsible": false,
+      "slicers": [
+        {
+          "table": "dim_mitarbeitende",
+          "name": "Standort",
+          "kind": "column",
+          "ref": "dim_mitarbeitende.Standort",
+          "isNew": false,
+          "default": null
+        },
+        {
+          "table": "dim_bereich",
+          "name": "Bereich",
+          "kind": "column",
+          "ref": "dim_bereich.Bereich",
+          "isNew": false,
+          "default": null
+        },
+        {
+          "table": "dim_mitarbeitende",
+          "name": "Beschaeftigung",
+          "kind": "column",
+          "ref": "dim_mitarbeitende.Beschaeftigung",
+          "isNew": false,
+          "default": null
+        },
+        {
+          "table": "dim_kurs",
+          "name": "Kategorie",
+          "kind": "column",
+          "ref": "dim_kurs.Kategorie",
+          "isNew": false,
+          "default": null
+        }
+      ]
+    },
+    "content": {
+      "x": 16,
+      "y": 72,
+      "w": 1068,
+      "h": 608
+    }
+  },
+  "pages": [
+    {
+      "id": "wbpage01",
+      "index": 1,
+      "name": "Überblick",
+      "question": "Erreichen wir unsere Weiterbildungsziele 2025 – und wo müssen wir nachsteuern?",
+      "notes": "Eine Seite für die GF. Details (Person, Kurs) bewusst nicht hier – personenbezogene Daten nur mit RLS.",
+      "contentRect": {
+        "x": 16,
+        "y": 72,
+        "w": 1068,
+        "h": 608
+      },
+      "visuals": [
+        {
+          "id": "mk_wbt01",
+          "stableId": "wbt01",
+          "slug": "Teilnahmequote",
+          "page": "Überblick",
+          "kind": "kpi",
+          "label": "KPI-Kachel (ChartKitchen)",
+          "engine": "ck",
+          "chartKitchenType": "kpi",
+          "chartKitchenMode": "cards",
+          "native": {
+            "type": "card",
+            "buckets": {
+              "Values": [
+                {
+                  "ref": "_Measures.Teilnahmequote",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Teilnahmequote",
+          "subtitle": "vs. Ziel",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": "%",
+            "displayUnits": null,
+            "decimals": 1,
+            "sort": null,
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 16,
+            "y": 72,
+            "w": 204,
+            "h": 117
+          },
+          "roles": {
+            "indicator": [
+              {
+                "table": "_Measures",
+                "name": "Teilnahmequote",
+                "kind": "measure",
+                "ref": "_Measures.Teilnahmequote",
+                "isNew": false
+              }
+            ],
+            "goal": [
+              {
+                "table": "_Measures",
+                "name": "Ziel Teilnahmequote",
+                "kind": "measure",
+                "ref": "_Measures.Ziel Teilnahmequote",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Anteil der Belegschaft mit mindestens einer freiwilligen Weiterbildung. Pflichtkurse zählen nicht mit.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt02",
+          "stableId": "wbt02",
+          "slug": "Stunden_je_MA",
+          "page": "Überblick",
+          "kind": "kpi",
+          "label": "KPI-Kachel (ChartKitchen)",
+          "engine": "ck",
+          "chartKitchenType": "kpi",
+          "chartKitchenMode": "cards",
+          "native": {
+            "type": "card",
+            "buckets": {
+              "Values": [
+                {
+                  "ref": "_Measures.Ø Stunden je MA",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Ø Stunden je MA",
+          "subtitle": "vs. Ziel",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": "h",
+            "displayUnits": null,
+            "decimals": 1,
+            "sort": null,
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 232,
+            "y": 72,
+            "w": 204,
+            "h": 117
+          },
+          "roles": {
+            "indicator": [
+              {
+                "table": "_Measures",
+                "name": "Ø Stunden je MA",
+                "kind": "measure",
+                "ref": "_Measures.Ø Stunden je MA",
+                "isNew": false
+              }
+            ],
+            "goal": [
+              {
+                "table": "_Measures",
+                "name": "Ziel Ø Stunden je MA",
+                "kind": "measure",
+                "ref": "_Measures.Ziel Ø Stunden je MA",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Nenner ist der Headcount – Personen ohne Weiterbildung ziehen den Schnitt bewusst nach unten.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt03",
+          "stableId": "wbt03",
+          "slug": "Pflichtquote",
+          "page": "Überblick",
+          "kind": "kpi",
+          "label": "KPI-Kachel (ChartKitchen)",
+          "engine": "ck",
+          "chartKitchenType": "kpi",
+          "chartKitchenMode": "cards",
+          "native": {
+            "type": "card",
+            "buckets": {
+              "Values": [
+                {
+                  "ref": "_Measures.Pflichtquote",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Pflichtquote",
+          "subtitle": "alle 3 Pflichtkurse",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": "%",
+            "displayUnits": null,
+            "decimals": 1,
+            "sort": null,
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 448,
+            "y": 72,
+            "w": 204,
+            "h": 117
+          },
+          "roles": {
+            "indicator": [
+              {
+                "table": "_Measures",
+                "name": "Pflichtquote",
+                "kind": "measure",
+                "ref": "_Measures.Pflichtquote",
+                "isNew": false
+              }
+            ],
+            "goal": [
+              {
+                "table": "_Measures",
+                "name": "Ziel Pflichtquote",
+                "kind": "measure",
+                "ref": "_Measures.Ziel Pflichtquote",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Compliance-relevant: Datenschutz, Arbeitsschutz, Verhaltenskodex. Ziel 95 %.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt04",
+          "stableId": "wbt04",
+          "slug": "Kosten",
+          "page": "Überblick",
+          "kind": "kpi",
+          "label": "KPI-Kachel (ChartKitchen)",
+          "engine": "ck",
+          "chartKitchenType": "kpi",
+          "chartKitchenMode": "cards",
+          "native": {
+            "type": "card",
+            "buckets": {
+              "Values": [
+                {
+                  "ref": "_Measures.Kosten",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Kosten",
+          "subtitle": "vs. Budget",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "lower",
+            "polarityAuto": false,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": "€",
+            "displayUnits": "K",
+            "decimals": 0,
+            "sort": null,
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 664,
+            "y": 72,
+            "w": 204,
+            "h": 117
+          },
+          "roles": {
+            "indicator": [
+              {
+                "table": "_Measures",
+                "name": "Kosten",
+                "kind": "measure",
+                "ref": "_Measures.Kosten",
+                "isNew": false
+              }
+            ],
+            "goal": [
+              {
+                "table": "_Measures",
+                "name": "Budget",
+                "kind": "measure",
+                "ref": "_Measures.Budget",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Weniger ist besser (Polarität gesetzt): Überschreitung = rot.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt05",
+          "stableId": "wbt05",
+          "slug": "Zufriedenheit",
+          "page": "Überblick",
+          "kind": "kpi",
+          "label": "KPI-Kachel (ChartKitchen)",
+          "engine": "ck",
+          "chartKitchenType": "kpi",
+          "chartKitchenMode": "cards",
+          "native": {
+            "type": "card",
+            "buckets": {
+              "Values": [
+                {
+                  "ref": "_Measures.Ø Zufriedenheit",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Ø Zufriedenheit",
+          "subtitle": "Skala 1–5",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": null,
+            "displayUnits": null,
+            "decimals": 2,
+            "sort": null,
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 880,
+            "y": 72,
+            "w": 204,
+            "h": 117
+          },
+          "roles": {
+            "indicator": [
+              {
+                "table": "_Measures",
+                "name": "Ø Zufriedenheit",
+                "kind": "measure",
+                "ref": "_Measures.Ø Zufriedenheit",
+                "isNew": false
+              }
+            ],
+            "goal": [
+              {
+                "table": "_Measures",
+                "name": "Ziel Zufriedenheit",
+                "kind": "measure",
+                "ref": "_Measures.Ziel Zufriedenheit",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Mittelwert ist hier richtig: jede Bewertung zählt gleich. Nur abgeschlossene, bewertete Kurse.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt07",
+          "stableId": "wbt07",
+          "slug": "Kosten_vs_Budget_je_Quartal",
+          "page": "Überblick",
+          "kind": "columns",
+          "label": "Säulen (AC vs Referenz)",
+          "engine": "ck",
+          "chartKitchenType": "columns",
+          "chartKitchenMode": "columns",
+          "native": {
+            "type": "clusteredColumnChart",
+            "buckets": {
+              "Category": [
+                {
+                  "ref": "Kalender.Quartal",
+                  "kind": "column",
+                  "isNew": false
+                }
+              ],
+              "Y": [
+                {
+                  "ref": "_Measures.Kosten",
+                  "kind": "measure",
+                  "isNew": false
+                },
+                {
+                  "ref": "_Measures.Budget",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Kosten vs. Budget je Quartal",
+          "subtitle": "in T€",
+          "content": "",
+          "scenario": "AC/PL",
+          "analysis": {
+            "polarity": "lower",
+            "polarityAuto": false,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": false,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": "T€",
+            "displayUnits": "K",
+            "decimals": null,
+            "sort": null,
+            "topN": null,
+            "timeGrain": "quarter",
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": "Q2 sprengt das Budget – Vertriebsoffensive mit Premium-Seminaren",
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 16,
+            "y": 201,
+            "w": 348,
+            "h": 233
+          },
+          "roles": {
+            "category": [
+              {
+                "table": "Kalender",
+                "name": "Quartal",
+                "kind": "column",
+                "ref": "Kalender.Quartal",
+                "isNew": false
+              }
+            ],
+            "ac": [
+              {
+                "table": "_Measures",
+                "name": "Kosten",
+                "kind": "measure",
+                "ref": "_Measures.Kosten",
+                "isNew": false
+              }
+            ],
+            "ref": [
+              {
+                "table": "_Measures",
+                "name": "Budget",
+                "kind": "measure",
+                "ref": "_Measures.Budget",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Budget liegt nur auf Quartalsebene vor – nie nach Monat zeigen.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt08",
+          "stableId": "wbt08",
+          "slug": "Pflichtquote_je_Standort",
+          "page": "Überblick",
+          "kind": "bars",
+          "label": "Balken (Kategorien, sortiert)",
+          "engine": "ck",
+          "chartKitchenType": "bars",
+          "chartKitchenMode": "bars",
+          "native": {
+            "type": "clusteredBarChart",
+            "buckets": {
+              "Category": [
+                {
+                  "ref": "dim_mitarbeitende.Standort",
+                  "kind": "column",
+                  "isNew": false
+                }
+              ],
+              "Y": [
+                {
+                  "ref": "_Measures.Pflichtquote",
+                  "kind": "measure",
+                  "isNew": false
+                },
+                {
+                  "ref": "_Measures.Ziel Pflichtquote",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Pflichtquote je Standort",
+          "subtitle": "in % vs. Ziel",
+          "content": "",
+          "scenario": "AC/PL",
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": false,
+            "deltaKind": [
+              "abs"
+            ],
+            "unit": "%",
+            "displayUnits": null,
+            "decimals": null,
+            "sort": {
+              "by": "value",
+              "dir": "asc"
+            },
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": "Werk Ulm hängt beim Datenschutz-E-Learning zurück",
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 376,
+            "y": 201,
+            "w": 348,
+            "h": 233
+          },
+          "roles": {
+            "category": [
+              {
+                "table": "dim_mitarbeitende",
+                "name": "Standort",
+                "kind": "column",
+                "ref": "dim_mitarbeitende.Standort",
+                "isNew": false
+              }
+            ],
+            "ac": [
+              {
+                "table": "_Measures",
+                "name": "Pflichtquote",
+                "kind": "measure",
+                "ref": "_Measures.Pflichtquote",
+                "isNew": false
+              }
+            ],
+            "ref": [
+              {
+                "table": "_Measures",
+                "name": "Ziel Pflichtquote",
+                "kind": "measure",
+                "ref": "_Measures.Ziel Pflichtquote",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Drill-Idee: Standort → Bereich → Pflichtkurs. Ulm/Produktion hat kaum PC-Arbeitsplätze.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt09",
+          "stableId": "wbt09",
+          "slug": "Stunden_je_MA_nach_Bereich",
+          "page": "Überblick",
+          "kind": "bars",
+          "label": "Balken (Kategorien, sortiert)",
+          "engine": "ck",
+          "chartKitchenType": "bars",
+          "chartKitchenMode": "bars",
+          "native": {
+            "type": "clusteredBarChart",
+            "buckets": {
+              "Category": [
+                {
+                  "ref": "dim_bereich.Bereich",
+                  "kind": "column",
+                  "isNew": false
+                }
+              ],
+              "Y": [
+                {
+                  "ref": "_Measures.Ø Stunden je MA",
+                  "kind": "measure",
+                  "isNew": false
+                },
+                {
+                  "ref": "_Measures.Ziel Ø Stunden je MA",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Ø Stunden je MA nach Bereich",
+          "subtitle": "in h vs. Ziel",
+          "content": "",
+          "scenario": "AC/PL",
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": false,
+            "deltaKind": [
+              "abs"
+            ],
+            "unit": "h",
+            "displayUnits": null,
+            "decimals": null,
+            "sort": {
+              "by": "delta",
+              "dir": "asc"
+            },
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "must",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 736,
+            "y": 201,
+            "w": 348,
+            "h": 233
+          },
+          "roles": {
+            "category": [
+              {
+                "table": "dim_bereich",
+                "name": "Bereich",
+                "kind": "column",
+                "ref": "dim_bereich.Bereich",
+                "isNew": false
+              }
+            ],
+            "ac": [
+              {
+                "table": "_Measures",
+                "name": "Ø Stunden je MA",
+                "kind": "measure",
+                "ref": "_Measures.Ø Stunden je MA",
+                "isNew": false
+              }
+            ],
+            "ref": [
+              {
+                "table": "_Measures",
+                "name": "Ziel Ø Stunden je MA",
+                "kind": "measure",
+                "ref": "_Measures.Ziel Ø Stunden je MA",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Ziel je Bereich unterschiedlich (IT 28 h, Logistik 12 h) – deshalb Abweichung statt Rangfolge.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt11",
+          "stableId": "wbt11",
+          "slug": "Weiterbildungsstunden_je_Monat",
+          "page": "Überblick",
+          "kind": "nline",
+          "label": "Liniendiagramm (nativ)",
+          "engine": "native",
+          "chartKitchenType": null,
+          "chartKitchenMode": null,
+          "native": {
+            "type": "lineChart",
+            "buckets": {
+              "Category": [
+                {
+                  "ref": "Kalender.Monat",
+                  "kind": "column",
+                  "isNew": false
+                }
+              ],
+              "Y": [
+                {
+                  "ref": "_Measures.Stunden",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Weiterbildungsstunden je Monat",
+          "subtitle": "abgeschlossene Kurse",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": null,
+            "displayUnits": null,
+            "decimals": null,
+            "sort": null,
+            "topN": null,
+            "timeGrain": "month",
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "should",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 16,
+            "y": 446,
+            "w": 348,
+            "h": 234
+          },
+          "roles": {
+            "category": [
+              {
+                "table": "Kalender",
+                "name": "Monat",
+                "kind": "column",
+                "ref": "Kalender.Monat",
+                "isNew": false
+              }
+            ],
+            "values": [
+              {
+                "table": "_Measures",
+                "name": "Stunden",
+                "kind": "measure",
+                "ref": "_Measures.Stunden",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Saisonmuster: Sommerloch und Dezember. Hilft bei der Kursplanung 2026.",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt12",
+          "stableId": "wbt12",
+          "slug": "Vollzeit_vs_Teilzeit",
+          "page": "Überblick",
+          "kind": "nbar",
+          "label": "Balkendiagramm (nativ)",
+          "engine": "native",
+          "chartKitchenType": null,
+          "chartKitchenMode": null,
+          "native": {
+            "type": "clusteredBarChart",
+            "buckets": {
+              "Category": [
+                {
+                  "ref": "dim_mitarbeitende.Beschaeftigung",
+                  "kind": "column",
+                  "isNew": false
+                }
+              ],
+              "Y": [
+                {
+                  "ref": "_Measures.Teilnahmequote",
+                  "kind": "measure",
+                  "isNew": false
+                },
+                {
+                  "ref": "_Measures.Ø Stunden je MA",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Vollzeit vs. Teilzeit",
+          "subtitle": "Teilnahmequote · Ø Stunden",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": null,
+            "displayUnits": null,
+            "decimals": null,
+            "sort": null,
+            "topN": null,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": "Teilzeitkräfte kommen nur halb so oft zum Zug",
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "should",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 376,
+            "y": 446,
+            "w": 348,
+            "h": 234
+          },
+          "roles": {
+            "category": [
+              {
+                "table": "dim_mitarbeitende",
+                "name": "Beschaeftigung",
+                "kind": "column",
+                "ref": "dim_mitarbeitende.Beschaeftigung",
+                "isNew": false
+              }
+            ],
+            "values": [
+              {
+                "table": "_Measures",
+                "name": "Teilnahmequote",
+                "kind": "measure",
+                "ref": "_Measures.Teilnahmequote",
+                "isNew": false
+              },
+              {
+                "table": "_Measures",
+                "name": "Ø Stunden je MA",
+                "kind": "measure",
+                "ref": "_Measures.Ø Stunden je MA",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Fairness-Frage für GF und Betriebsrat: Kurszeiten passen nicht zu Teilzeitmodellen?",
+          "link": null,
+          "warnings": []
+        },
+        {
+          "id": "mk_wbt13",
+          "stableId": "wbt13",
+          "slug": "Top_Kurse_nach_Kosten",
+          "page": "Überblick",
+          "kind": "matrix",
+          "label": "Matrix (nativ)",
+          "engine": "native",
+          "chartKitchenType": null,
+          "chartKitchenMode": null,
+          "native": {
+            "type": "pivotTable",
+            "buckets": {
+              "Rows": [
+                {
+                  "ref": "dim_kurs.Kurstitel",
+                  "kind": "column",
+                  "isNew": false
+                }
+              ],
+              "Values": [
+                {
+                  "ref": "_Measures.Teilnahmen",
+                  "kind": "measure",
+                  "isNew": false
+                },
+                {
+                  "ref": "_Measures.Kosten",
+                  "kind": "measure",
+                  "isNew": false
+                },
+                {
+                  "ref": "_Measures.Ø Zufriedenheit",
+                  "kind": "measure",
+                  "isNew": false
+                }
+              ]
+            }
+          },
+          "customVisual": null,
+          "title": "Top-Kurse nach Kosten",
+          "subtitle": "Teilnahmen · Kosten · Zufriedenheit",
+          "content": "",
+          "scenario": null,
+          "analysis": {
+            "polarity": "higher",
+            "polarityAuto": true,
+            "deltaBasis": "PL",
+            "deltaBasisAuto": true,
+            "deltaKind": [
+              "abs",
+              "rel"
+            ],
+            "unit": null,
+            "displayUnits": null,
+            "decimals": null,
+            "sort": {
+              "by": "value",
+              "dir": "desc"
+            },
+            "topN": 8,
+            "timeGrain": null,
+            "cumulative": false,
+            "scaleGroup": null,
+            "message": null,
+            "smallMultiples": null,
+            "fieldParam": null
+          },
+          "workshop": {
+            "priority": "could",
+            "status": "agreed",
+            "openQuestion": false
+          },
+          "interaction": {
+            "drillDown": false,
+            "crossFilter": true,
+            "drillThrough": null
+          },
+          "rect": {
+            "x": 736,
+            "y": 446,
+            "w": 348,
+            "h": 234
+          },
+          "roles": {
+            "rows": [
+              {
+                "table": "dim_kurs",
+                "name": "Kurstitel",
+                "kind": "column",
+                "ref": "dim_kurs.Kurstitel",
+                "isNew": false
+              }
+            ],
+            "values": [
+              {
+                "table": "_Measures",
+                "name": "Teilnahmen",
+                "kind": "measure",
+                "ref": "_Measures.Teilnahmen",
+                "isNew": false
+              },
+              {
+                "table": "_Measures",
+                "name": "Kosten",
+                "kind": "measure",
+                "ref": "_Measures.Kosten",
+                "isNew": false
+              },
+              {
+                "table": "_Measures",
+                "name": "Ø Zufriedenheit",
+                "kind": "measure",
+                "ref": "_Measures.Ø Zufriedenheit",
+                "isNew": false
+              }
+            ]
+          },
+          "notes": "Kosten und Zufriedenheit nebeneinander: Welche teuren Kurse lohnen sich?",
+          "link": null,
+          "warnings": []
+        }
+      ],
+      "layoutTree": {
+        "split": "col",
+        "children": [
+          {
+            "size": 1,
+            "node": {
+              "split": "row",
+              "children": [
+                {
+                  "size": 1,
+                  "node": {
+                    "leaf": "Teilnahmequote",
+                    "stableId": "wbt01"
+                  }
+                },
+                {
+                  "size": 1,
+                  "node": {
+                    "leaf": "Ø Stunden je MA",
+                    "stableId": "wbt02"
+                  }
+                },
+                {
+                  "size": 1,
+                  "node": {
+                    "leaf": "Pflichtquote",
+                    "stableId": "wbt03"
+                  }
+                },
+                {
+                  "size": 1,
+                  "node": {
+                    "leaf": "Kosten",
+                    "stableId": "wbt04"
+                  }
+                },
+                {
+                  "size": 1,
+                  "node": {
+                    "leaf": "Ø Zufriedenheit",
+                    "stableId": "wbt05"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "size": 2,
+            "node": {
+              "split": "row",
+              "children": [
+                {
+                  "size": 3,
+                  "node": {
+                    "leaf": "Kosten vs. Budget je Quartal",
+                    "stableId": "wbt07"
+                  }
+                },
+                {
+                  "size": 3,
+                  "node": {
+                    "leaf": "Pflichtquote je Standort",
+                    "stableId": "wbt08"
+                  }
+                },
+                {
+                  "size": 3,
+                  "node": {
+                    "leaf": "Ø Stunden je MA nach Bereich",
+                    "stableId": "wbt09"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "size": 2,
+            "node": {
+              "split": "row",
+              "children": [
+                {
+                  "size": 3,
+                  "node": {
+                    "leaf": "Weiterbildungsstunden je Monat",
+                    "stableId": "wbt11"
+                  }
+                },
+                {
+                  "size": 3,
+                  "node": {
+                    "leaf": "Vollzeit vs. Teilzeit",
+                    "stableId": "wbt12"
+                  }
+                },
+                {
+                  "size": 3,
+                  "node": {
+                    "leaf": "Top-Kurse nach Kosten",
+                    "stableId": "wbt13"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "links": [],
+  "model": {
+    "source": "Weiterbildungs-Monitoring (Trainingsmodell, 03-Fall-Weiterbildung)",
+    "tables": [
+      "fakt_buchungen",
+      "dim_mitarbeitende",
+      "dim_bereich",
+      "dim_kurs",
+      "Kalender",
+      "Budget",
+      "Zielwerte",
+      "_Measures"
+    ],
+    "usedFields": [
+      {
+        "table": "_Measures",
+        "name": "Teilnahmequote",
+        "kind": "measure",
+        "ref": "_Measures.Teilnahmequote",
+        "isNew": false,
+        "description": "Personen mit ≥ 1 abgeschlossener freiwilliger Weiterbildung ÷ Headcount",
+        "formatString": "0.0%",
+        "dataType": "measure",
+        "alias": "Teilnahmequote",
+        "renameInModel": false,
+        "confirmed": true,
+        "owner": "Personalentwicklung",
+        "source": "LMS + HR-Stamm",
+        "target": "75 %",
+        "unit": "%",
+        "note": "nur freiwillige Kurse; Nenner = Headcount"
+      },
+      {
+        "table": "_Measures",
+        "name": "Ziel Teilnahmequote",
+        "kind": "measure",
+        "ref": "_Measures.Ziel Teilnahmequote",
+        "isNew": false,
+        "description": "",
+        "formatString": "0.0%",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Ø Stunden je MA",
+        "kind": "measure",
+        "ref": "_Measures.Ø Stunden je MA",
+        "isNew": false,
+        "description": "Stunden ÷ Headcount (alle Personen, auch ohne Weiterbildung)",
+        "formatString": "#,##0.0",
+        "dataType": "measure",
+        "alias": "Weiterbildungsstunden pro Kopf",
+        "renameInModel": false,
+        "confirmed": true,
+        "owner": "Personalentwicklung",
+        "source": "LMS",
+        "target": "je Bereich (12–28 h)",
+        "unit": "h",
+        "note": "Nenner Headcount, nicht Teilnehmende"
+      },
+      {
+        "table": "_Measures",
+        "name": "Ziel Ø Stunden je MA",
+        "kind": "measure",
+        "ref": "_Measures.Ziel Ø Stunden je MA",
+        "isNew": false,
+        "description": "nach Headcount gewichtet",
+        "formatString": "#,##0.0",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Pflichtquote",
+        "kind": "measure",
+        "ref": "_Measures.Pflichtquote",
+        "isNew": false,
+        "description": "Personen, die alle Pflichtkurse abgeschlossen haben ÷ Headcount",
+        "formatString": "0.0%",
+        "dataType": "measure",
+        "alias": "Pflichtschulungsquote",
+        "renameInModel": false,
+        "confirmed": true,
+        "owner": "Compliance / Arbeitssicherheit",
+        "source": "LMS + HR-Stamm",
+        "target": "95 %",
+        "unit": "%",
+        "note": "alle drei Pflichtkurse abgeschlossen"
+      },
+      {
+        "table": "_Measures",
+        "name": "Ziel Pflichtquote",
+        "kind": "measure",
+        "ref": "_Measures.Ziel Pflichtquote",
+        "isNew": false,
+        "description": "",
+        "formatString": "0.0%",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Kosten",
+        "kind": "measure",
+        "ref": "_Measures.Kosten",
+        "isNew": false,
+        "description": "Summe Kosten inkl. No-Show und Stornogebühren",
+        "formatString": "#,##0",
+        "dataType": "measure",
+        "alias": "Weiterbildungskosten",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "Controlling",
+        "source": "LMS (Kosten je Buchung)",
+        "target": "≤ Budget",
+        "unit": "€",
+        "note": "offen: Reisekosten gehören (noch) nicht dazu"
+      },
+      {
+        "table": "_Measures",
+        "name": "Budget",
+        "kind": "measure",
+        "ref": "_Measures.Budget",
+        "isNew": false,
+        "description": "",
+        "formatString": "#,##0",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Ø Zufriedenheit",
+        "kind": "measure",
+        "ref": "_Measures.Ø Zufriedenheit",
+        "isNew": false,
+        "description": "Mittelwert der Bewertungen 1–5",
+        "formatString": "0.00",
+        "dataType": "measure",
+        "alias": "Kurszufriedenheit",
+        "renameInModel": false,
+        "confirmed": true,
+        "owner": "Personalentwicklung",
+        "source": "LMS-Feedback",
+        "target": "4,0",
+        "unit": "1–5",
+        "note": "freiwillige Angabe, ca. 70 % Rücklauf"
+      },
+      {
+        "table": "_Measures",
+        "name": "Ziel Zufriedenheit",
+        "kind": "measure",
+        "ref": "_Measures.Ziel Zufriedenheit",
+        "isNew": false,
+        "description": "",
+        "formatString": "0.0",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "Kalender",
+        "name": "Quartal",
+        "kind": "column",
+        "ref": "Kalender.Quartal",
+        "isNew": false,
+        "description": "",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "dim_mitarbeitende",
+        "name": "Standort",
+        "kind": "column",
+        "ref": "dim_mitarbeitende.Standort",
+        "isNew": false,
+        "default": null,
+        "description": "",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "dim_bereich",
+        "name": "Bereich",
+        "kind": "column",
+        "ref": "dim_bereich.Bereich",
+        "isNew": false,
+        "default": null,
+        "description": "",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "Kalender",
+        "name": "Monat",
+        "kind": "column",
+        "ref": "Kalender.Monat",
+        "isNew": false,
+        "description": "",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Stunden",
+        "kind": "measure",
+        "ref": "_Measures.Stunden",
+        "isNew": false,
+        "description": "Weiterbildungsstunden aus abgeschlossenen Buchungen",
+        "formatString": "#,##0",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "dim_mitarbeitende",
+        "name": "Beschaeftigung",
+        "kind": "column",
+        "ref": "dim_mitarbeitende.Beschaeftigung",
+        "isNew": false,
+        "default": null,
+        "description": "Vollzeit / Teilzeit",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "dim_kurs",
+        "name": "Kurstitel",
+        "kind": "column",
+        "ref": "dim_kurs.Kurstitel",
+        "isNew": false,
+        "description": "",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Teilnahmen",
+        "kind": "measure",
+        "ref": "_Measures.Teilnahmen",
+        "isNew": false,
+        "description": "Buchungen mit Status abgeschlossen",
+        "formatString": "#,##0",
+        "dataType": "measure",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      },
+      {
+        "table": "dim_kurs",
+        "name": "Kategorie",
+        "kind": "column",
+        "ref": "dim_kurs.Kategorie",
+        "isNew": false,
+        "default": null,
+        "description": "",
+        "formatString": "",
+        "dataType": "string",
+        "alias": "",
+        "renameInModel": false,
+        "confirmed": false,
+        "owner": "",
+        "source": "",
+        "target": "",
+        "unit": "",
+        "note": ""
+      }
+    ]
+  },
+  "fields": [
+    {
+      "table": "_Measures",
+      "name": "Teilnahmequote",
+      "kind": "measure",
+      "ref": "_Measures.Teilnahmequote",
+      "isNew": false,
+      "description": "Personen mit ≥ 1 abgeschlossener freiwilliger Weiterbildung ÷ Headcount",
+      "formatString": "0.0%",
+      "dataType": "measure",
+      "alias": "Teilnahmequote",
+      "renameInModel": false,
+      "confirmed": true,
+      "owner": "Personalentwicklung",
+      "source": "LMS + HR-Stamm",
+      "target": "75 %",
+      "unit": "%",
+      "note": "nur freiwillige Kurse; Nenner = Headcount"
+    },
+    {
+      "table": "_Measures",
+      "name": "Ziel Teilnahmequote",
+      "kind": "measure",
+      "ref": "_Measures.Ziel Teilnahmequote",
+      "isNew": false,
+      "description": "",
+      "formatString": "0.0%",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "Ø Stunden je MA",
+      "kind": "measure",
+      "ref": "_Measures.Ø Stunden je MA",
+      "isNew": false,
+      "description": "Stunden ÷ Headcount (alle Personen, auch ohne Weiterbildung)",
+      "formatString": "#,##0.0",
+      "dataType": "measure",
+      "alias": "Weiterbildungsstunden pro Kopf",
+      "renameInModel": false,
+      "confirmed": true,
+      "owner": "Personalentwicklung",
+      "source": "LMS",
+      "target": "je Bereich (12–28 h)",
+      "unit": "h",
+      "note": "Nenner Headcount, nicht Teilnehmende"
+    },
+    {
+      "table": "_Measures",
+      "name": "Ziel Ø Stunden je MA",
+      "kind": "measure",
+      "ref": "_Measures.Ziel Ø Stunden je MA",
+      "isNew": false,
+      "description": "nach Headcount gewichtet",
+      "formatString": "#,##0.0",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "Pflichtquote",
+      "kind": "measure",
+      "ref": "_Measures.Pflichtquote",
+      "isNew": false,
+      "description": "Personen, die alle Pflichtkurse abgeschlossen haben ÷ Headcount",
+      "formatString": "0.0%",
+      "dataType": "measure",
+      "alias": "Pflichtschulungsquote",
+      "renameInModel": false,
+      "confirmed": true,
+      "owner": "Compliance / Arbeitssicherheit",
+      "source": "LMS + HR-Stamm",
+      "target": "95 %",
+      "unit": "%",
+      "note": "alle drei Pflichtkurse abgeschlossen"
+    },
+    {
+      "table": "_Measures",
+      "name": "Ziel Pflichtquote",
+      "kind": "measure",
+      "ref": "_Measures.Ziel Pflichtquote",
+      "isNew": false,
+      "description": "",
+      "formatString": "0.0%",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "Kosten",
+      "kind": "measure",
+      "ref": "_Measures.Kosten",
+      "isNew": false,
+      "description": "Summe Kosten inkl. No-Show und Stornogebühren",
+      "formatString": "#,##0",
+      "dataType": "measure",
+      "alias": "Weiterbildungskosten",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "Controlling",
+      "source": "LMS (Kosten je Buchung)",
+      "target": "≤ Budget",
+      "unit": "€",
+      "note": "offen: Reisekosten gehören (noch) nicht dazu"
+    },
+    {
+      "table": "_Measures",
+      "name": "Budget",
+      "kind": "measure",
+      "ref": "_Measures.Budget",
+      "isNew": false,
+      "description": "",
+      "formatString": "#,##0",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "Ø Zufriedenheit",
+      "kind": "measure",
+      "ref": "_Measures.Ø Zufriedenheit",
+      "isNew": false,
+      "description": "Mittelwert der Bewertungen 1–5",
+      "formatString": "0.00",
+      "dataType": "measure",
+      "alias": "Kurszufriedenheit",
+      "renameInModel": false,
+      "confirmed": true,
+      "owner": "Personalentwicklung",
+      "source": "LMS-Feedback",
+      "target": "4,0",
+      "unit": "1–5",
+      "note": "freiwillige Angabe, ca. 70 % Rücklauf"
+    },
+    {
+      "table": "_Measures",
+      "name": "Ziel Zufriedenheit",
+      "kind": "measure",
+      "ref": "_Measures.Ziel Zufriedenheit",
+      "isNew": false,
+      "description": "",
+      "formatString": "0.0",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "Kalender",
+      "name": "Quartal",
+      "kind": "column",
+      "ref": "Kalender.Quartal",
+      "isNew": false,
+      "description": "",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "dim_mitarbeitende",
+      "name": "Standort",
+      "kind": "column",
+      "ref": "dim_mitarbeitende.Standort",
+      "isNew": false,
+      "default": null,
+      "description": "",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "dim_bereich",
+      "name": "Bereich",
+      "kind": "column",
+      "ref": "dim_bereich.Bereich",
+      "isNew": false,
+      "default": null,
+      "description": "",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "Kalender",
+      "name": "Monat",
+      "kind": "column",
+      "ref": "Kalender.Monat",
+      "isNew": false,
+      "description": "",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "Stunden",
+      "kind": "measure",
+      "ref": "_Measures.Stunden",
+      "isNew": false,
+      "description": "Weiterbildungsstunden aus abgeschlossenen Buchungen",
+      "formatString": "#,##0",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "dim_mitarbeitende",
+      "name": "Beschaeftigung",
+      "kind": "column",
+      "ref": "dim_mitarbeitende.Beschaeftigung",
+      "isNew": false,
+      "default": null,
+      "description": "Vollzeit / Teilzeit",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "dim_kurs",
+      "name": "Kurstitel",
+      "kind": "column",
+      "ref": "dim_kurs.Kurstitel",
+      "isNew": false,
+      "description": "",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "Teilnahmen",
+      "kind": "measure",
+      "ref": "_Measures.Teilnahmen",
+      "isNew": false,
+      "description": "Buchungen mit Status abgeschlossen",
+      "formatString": "#,##0",
+      "dataType": "measure",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "table": "dim_kurs",
+      "name": "Kategorie",
+      "kind": "column",
+      "ref": "dim_kurs.Kategorie",
+      "isNew": false,
+      "default": null,
+      "description": "",
+      "formatString": "",
+      "dataType": "string",
+      "alias": "",
+      "renameInModel": false,
+      "confirmed": false,
+      "owner": "",
+      "source": "",
+      "target": "",
+      "unit": "",
+      "note": ""
+    }
+  ],
+  "newFields": [],
+  "issues": [],
+  "warnings": []
+}

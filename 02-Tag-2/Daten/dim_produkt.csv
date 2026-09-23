@@ -1,0 +1,19 @@
+ProduktID,Produkt,Kategorie,Listenpreis,Einstandspreis
+P01,Stadtrad Classic,Fahrräder,649.00,410.00
+P02,Trekkingrad Tour,Fahrräder,899.00,560.00
+P03,Gravelbike Kies,Fahrräder,1299.00,830.00
+P04,Kinderrad 20 Zoll,Fahrräder,329.00,205.00
+P05,E-Bike City,E-Bikes,2499.00,1690.00
+P06,E-Bike Trekking,E-Bikes,3199.00,2170.00
+P07,E-Lastenrad,E-Bikes,4990.00,3490.00
+P08,Helm Urban,Zubehör,79.90,38.00
+P09,Faltschloss,Zubehör,59.90,27.50
+P10,Fahrradtasche,Zubehör,89.00,44.00
+P11,Lichtset LED,Zubehör,39.90,16.80
+P12,Luftpumpe,Zubehör,24.90,9.90
+P13,Regenjacke,Bekleidung,129.00,61.00
+P14,Radhose,Bekleidung,69.00,29.00
+P15,Handschuhe,Bekleidung,29.90,11.50
+P16,Inspektion Standard,Werkstatt,89.00,52.00
+P17,Inspektion E-Bike,Werkstatt,149.00,88.00
+P18,Schlauchwechsel,Werkstatt,19.90,9.00
