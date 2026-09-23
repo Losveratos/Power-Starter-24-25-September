@@ -53,6 +53,15 @@ hr { border: 0; border-top: 1px solid #D5DADF; margin: 12pt 0; }
 
 def md_to_html(md_path: Path) -> str:
     text = md_path.read_text(encoding="utf-8")
+    # GitHub erlaubt Listen direkt unter einem Absatz, Python-Markdown braucht eine Leerzeile davor
+    lines, out = text.splitlines(), []
+    for i, line in enumerate(lines):
+        is_item = re.match(r"^\s*([-*]|\d+\.)\s", line)
+        prev = out[-1] if out else ""
+        if is_item and prev.strip() and not re.match(r"^\s*([-*]|\d+\.)\s", prev) and not prev.startswith((" ", "\t")):
+            out.append("")
+        out.append(line)
+    text = "\n".join(out)
     body = markdown.markdown(text, extensions=["tables", "fenced_code", "sane_lists"])
     rel_dir = md_path.parent.relative_to(ROOT)
 

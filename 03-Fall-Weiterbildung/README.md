@@ -12,8 +12,25 @@ Du übst dabei alles aus den beiden Trainingstagen noch einmal – plus vier neu
 
 > ⬇️ **Alles in einem Paket:** [Anleitung als PDF + Daten + Skripte (ZIP)](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Fall-Weiterbildungs-Monitoring.zip)
 
-> **Hängst du fest?** Zu jedem Schritt gibt es ein fertiges Skript in [`Loesungen/`](Loesungen/). Einfügen,
-> Kontrollzahl prüfen, weiter. Alle Zahlen stehen auch in [`Daten/kontrollzahlen.json`](Daten/kontrollzahlen.json).
+---
+
+## Bevor du anfängst
+
+**Du brauchst:** Power BI Desktop auf Windows ([Installation: Tag 1, Übung 0](../01-Tag-1/README.md#übung-0--power-bi-desktop-installieren-15-min)),
+Internet, etwa **4 Stunden** – gern in Etappen, nach jedem Schritt speichern (**Strg + S**).
+
+**Vorwissen:** Dieser Fall setzt voraus, was an [Tag 1](../01-Tag-1/) und [Tag 2](../02-Tag-2/) drankam. Die Klickwege
+stehen hier deshalb kürzer – bei jedem Schritt steht, in welcher Übung du sie ausführlich findest.
+
+| Zeichen | Bedeutung |
+|---|---|
+| ✅ **Kontrollpunkt** | Diese Zahl muss bei dir stehen. |
+| 🆘 **Hängst du fest?** | Häufige Fehler und wie du sie behebst. |
+| ⏭ **Überspringen** | Fertiges Skript für diesen Schritt – einfügen, Kontrollzahl prüfen, weiter. |
+| 📚 **Mehr dazu** | [Knowledge Kitchen](https://datenwgknowledgekitchen.com/) und Microsoft Learn zum Nachlesen. |
+
+Alle Kontrollzahlen stehen auch in [`Daten/kontrollzahlen.json`](Daten/kontrollzahlen.json). Die komplette Lösung als
+Power-BI-Datei liegt in [`PowerBI-Loesung`](PowerBI-Loesung/) – zum Vergleichen, wenn du fertig bist.
 
 ---
 
@@ -54,7 +71,9 @@ Die Begründung jeder Kachel steht in der [Workshop-Doku](Mockup/WORKSHOP-DOKU.m
 
 ## Schritt 1 · Den Rohexport ansehen (10 min)
 
-Öffne `weiterbildung_buchungen_2025.csv` zuerst **im Editor** (nicht in Excel). Was fällt auf?
+Schau dir die Rohdatei zuerst als Text an – **nicht in Excel** (Excel „repariert" beim Öffnen und versteckt die Probleme):
+[`weiterbildung_buchungen_2025.csv`](Daten/1-Rohdaten/weiterbildung_buchungen_2025.csv) anklicken – GitHub zeigt sie als Tabelle; oben auf **Code** klicken
+zeigt den reinen Text. *(Offline: im entpackten ZIP Rechtsklick auf die Datei → **Öffnen mit → Editor**.)* Was fällt auf?
 
 - Trennzeichen ist das **Semikolon**, Zahlen haben ein **Komma** (`7,5`), Kosten ein **€-Zeichen** (`1.234,50 €`).
 - Datumswerte stehen als `TT.MM.JJJJ`.
@@ -67,7 +86,11 @@ Die Begründung jeder Kachel steht in der [Workshop-Doku](Mockup/WORKSHOP-DOKU.m
 
 ## Schritt 2 · Rohdaten aufräumen (45 min)
 
-1. **Daten abrufen → Web** → Adresse der Rohdatei → **Anonym**.
+1. Neuer Bericht (**Datei → Neu**) → **Start → Daten abrufen → Web** → Adresse
+   ```
+   https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/03-Fall-Weiterbildung/Daten/1-Rohdaten/weiterbildung_buchungen_2025.csv
+   ```
+   → **OK** → **Anonym** → **Verbinden**.
 2. Im Vorschaufenster oben **Dateiursprung: 1252: Westeuropäisch (Windows)** und **Trennzeichen: Semikolon** wählen.
    Probier vorher einmal *65001: Unicode (UTF-8)* – dann siehst du, was mit `Präsenz` und `Datensätze` passiert.
 3. **Daten transformieren.** Unter *Angewendete Schritte* alles nach **Höher gestufte Header** löschen.
@@ -78,10 +101,10 @@ Die Begründung jeder Kachel steht in der [Workshop-Doku](Mockup/WORKSHOP-DOKU.m
 | 1 | Summenzeile am Ende | **Start → Zeilen entfernen → Untere Zeilen entfernen** → `1` |
 | 2 | Doppelte Buchungen | Spalte **BuchungsID** markieren → **Start → Zeilen entfernen → Duplikate entfernen** |
 | 3 | Kurstitel doppelt (steht auch im Kurskatalog) | Spalte **Kurstitel** entfernen |
-| 4 | Führende Nullen fehlen | **Personalnr** markieren → **Transformieren → Format → Präfix hinzufügen** hilft nicht (mal 2, mal 3 Nullen). Stattdessen **Spalte hinzufügen → Benutzerdefinierte Spalte**: `Text.PadStart([Personalnr], 5, "0")`, alte Spalte löschen, neue umbenennen |
-| 5 | Status uneinheitlich | **Status** markieren → **Format → Kürzen**, dann **Format → Kleinbuchstaben**, dann **Werte ersetzen**: `teilgenommen` → `abgeschlossen`, `no show` und `nicht erschienen` → `No-Show`, `no-show` → `No-Show` |
-| 6 | Euro-Zeichen | **Kosten** markieren → **Werte ersetzen**: ` €` (mit Leerzeichen davor) → *nichts* |
-| 7 | Leeres Feedback | **Feedback** markieren → **Werte ersetzen**: *leer lassen* → `null` |
+| 4 | Führende Nullen fehlen | **Spalte hinzufügen → Benutzerdefinierte Spalte** → Name `Personalnr_neu`, Formel `Text.PadStart([Personalnr], 5, "0")` → **OK**. Dann die alte Spalte **Personalnr** entfernen (Überschrift anklicken → **Entf**) und die neue per Doppelklick in `Personalnr` umbenennen. *(„Präfix hinzufügen" hilft nicht – mal fehlen 2, mal 3 Nullen.)* |
+| 5 | Status uneinheitlich | **Status** markieren → **Transformieren → Format → Kürzen**, dann **Format → Kleinbuchstaben**, dann je Paar Rechtsklick → **Werte ersetzen**: `teilgenommen` → `abgeschlossen`, `no show` und `nicht erschienen` → `No-Show`, `no-show` → `No-Show` |
+| 6 | Euro-Zeichen | Rechtsklick auf **Kosten** → **Werte ersetzen** → *Zu suchender Wert:* ` €` (Leerzeichen + €) → *Ersetzen durch:* leer lassen → **OK** |
+| 7 | Leeres Feedback | Rechtsklick auf **Feedback** → **Werte ersetzen** → *Zu suchender Wert:* leer lassen → *Ersetzen durch:* `null` → **OK** |
 | 8 | Datentypen | Datumsspalten → **Datum**, **Stunden** → Dezimalzahl, **Kosten** → Währung, **Feedback** → Ganze Zahl. Diesmal **ohne** Gebietsschema-Umweg – die Datei ist deutsch wie dein Windows |
 
 5. Abfrage `fakt_buchungen` nennen.
@@ -89,13 +112,14 @@ Die Begründung jeder Kachel steht in der [Workshop-Doku](Mockup/WORKSHOP-DOKU.m
 **✅ Kontrollpunkt:** **1.712 Zeilen**, 10 Spalten. Filterpfeil bei **Status** zeigt genau vier Werte:
 `abgeschlossen` (1.587) · `storniert` (69) · `No-Show` (53) · `angemeldet` (3).
 
+🆘 **Hängst du fest?**
 - *1.736 Zeilen?* → Duplikate noch drin (Handgriff 2).
 - *1.713 Zeilen?* → Summenzeile noch drin (Handgriff 1). *1.737* → beides.
 - *Mehr als vier Status-Werte?* → Kürzen oder Kleinbuchstaben vergessen.
 
 ⏭ **Überspringen:** [`01_fakt_buchungen.pq`](Loesungen/PowerQuery/01_fakt_buchungen.pq)
 
-📚 Kitchen: [Power Query · Staging (Datentypen, Schlüssel bereinigen)](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#pq) ·
+📚 **Mehr dazu:** Kitchen: [Power Query · Staging (Datentypen, Schlüssel bereinigen)](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#pq) ·
 Microsoft Learn: [Text/CSV-Connector](https://learn.microsoft.com/de-de/power-query/connectors/text-csv) ·
 [Mit Duplikaten arbeiten](https://learn.microsoft.com/de-de/power-query/working-with-duplicates) ·
 [Datentypen und Gebietsschema](https://learn.microsoft.com/de-de/power-query/data-types)
@@ -104,7 +128,7 @@ Microsoft Learn: [Text/CSV-Connector](https://learn.microsoft.com/de-de/power-qu
 
 ## Schritt 3 · Anreichern: Dimensionen laden und Schlüssel prüfen (30 min)
 
-1. Die drei CSVs aus `Daten/2-Anreicherung/` laden (UTF-8, Komma, Punkt als Dezimalzeichen – also **FTE** mit Gebietsschema *Englisch (USA)*).
+1. Die drei CSVs laden (je **Daten abrufen → Web** → `https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/03-Fall-Weiterbildung/Daten/2-Anreicherung/` + Dateiname → **Daten transformieren**) (UTF-8, Komma, Punkt als Dezimalzeichen – also **FTE** mit Gebietsschema *Englisch (USA)*).
 2. Abfragen nennen: `dim_mitarbeitende`, `dim_bereich`, `dim_kurs`.
 3. **Personalnr ist Text!** Sonst wird aus `00238` die Zahl `238` – und nichts passt mehr zusammen.
 4. **Prüfen, ob die Schlüssel passen:** `fakt_buchungen` markieren → **Start → Abfragen zusammenführen als neue Abfrage** →
@@ -114,11 +138,16 @@ Microsoft Learn: [Text/CSV-Connector](https://learn.microsoft.com/de-de/power-qu
 **✅ Kontrollpunkt:** `dim_mitarbeitende` **420**, `dim_bereich` **7**, `dim_kurs` **23** Zeilen (davon **3** mit `Pflicht = Ja`).
 Die Anti-Join-Prüfung ergibt **0 Zeilen**. Nimm testweise Handgriff 4 aus Schritt 2 heraus: Dann sind es **alle 1.712** – so sieht ein kaputter Schlüssel aus.
 
+🆘 **Hängst du fest?**
+- *FTE steht als 50 oder 75 statt 0,5 / 0,75* → FTE ohne Gebietsschema umgewandelt: Rechtsklick → **Typ ändern → Gebietsschema verwenden…** → Dezimalzahl, *Englisch (USA)*.
+- *Personalnr ohne führende Nullen (z. B. 238)* → Power BI hat sie als Zahl erkannt. Typ-Schritt löschen, Spalte als **Text** setzen.
+- *„Abfragen zusammenführen" ist grau* → Du bist nicht im Power Query-Editor oder `fakt_buchungen` ist nicht links markiert.
+
 ⏭ **Überspringen:** [`02a_dim_mitarbeitende.pq`](Loesungen/PowerQuery/02a_dim_mitarbeitende.pq) ·
 [`02b_dim_bereich.pq`](Loesungen/PowerQuery/02b_dim_bereich.pq) · [`02c_dim_kurs.pq`](Loesungen/PowerQuery/02c_dim_kurs.pq) ·
 [`03_pruefung_anti_join.pq`](Loesungen/PowerQuery/03_pruefung_anti_join.pq)
 
-📚 Microsoft Learn: [Abfragen zusammenführen – Überblick](https://learn.microsoft.com/de-de/power-query/merge-queries-overview) ·
+📚 **Mehr dazu:** Microsoft Learn: [Abfragen zusammenführen – Überblick](https://learn.microsoft.com/de-de/power-query/merge-queries-overview) ·
 [Linker Anti-Join](https://learn.microsoft.com/de-de/power-query/merge-queries-left-anti)
 
 ---
@@ -129,7 +158,7 @@ Die Personalentwicklung plant in Excel – **Bereiche in Zeilen, Quartale bzw. K
 Für Menschen perfekt, für Power BI unbrauchbar. Zwei Blätter, zweimal derselbe Handgriff.
 
 **Blatt „Budget 2025":**
-1. **Daten abrufen → Web** → `…/Daten/3-Ziele/ziele_2025.xlsx` → Blatt **Budget 2025** → **Daten transformieren**. Automatische Schritte nach *Navigation* löschen.
+1. **Daten abrufen → Web** → Adresse `https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/03-Fall-Weiterbildung/Daten/3-Ziele/ziele_2025.xlsx` → **Anonym** → im Navigator Blatt **Budget 2025** anhaken → **Daten transformieren**. Rechts alle Schritte nach *Navigation* löschen.
 2. **Obere Zeilen entfernen** `2` → **Erste Zeile als Überschriften**.
 3. Zeile **Gesamt** herausfiltern, Spalte **Summe** entfernen – Summen rechnet Power BI selbst.
 4. **Bereich** markieren → **Transformieren → Spalten entpivotieren → Andere Spalten entpivotieren**. *Attribut* → `Quartal`, *Wert* → `Budget`.
@@ -139,18 +168,24 @@ Für Menschen perfekt, für Power BI unbrauchbar. Zwei Blätter, zweimal derselb
 
 **✅ Kontrollpunkt:** `Budget` **28 Zeilen**, Summe **274.500 €**. `Zielwerte` **28 Zeilen**; die Teilnahmequote steht als **0,75**, nicht als 75 – das „%" in Excel war nur Formatierung.
 
+🆘 **Hängst du fest?** Klickweg ausführlich: [Tag 2, Übung 11](../02-Tag-2/README.md#übung-11--plan-ist-aus-einer-excel-kreuztabelle-35-min).
+*Zeile „Gesamt" herausfiltern:* Filterpfeil bei **Bereich** → Häkchen bei *Gesamt* entfernen → **OK**.
+*Nur 7 statt 28 Zeilen:* Beim Entpivotieren war nicht **Bereich** markiert.
+*`Quartalsanfang` zeigt Fehler:* Die Quartalsspalte heißt noch *Attribut* – erst umbenennen, dann die Formel.
+
 ⏭ **Überspringen:** [`04_budget_entpivotieren.pq`](Loesungen/PowerQuery/04_budget_entpivotieren.pq) · [`05_zielwerte_entpivotieren.pq`](Loesungen/PowerQuery/05_zielwerte_entpivotieren.pq)
 
-📚 Kitchen: [Praxis-Pfad · Exkurs „Warum deine Excel-Tabelle nicht passt"](https://datenwgknowledgekitchen.com/powerbi_praxis_pfad.html#exkurs) ·
+📚 **Mehr dazu:** Kitchen: [Praxis-Pfad · Exkurs „Warum deine Excel-Tabelle nicht passt"](https://datenwgknowledgekitchen.com/powerbi_praxis_pfad.html#exkurs) ·
 Microsoft Learn: [Spalten entpivotieren](https://learn.microsoft.com/de-de/power-query/unpivot-column)
 
 ---
 
 ## Schritt 5 · Kalender und Beziehungen (25 min)
 
-1. **Automatisches Datum/Uhrzeit aus** (Datei → Optionen → Aktuelle Datei → Datenladevorgang).
-2. Kalender per Leerer Abfrage aus [`06_kalender.pq`](Loesungen/PowerQuery/06_kalender.pq), **als Datumstabelle markieren**, `Monat` nach `MonatNr` sortieren.
-3. Beziehungen, alle **n:1**, Filterrichtung **einfach**:
+1. **Automatisches Datum/Uhrzeit aus:** **Datei → Optionen und Einstellungen → Optionen → Aktuelle Datei → Datenladevorgang** → Häkchen entfernen.
+2. **Kalender:** [`06_kalender.pq`](Loesungen/PowerQuery/06_kalender.pq) als Leere Abfrage einfügen, `Kalender` nennen, **als Datumstabelle markieren**,
+   `Monat` nach `MonatNr` sortieren. *(Ausführlich: [Tag 2, Übung 9](../02-Tag-2/README.md#übung-9--kalendertabelle-20-min).)*
+3. **Beziehungen** in der Modellansicht ziehen, alle **n:1**, Filterrichtung **einfach** *(ausführlich: [Tag 2, Übung 8](../02-Tag-2/README.md#übung-8--beziehungen--das-sternschema-25-min))*:
 
 | Von (n) | Nach (1) |
 |---|---|
@@ -168,7 +203,12 @@ Microsoft Learn: [Spalten entpivotieren](https://learn.microsoft.com/de-de/power
 
 **✅ Kontrollpunkt:** Tabelle `dim_bereich[Bereich]` × Anzahl `dim_mitarbeitende[Personalnr]`: Produktion **150**, Logistik **55**, Entwicklung **60**, Service **45**, Vertrieb **45**, IT **25**, Verwaltung **40**.
 
-📚 Kitchen: [Datenmodellierung · Sternschema, Kalender, Modell-Prinzipien](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#model) ·
+🆘 **Hängst du fest?**
+- *Überall 420* → Beziehung `dim_mitarbeitende[BereichID]` → `dim_bereich[BereichID]` fehlt.
+- *Power BI will „n:n" anlegen* → Die Spalte auf der 1-Seite ist nicht eindeutig. Bei `Budget` → `dim_bereich` muss die Zeile *Gesamt* raus sein (Schritt 4).
+- *Beziehung Budget → Kalender geht nicht* → `Quartalsanfang` ist noch kein **Datum**.
+
+📚 **Mehr dazu:** Kitchen: [Datenmodellierung · Sternschema, Kalender, Modell-Prinzipien](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#model) ·
 Microsoft Learn: [Sternschema](https://learn.microsoft.com/de-de/power-bi/guidance/star-schema) ·
 [Beziehungen verstehen](https://learn.microsoft.com/de-de/power-bi/transform-model/desktop-relationships-understand) ·
 [Datumstabellen](https://learn.microsoft.com/de-de/power-bi/transform-model/desktop-date-tables)
@@ -177,10 +217,33 @@ Microsoft Learn: [Sternschema](https://learn.microsoft.com/de-de/power-bi/guidan
 
 ## Schritt 6 · Grundgrößen (20 min)
 
-Leere Tabelle `_Measures` anlegen, dann: `Headcount`, `Buchungen`, `Teilnahmen`, `Stunden`, `Kosten`
-(Formeln in [`measures.dax`](Loesungen/DAX/measures.dax)).
+1. **Start → Daten eingeben** → Name `_Measures` → **Laden**. *(Ausführlich: [Tag 2, Übung 10](../02-Tag-2/README.md#übung-10--measures-statt-autosumme-45-min).)*
+2. `_Measures` anklicken → **Tabellentools → Neues Measure** → Formel einfügen → **Enter**. Nacheinander:
+   ```dax
+   Headcount = COUNTROWS ( dim_mitarbeitende )
+   ```
+   ```dax
+   Buchungen = COUNTROWS ( fakt_buchungen )
+   ```
+   ```dax
+   Teilnahmen = CALCULATE ( [Buchungen], fakt_buchungen[Status] = "abgeschlossen" )
+   ```
+   ```dax
+   Stunden = CALCULATE ( SUM ( fakt_buchungen[Stunden] ), fakt_buchungen[Status] = "abgeschlossen" )
+   ```
+   ```dax
+   Kosten = SUM ( fakt_buchungen[Kosten] )
+   ```
+3. Jedes Measure in eine **Karte** ziehen und ablesen.
 
 **✅ Kontrollpunkt:** Headcount **420** · Buchungen **1.712** · Teilnahmen **1.587** · Stunden **6.894** · Kosten **272.678,91 €**
+
+🆘 **Hängst du fest?**
+- *Teilnahmen = 0* → Der Status heißt bei dir anders (z. B. „Abgeschlossen" groß). Schritt 2, Handgriff 5 prüfen.
+- *Kosten viel zu hoch* → Kosten sind noch Text mit €-Zeichen oder falsch umgewandelt. Schritt 2, Handgriffe 6 und 8.
+
+📚 **Mehr dazu:** Microsoft Learn: [Eigene Measures erstellen (Tutorial)](https://learn.microsoft.com/de-de/power-bi/transform-model/desktop-tutorial-create-measures) ·
+Kitchen: [Einsteiger-Guide · DAX (Measures vs. berechnete Spalten)](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#dax)
 
 ---
 
@@ -212,7 +275,15 @@ Produktion und Logistik gibt es kaum PC-Arbeitsplätze. Nur **62,3 %** dort habe
 
 **Vollzeit vs. Teilzeit** (`dim_mitarbeitende[Beschaeftigung]`): Ø Stunden **17,86 h** vs. **9,79 h**, Teilnahmequote **69,0 %** vs. **37,3 %**.
 
-📚 Kitchen: [DAX · CALCULATE, Filterkontext, Anti-Patterns](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#dax) ·
+**So kommst du an die Zahlen:** alle Measures aus [`measures.dax`](Loesungen/DAX/measures.dax) (Abschnitt *Schritt 7*) einzeln anlegen,
+dann eine **Matrix** mit Zeilen `dim_mitarbeitende` **Standort** und den Measures als Werte.
+
+🆘 **Hängst du fest?**
+- *Ø Stunden je MA ist viel höher (z. B. 26)* → Du teilst durch die Personen aus der Buchungstabelle statt durch `[Headcount]`. Genau das ist die Falle dieses Schritts.
+- *Pflichtquote 0 %* → `dim_kurs[Pflicht]` enthält „Ja"/„Nein" – prüf die Schreibweise im Measure. Oder die Beziehung `fakt_buchungen[Kursnr]` → `dim_kurs[Kursnr]` fehlt.
+- *Teilnahmequote über 100 %* → Die Beziehung `fakt_buchungen[Personalnr]` → `dim_mitarbeitende[Personalnr]` fehlt oder die Personalnummern haben keine führenden Nullen (Schritt 2, Handgriff 4).
+
+📚 **Mehr dazu:** Kitchen: [DAX · CALCULATE, Filterkontext, Anti-Patterns](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#dax) ·
 Microsoft Learn: [DIVIDE](https://learn.microsoft.com/de-de/dax/divide-function-dax) ·
 [CALCULATE](https://learn.microsoft.com/de-de/dax/calculate-function-dax) ·
 [Variablen in DAX](https://learn.microsoft.com/de-de/dax/best-practices/dax-variables)
@@ -239,7 +310,15 @@ Gesamt sieht das Budget gut aus. Aber:
 
 > Budget liegt nur je **Quartal** vor. Zeig es nie nach Monat – dort wäre es falsch verteilt (Granularität).
 
-📚 Kitchen: [Visualisierung & IBCS · Plan-Ist-Notation](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#viz) ·
+**So kommst du an die Zahlen:** Measures aus [`measures.dax`](Loesungen/DAX/measures.dax) (Abschnitt *Schritt 8*) anlegen, dann
+eine **Matrix** mit Zeilen `Kalender` **Quartal** und Werten `Kosten`, `Budget`, `Budget-Ausschöpfung` – und eine zweite mit `dim_bereich` **Bereich**.
+
+🆘 **Hängst du fest?**
+- *Budget ist in jedem Quartal gleich / leer* → Beziehung `Budget[Quartalsanfang]` → `Kalender[Datum]` fehlt.
+- *Budget ist in jedem Bereich 274.500 €* → Beziehung `Budget[Bereich]` → `dim_bereich[Bereich]` fehlt.
+- *Ziel-Measures leer* → Die Kennzahlnamen in `Zielwerte[Kennzahl]` müssen exakt stimmen (z. B. `Ø Stunden je MA` mit Ø).
+
+📚 **Mehr dazu:** Kitchen: [Visualisierung & IBCS · Plan-Ist-Notation](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#viz) ·
 Microsoft Learn: [SUMX](https://learn.microsoft.com/de-de/dax/sumx-function-dax)
 
 ---
@@ -249,6 +328,18 @@ Microsoft Learn: [SUMX](https://learn.microsoft.com/de-de/dax/sumx-function-dax)
 Bau die Seite nach dem [Mockup](Mockup/page-1-uberblick.png). Die Kachel-Liste mit Feldern steht in der
 [Workshop-Doku](Mockup/WORKSHOP-DOKU.md), die Maße in [`AGENT-BRIEF.md`](Mockup/AGENT-BRIEF.md).
 
+**Schritt für Schritt mit Bordmitteln:**
+1. **Oben fünf Karten** nebeneinander: `Teilnahmequote`, `Ø Stunden je MA`, `Pflichtquote`, `Kosten`, `Ø Zufriedenheit`.
+2. **Darunter drei Diagramme:**
+   - *Gruppiertes Säulendiagramm:* X-Achse `Kalender` **Quartal**, Y-Achse `Kosten` und `Budget`.
+   - *Gruppiertes Balkendiagramm:* Y-Achse `dim_mitarbeitende` **Standort**, X-Achse `Pflichtquote` und `Ziel Pflichtquote`.
+   - *Gruppiertes Balkendiagramm:* Y-Achse `dim_bereich` **Bereich**, X-Achse `Ø Stunden je MA` und `Ziel Ø Stunden je MA`.
+3. **Unten:** *Liniendiagramm* `Kalender` **Monat** × `Stunden` · *Balkendiagramm* **Beschaeftigung** × `Teilnahmequote` · *Tabelle* **Kurstitel**, `Teilnahmen`, `Kosten`, `Ø Zufriedenheit` (nach Kosten absteigend sortieren).
+4. **Rechts vier Datenschnitte:** Standort, Bereich, Beschaeftigung, Kategorie – im Format-Bereich auf **Dropdown** stellen.
+5. **Kopfzeile:** Textfeld `Weiterbildungs-Monitoring 2025`.
+
+**✅ Kontrollpunkt:** Die Karten zeigen **63,3 %** · **16,4** · **79,5 %** · **272.679 €** · **3,78**. Datenschnitt *Werk Ulm* → Pflichtquote **58,6 %**.
+
 - **Nur mit Bordmitteln:** KPI-Kacheln als *Karte (neu)* mit Referenzbeschriftung, Balken und Säulen als *Gruppiertes Balken-/Säulendiagramm* mit Ist und Ziel.
 - **Mit ChartKitchen:** Die Kacheln mit Szenario-Notation (Ist vs. Ziel, Abweichung) sind im Mockup für das Visual
   [ChartKitchen byDatenWG](https://datenwgknowledgekitchen.com/chartkitchen-schnellstart.html) vorgesehen.
@@ -256,7 +347,10 @@ Bau die Seite nach dem [Mockup](Mockup/page-1-uberblick.png). Die Kachel-Liste m
 - **Mit Claude Code:** Speichere dein Modell als **PBIP** und sag im Repo: *„Setz das Mockup `03-Fall-Weiterbildung/Mockup/mockup-spec.json` in meinem Bericht um."* – der Skill `mockup-to-powerbi` baut die Seite (siehe [Claude-Skills](../04-Material/Claude-Skills.md)).
 - **Weiterskizzieren:** [MockupKitchen](https://datenwgknowledgekitchen.com/mockup-kitchen.html) öffnen → **Öffnen** → [`weiterbildungs-monitoring.mockup.json`](Mockup/weiterbildungs-monitoring.mockup.json). Dort kannst du Kacheln ändern oder eine Detailseite ergänzen.
 
-📚 Kitchen: [Interaktivität · Drillthrough, Tooltips, bedingte Formatierung](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#inter)
+📚 **Mehr dazu:** Kitchen: [Einsteiger-Guide · Visualisierung & IBCS](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#viz) ·
+[Interaktivität · Drillthrough, Tooltips, bedingte Formatierung](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#inter) ·
+Microsoft Learn: [Karten-Visual](https://learn.microsoft.com/de-de/power-bi/visuals/power-bi-visualization-card) ·
+[Datenschnitte](https://learn.microsoft.com/de-de/power-bi/visuals/power-bi-visualization-slicers)
 
 ---
 
@@ -269,7 +363,7 @@ Im echten Leben gilt:
 - Bei kleinen Gruppen (z. B. 3 Teilzeitkräfte in der IT) lässt sich trotzdem auf Personen schließen. Mindestgröße vereinbaren.
 - Führungskräfte sehen nur ihren Bereich → **Row-Level Security**. Betriebsrat und Datenschutz früh einbinden.
 
-📚 Kitchen: [Row-Level Security](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#rls) ·
+📚 **Mehr dazu:** Kitchen: [Row-Level Security](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#rls) ·
 Microsoft Learn: [RLS-Leitfaden](https://learn.microsoft.com/de-de/power-bi/guidance/rls-guidance)
 
 ---

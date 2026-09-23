@@ -12,7 +12,7 @@
 
 | Zeit | Block | Inhalt | Übung |
 |---|---|---|---|
-| 09:00 | **Start** | Vorstellung, Erwartungen, Setup-Check an jedem Rechner | [Ü0](../01-Tag-1/README.md#übung-0--setup-check-10-min) |
+| 09:00 | **Start** | Vorstellung, Erwartungen, Setup-Check an jedem Rechner | [Ü0](../01-Tag-1/README.md#übung-0--power-bi-desktop-installieren-15-min) |
 | 09:30 | **Was ist Power BI?** | Desktop · Service · Mobile · Gateway in einem Bild; der Weg *Laden → Transformieren → Modellieren → Visualisieren → Teilen* | – |
 | 10:00 | **Daten anbinden** | Konnektoren, Web vs. Datei, Anmeldung „Anonym", was die Vorschau zeigt | [Ü1](../01-Tag-1/README.md#übung-1--daten-anbinden-15-min) |
 | 10:30 | *Pause* | | |
@@ -35,7 +35,7 @@
 | Zeit | Block | Inhalt | Übung |
 |---|---|---|---|
 | 09:00 | **Recap** | Fragen von gestern · „Menschen lesen Kreuztabellen, Maschinen lange Tabellen" | – |
-| 09:20 | **Warum mehrere Tabellen?** | Fakten vs. Dimensionen · Schlüssel · Datentyp-Falle PLZ | [Ü7](../02-Tag-2/README.md#übung-7--vier-tabellen-laden-25-min) |
+| 09:20 | **Warum mehrere Tabellen?** | Fakten vs. Dimensionen · Schlüssel · Datentyp-Falle PLZ | [Ü7](../02-Tag-2/README.md#übung-7--vier-tabellen-laden-30-min) |
 | 10:00 | **Sternschema** | Beziehungen n:1, Filterrichtung, „immer genau ein Weg" | [Ü8](../02-Tag-2/README.md#übung-8--beziehungen--das-sternschema-25-min) |
 | 10:30 | *Pause* | | |
 | 10:45 | **Kalendertabelle** | Auto Date/Time aus · Kalender in M · als Datumstabelle markieren · Sortieren nach Spalte | [Ü9](../02-Tag-2/README.md#übung-9--kalendertabelle-20-min) |
@@ -44,7 +44,7 @@
 | 13:15 | **DAX II: Filterkontext** | `CALCULATE` · Anteil am Gesamt · `DATESYTD` · die Köln-Frage, diesmal richtig | [Ü10](../02-Tag-2/README.md#übung-10--measures-statt-autosumme-45-min) (5–6) |
 | 14:15 | *Pause* | | |
 | 14:30 | **Plan-Ist** | Excel-Kreuztabelle entpivotieren · zweite Faktentabelle · Granularität | [Ü11](../02-Tag-2/README.md#übung-11--plan-ist-aus-einer-excel-kreuztabelle-35-min) |
-| 15:15 | **Teilen** | Veröffentlichen, Workspace, App, Aktualisierung, Gateway, Lizenzen (Demo) | [Ü12](../02-Tag-2/README.md#übung-12--teilen--was-nach-dem-desktop-kommt-demo-30-min) |
+| 15:15 | **Teilen** | Veröffentlichen, Workspace, App, Aktualisierung, Gateway, Lizenzen (Demo) | [Ü12](../02-Tag-2/README.md#übung-12--teilen--was-nach-dem-desktop-kommt-lesen-20-min) |
 | 15:45 | **Wie geht's weiter?** | Checkliste · [Videoempfehlungen](Videos.md) · [Claude-Skills](Claude-Skills.md) für den eigenen Report · eigene Projektideen | – |
 | 16:15 | **Feedback & Ende** | | |
 

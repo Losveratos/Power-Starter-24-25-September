@@ -32,6 +32,19 @@ Klick auf einen Ordner, die Anleitung steht jeweils gleich darunter.
 
 Jeder Übungsordner ist gleich aufgebaut: **Anleitung** (README) → **`Daten`** → **`Loesungen`** (falls du hängst).
 
+## 🧭 Allein durcharbeiten? So gehst du vor
+
+Alles ist so geschrieben, dass du es **ohne Trainer** schaffst. Jede Übung hat Kontrollzahlen (✅), Hilfe bei Fehlern (🆘),
+fertige Lösungen und Links zum Nachlesen in der [Knowledge Kitchen](https://datenwgknowledgekitchen.com/) und bei Microsoft Learn (📚).
+
+| Reihenfolge | Was | Dauer |
+|---|---|---|
+| 1 | [**Tag 1**](01-Tag-1/) – Power BI installieren, Daten laden und aufräumen, erste Diagramme, Filter | ca. 2½ h |
+| 2 | [**Tag 2**](02-Tag-2/) – mehrere Tabellen, Kalender, DAX-Measures, Plan-Ist | ca. 4 h |
+| 3 | [**Fall Weiterbildungs-Monitoring**](03-Fall-Weiterbildung/) – alles noch einmal an einem neuen Thema, mit fertiger Lösung zum Vergleichen | ca. 4 h |
+
+Du brauchst nur einen **Windows-Rechner** und Internet. Kein Konto, keine Lizenz. Pausen sind jederzeit möglich – vorher **Strg + S**.
+
 ## ⚡ 3 · Direkt loslegen, ohne Download
 
 1. **Power BI Desktop** installieren (Windows; Microsoft Store → „Power BI Desktop").

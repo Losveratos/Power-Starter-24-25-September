@@ -72,6 +72,18 @@ ein neuer Fall wird `05-Fall-<Name>/` mit derselben Innenstruktur wie der Weiter
 - **PBIP:** `03-Fall-Weiterbildung/PowerBI-Loesung/` erzeugt `_Werkzeuge/pbip/build_weiterbildung_pbip.py` – Modell per TOM geprüft (`_Werkzeuge/pbip/TmdlCheck`, .NET 8), Bericht per `_Werkzeuge/pbip/validate_pbir.py` (Microsoft-Schemas + Feldbezüge). Wenn `te`/`pbir` verfügbar sind, zusätzlich `PowerBI-Loesung/pruefen.ps1` – die CLIs haben Vorrang.
 - **Downloads:** `_Werkzeuge/downloads_bauen.py` – **nach jeder Änderung an Übungen, Material, Daten, Fall oder PBIP neu bauen**, sonst laden Teilnehmende einen alten Stand.
 
+## Aufbau jeder Übung (für Selbstlerner)
+
+Alles muss **ohne Trainer** funktionieren. Jede Übung bzw. jeder Schritt hat:
+1. nummerierte Klickwege mit exakten Menünamen in **Fett** und `A → B → C`,
+2. **✅ Kontrollpunkt** mit echten Zahlen (aus den Kontrollzahlen-JSONs, nie geschätzt),
+3. **🆘 Hängst du fest?** mit den häufigsten Fehlern und der Lösung (inkl. Verweis auf `Loesungen/`),
+4. **📚 Mehr dazu** mit dem passenden Abschnitt der Knowledge Kitchen (Praxis-Pfad `#modul-0…6`, `#exkurs`;
+   Einsteiger-Guide `#arch #pq #model #dax #viz #inter #service #rls`) und Microsoft Learn (`/de-de/`).
+   **Nur Microsoft-Learn-Adressen verlinken, deren Existenz geprüft ist** (Websuche oder Quellenliste der Kitchen).
+
+Nach Änderungen: Link-Check (relative Links, Anker, Raw-URLs) und `_Werkzeuge/downloads_bauen.py`.
+
 ## Konventionen im Repo
 
 - Sprache Deutsch, Anrede „du".

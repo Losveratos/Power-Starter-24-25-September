@@ -122,3 +122,17 @@
 | Granularität | Detailstufe einer Tabelle (Tag vs. Monat). |
 | Semantikmodell | Das veröffentlichte Modell im Service (früher „Dataset"). |
 | Workspace / App | Arbeitsbereich zum Bauen / verpacktes Paket zum Konsumieren. |
+
+---
+
+## 8 · Zum Nachschlagen
+
+| Thema | Knowledge Kitchen (deutsch, praxisnah) | Microsoft Learn (offizielle Doku) |
+|---|---|---|
+| Erste Schritte | [Praxis-Pfad: Dein erstes Dashboard](https://datenwgknowledgekitchen.com/powerbi_praxis_pfad.html) | [Erste Schritte mit Power BI Desktop](https://learn.microsoft.com/de-de/power-bi/fundamentals/desktop-getting-started) |
+| Power Query | [Einsteiger-Guide · Power Query](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#pq) | [Datentypen und Gebietsschema](https://learn.microsoft.com/de-de/power-query/data-types) · [Spalten entpivotieren](https://learn.microsoft.com/de-de/power-query/unpivot-column) |
+| Datenmodell | [Einsteiger-Guide · Datenmodellierung](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#model) | [Sternschema](https://learn.microsoft.com/de-de/power-bi/guidance/star-schema) · [Datumstabellen](https://learn.microsoft.com/de-de/power-bi/transform-model/desktop-date-tables) |
+| DAX | [Einsteiger-Guide · DAX](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#dax) | [Measures erstellen (Tutorial)](https://learn.microsoft.com/de-de/power-bi/transform-model/desktop-tutorial-create-measures) · [DAX-Übersicht](https://learn.microsoft.com/de-de/dax/dax-overview) |
+| Visualisierung | [Einsteiger-Guide · Visualisierung & IBCS](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#viz) | [Überblick über Visualisierungen](https://learn.microsoft.com/de-de/power-bi/visuals/power-bi-visualizations-overview) |
+| Teilen | [Einsteiger-Guide · Service & Sharing](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#service) | [Aus Desktop veröffentlichen](https://learn.microsoft.com/de-de/power-bi/create-reports/desktop-upload-desktop-files) |
+
