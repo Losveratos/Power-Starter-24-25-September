@@ -7,6 +7,7 @@ und Download-Pakete erzeugt werden. **Erzeugte Dateien nie von Hand ändern** �
 |---|---|---|
 | `tag-daten_erzeugen.py` | `01-Tag-1/Daten`, `02-Tag-2/Daten`, `kontrollzahlen-tag1-tag2.json` | `python3 _Werkzeuge/tag-daten_erzeugen.py` |
 | `fall-weiterbildung/generate_data.py` | `03-Fall-Weiterbildung/Daten` inkl. Kontrollzahlen | `python3 _Werkzeuge/fall-weiterbildung/generate_data.py` |
+| `fall-bahn/daten_erzeugen.py` | `05-Fall-Bahn/Daten` inkl. Kontrollzahlen | `python3 _Werkzeuge/fall-bahn/daten_erzeugen.py` |
 | `fall-weiterbildung/build_mockup.py` | `03-Fall-Weiterbildung/Mockup` (mit der echten MockupKitchen) | `python3 _Werkzeuge/fall-weiterbildung/build_mockup.py ../PowerBI-Kitchen-` |
 | `pbip/build_weiterbildung_pbip.py` | `03-Fall-Weiterbildung/PowerBI-Loesung` (Modell per TOM geprüft) | siehe [`pbip/README.md`](pbip/README.md) |
 | `downloads_bauen.py` | `00-Downloads` (PDFs + ZIPs) | `python3 _Werkzeuge/downloads_bauen.py` |

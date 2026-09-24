@@ -59,6 +59,7 @@ Passende Abbildungen:
 02-Tag-2/              README = Übungen · Daten/ · Loesungen/
 03-Fall-Weiterbildung/ README = Anleitung · Daten/{1-Rohdaten,2-Anreicherung,3-Ziele} · Loesungen/{PowerQuery,DAX} · Mockup/ · PowerBI-Loesung/
 04-Material/           Agenda · Handout · Videos · Claude-Skills · Snippets/
+05-Fall-Bahn/          README = Anleitung · Daten/{1-Rohdaten,2-Anreicherung,3-Ziele} · Loesungen/{PowerQuery,DAX} (SBB/Eurostat live geladen)
 _Werkzeuge/            Generatoren, PBIP-Bau und -Prüfung, Download-Bau, Skill-Sync (nur Trainer)
 ```
 
@@ -67,7 +68,7 @@ ein neuer Fall wird `05-Fall-<Name>/` mit derselben Innenstruktur wie der Weiter
 
 ## Erzeugte Dateien
 
-- **Daten:** nur über `_Werkzeuge/tag-daten_erzeugen.py` bzw. `_Werkzeuge/fall-weiterbildung/generate_data.py` ändern, danach Kontrollzahlen in den Anleitungen abgleichen.
+- **Daten:** nur über `_Werkzeuge/tag-daten_erzeugen.py` bzw. `_Werkzeuge/fall-weiterbildung/generate_data.py` bzw. `_Werkzeuge/fall-bahn/daten_erzeugen.py` ändern, danach Kontrollzahlen in den Anleitungen abgleichen.
 - **Mockup:** `_Werkzeuge/fall-weiterbildung/build_mockup.py` (braucht einen Klon der Kitchen daneben). `03-Fall-Weiterbildung/Mockup/mockup-spec.json` ist eine gültige Eingabe für `mockup-to-powerbi`.
 - **PBIP:** `03-Fall-Weiterbildung/PowerBI-Loesung/` erzeugt `_Werkzeuge/pbip/build_weiterbildung_pbip.py` – Modell per TOM geprüft (`_Werkzeuge/pbip/TmdlCheck`, .NET 8), Bericht per `_Werkzeuge/pbip/validate_pbir.py` (Microsoft-Schemas + Feldbezüge). Wenn `te`/`pbir` verfügbar sind, zusätzlich `PowerBI-Loesung/pruefen.ps1` – die CLIs haben Vorrang.
 - **Downloads:** `_Werkzeuge/downloads_bauen.py` – **nach jeder Änderung an Übungen, Material, Daten, Fall oder PBIP neu bauen**, sonst laden Teilnehmende einen alten Stand.

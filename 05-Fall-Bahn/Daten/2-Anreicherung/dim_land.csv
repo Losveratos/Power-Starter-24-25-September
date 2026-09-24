@@ -1,0 +1,32 @@
+Code;Land;Land_EN;Region;EU
+CH;Schweiz;Switzerland;Westeuropa;Nein
+LU;Luxemburg;Luxembourg;Westeuropa;Ja
+AT;Österreich;Austria;Westeuropa;Ja
+DK;Dänemark;Denmark;Nordeuropa;Ja
+DE;Deutschland;Germany;Westeuropa;Ja
+HU;Ungarn;Hungary;Osteuropa;Ja
+SE;Schweden;Sweden;Nordeuropa;Ja
+NL;Niederlande;Netherlands;Westeuropa;Ja
+PT;Portugal;Portugal;Südeuropa;Ja
+FR;Frankreich;France;Westeuropa;Ja
+CZ;Tschechien;Czechia;Osteuropa;Ja
+FI;Finnland;Finland;Nordeuropa;Ja
+NO;Norwegen;Norway;Nordeuropa;Nein
+IT;Italien;Italy;Südeuropa;Ja
+ES;Spanien;Spain;Südeuropa;Ja
+SK;Slowakei;Slovakia;Osteuropa;Ja
+PL;Polen;Poland;Osteuropa;Ja
+LV;Lettland;Latvia;Nordeuropa;Ja
+IE;Irland;Ireland;Nordeuropa;Ja
+SI;Slowenien;Slovenia;Südeuropa;Ja
+HR;Kroatien;Croatia;Südeuropa;Ja
+EE;Estland;Estonia;Nordeuropa;Ja
+RO;Rumänien;Romania;Osteuropa;Ja
+BG;Bulgarien;Bulgaria;Osteuropa;Ja
+LT;Litauen;Lithuania;Nordeuropa;Ja
+EL;Griechenland;Greece;Südeuropa;Ja
+ME;Montenegro;Montenegro;Südeuropa;Nein
+RS;Serbien;Serbia;Südeuropa;Nein
+TR;Türkei;Türkiye;Westasien;Nein
+BA;Bosnien und Herzegowina;Bosnia and Herzegovina;Südeuropa;Nein
+MK;Nordmazedonien;North Macedonia;Südeuropa;Nein

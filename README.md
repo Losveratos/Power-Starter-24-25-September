@@ -11,6 +11,7 @@ Lade dir einfach das Paket für den Tag herunter.
 | 📗 | **[Tag 2 herunterladen](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Starter-Training-Tag2.zip)** | Übungen als PDF · Daten (CSV + Excel) · Lösungen · Handout · Agenda |
 | 🧩 | [Fall zum Selbermachen](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Fall-Weiterbildungs-Monitoring.zip) | Weiterbildungs-Monitoring: Anleitung als PDF · Daten · Lösungen |
 | 📊 | [Fertige Power-BI-Lösung zum Fall](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Loesung-Weiterbildungs-Monitoring-PowerBI.zip) | Power-BI-Projekt zum Doppelklicken |
+| 🚆 | [Fall Bahn in Europa](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Fall-Bahn-Europa.zip) | Grundlagen an echten Bahndaten (Eurostat, SBB): Anleitung als PDF · Daten · Lösungen |
 | 📄 | [Handout](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Handout.pdf) · [Agenda](https://github.com/Losveratos/Power-Starter-24-25-September/raw/main/00-Downloads/Agenda.pdf) | als PDF zum Öffnen oder Ausdrucken |
 
 **So geht's:** Link anklicken → die Datei landet in deinem Ordner *Downloads* →
@@ -28,6 +29,7 @@ Klick auf einen Ordner, die Anleitung steht jeweils gleich darunter.
 | 📗 [**02-Tag-2**](02-Tag-2/) | Übungen Tag 2 · `Daten` · `Loesungen` — *Sternschema, Kalender, DAX, Plan-Ist* |
 | 🧩 [**03-Fall-Weiterbildung**](03-Fall-Weiterbildung/) | Fall zum Selbermachen: Anleitung · `Daten` · `Loesungen` · `Mockup` · `PowerBI-Loesung` |
 | 📚 [**04-Material**](04-Material/) | [Agenda](04-Material/Agenda.md) · [Handout](04-Material/Handout.md) · [Videos](04-Material/Videos.md) · [Claude-Skills](04-Material/Claude-Skills.md) · [Snippets](04-Material/Snippets/) |
+| 🚆 [**05-Fall-Bahn**](05-Fall-Bahn/) | Fall für Bahn-Leute: Zugfahrten in Europa, SBB-Bahnhöfe, Eurostat-Fahrgäste · `Daten` · `Loesungen` |
 | 🔧 [_Werkzeuge](_Werkzeuge/) | nur für Trainer:innen – hier musst du nicht rein |
 
 Jeder Übungsordner ist gleich aufgebaut: **Anleitung** (README) → **`Daten`** → **`Loesungen`** (falls du hängst).
@@ -42,6 +44,7 @@ fertige Lösungen und Links zum Nachlesen in der [Knowledge Kitchen](https://dat
 | 1 | [**Tag 1**](01-Tag-1/) – Power BI installieren, Daten laden und aufräumen, erste Diagramme, Filter | ca. 2½ h |
 | 2 | [**Tag 2**](02-Tag-2/) – mehrere Tabellen, Kalender, DAX-Measures, Plan-Ist | ca. 4 h |
 | 3 | [**Fall Weiterbildungs-Monitoring**](03-Fall-Weiterbildung/) – alles noch einmal an einem neuen Thema, mit fertiger Lösung zum Vergleichen | ca. 4 h |
+| + | [**Fall Bahn in Europa**](05-Fall-Bahn/) – die Grundlagen an echten, öffentlichen Bahndaten | ca. 1½ h |
 
 Du brauchst nur einen **Windows-Rechner** und Internet. Kein Konto, keine Lizenz. Pausen sind jederzeit möglich – vorher **Strg + S**.
 

@@ -1,0 +1,69 @@
+{
+  "quelle": "Eurostat 2024, Zugfahrten pro Kopf, via Knowledge-Kitchen-Infografik",
+  "zeilen_rohdaten": 31,
+  "summe_fahrten_pro_kopf": 479.0,
+  "durchschnitt": 15.45,
+  "median": 13.3,
+  "median_land": [
+    "Slowakei"
+  ],
+  "top3": [
+    [
+      "Schweiz",
+      57.9
+    ],
+    [
+      "Luxemburg",
+      46.2
+    ],
+    [
+      "Österreich",
+      35.6
+    ]
+  ],
+  "rang_deutschland": 5,
+  "faktor_schweiz_zu_deutschland": 1.65,
+  "kategorien": {
+    "hoch": 9,
+    "mittel": 7,
+    "niedrig": 15
+  },
+  "eu": {
+    "anzahl": 24,
+    "durchschnitt": 16.8
+  },
+  "nicht_eu": {
+    "anzahl": 7,
+    "durchschnitt": 10.81
+  },
+  "regionen": {
+    "Nordeuropa": {
+      "anzahl": 8,
+      "durchschnitt": 14.53
+    },
+    "Osteuropa": {
+      "anzahl": 6,
+      "durchschnitt": 13.43
+    },
+    "Südeuropa": {
+      "anzahl": 10,
+      "durchschnitt": 6.7
+    },
+    "Westasien": {
+      "anzahl": 1,
+      "durchschnitt": 0.3
+    },
+    "Westeuropa": {
+      "anzahl": 6,
+      "durchschnitt": 35.82
+    }
+  },
+  "ziele": {
+    "zeilen_entpivotiert": 155,
+    "ziel_2030_deutschland": 41.9,
+    "ziel_2030_schweiz": 69.1,
+    "ziel_2030_durchschnitt": 19.39,
+    "luecke_2030_deutschland": 6.8
+  },
+  "kantone": 26
+}

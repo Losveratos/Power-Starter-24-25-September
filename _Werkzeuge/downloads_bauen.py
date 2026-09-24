@@ -7,6 +7,7 @@
   Starter-Training-Tag2.zip
   Fall-Weiterbildungs-Monitoring.zip                Anleitung als PDF + Daten + Skripte + Mockup
   Loesung-Weiterbildungs-Monitoring-PowerBI.zip     fertiges Power-BI-Projekt (PBIP)
+  Fall-Bahn-Europa.zip                              Anleitung als PDF + Daten + Skripte
 
 PDFs werden aus den Markdown-Dateien des Repos gerendert (Chromium über Playwright),
 relative Links zeigen im PDF auf die Dateien auf GitHub. ZIPs haben feste Zeitstempel,
@@ -142,6 +143,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     tmp = Path(tempfile.mkdtemp())
     case = ROOT / "03-Fall-Weiterbildung"
+    bahn = ROOT / "05-Fall-Bahn"
     pdf = {
         "agenda": OUT / "Agenda.pdf",
         "handout": OUT / "Handout.pdf",
@@ -149,10 +151,12 @@ def main():
         "tag2": tmp / "Uebungen-Tag2.pdf",
         "fall": tmp / "Anleitung-Weiterbildungs-Monitoring.pdf",
         "pbip": tmp / "LIESMICH-PowerBI.pdf",
+        "bahn": tmp / "Anleitung-Bahn-Europa.pdf",
     }
     render_pdfs([(ROOT / "04-Material/Agenda.md", pdf["agenda"]), (ROOT / "04-Material/Handout.md", pdf["handout"]),
                  (ROOT / "01-Tag-1/README.md", pdf["tag1"]), (ROOT / "02-Tag-2/README.md", pdf["tag2"]),
-                 (case / "README.md", pdf["fall"]), (case / "PowerBI-Loesung/README.md", pdf["pbip"])])
+                 (case / "README.md", pdf["fall"]), (case / "PowerBI-Loesung/README.md", pdf["pbip"]),
+                 (bahn / "README.md", pdf["bahn"])])
 
     write_zip("Starter-Training-Tag1.zip", [
         ("LIESMICH.txt", LIESMICH_TAG.format(tag="Tag 1", pdf="Uebungen-Tag1.pdf")),
@@ -191,6 +195,12 @@ Details: LIESMICH-PowerBI.pdf
         ("LIESMICH-PowerBI.pdf", pdf["pbip"]),
         *tree(case / "PowerBI-Loesung", "Weiterbildungs-Monitoring",
               skip=(".pbi",)),
+    ])
+    write_zip("Fall-Bahn-Europa.zip", [
+        ("LIESMICH.txt", LIESMICH_TAG.format(tag="Fall Bahn in Europa", pdf="Anleitung-Bahn-Europa.pdf")),
+        ("Anleitung-Bahn-Europa.pdf", pdf["bahn"]),
+        *[(f"Daten/{f.relative_to(bahn / 'Daten').as_posix()}", f) for f in sorted((bahn / "Daten").rglob("*")) if f.is_file()],
+        *[(f"Loesungen/{f.stem}.txt", f) for f in sorted((bahn / "Loesungen").rglob("*")) if f.is_file()],
     ])
 
 

@@ -1,0 +1,89 @@
+// Fall Bahn · alle Measures
+// Anlegen: Tabelle „_Measures" (Start → Daten eingeben → leere Tabelle „_Measures" → Laden),
+// dann Tabellentools → Neues Measure → Formel einfügen → Enter.
+// Kontrollzahlen: 05-Fall-Bahn/Daten/kontrollzahlen.json
+
+// ─── Teil A · Europa: Zugfahrten pro Kopf (fakt_zugfahrten, dim_land, ziele) ─────────────
+
+Fahrten pro Kopf =
+AVERAGE ( fakt_zugfahrten[Fahrten pro Kopf] )
+// ✅ je Land der Wert selbst (Schweiz 57,9) · Gesamt 15,45 · EU 16,80 · Nicht-EU 10,81
+// Achtung: Das ist der Durchschnitt der Länder – Luxemburg zählt so viel wie Deutschland.
+// Ein echter Europa-Wert wäre Σ Fahrten ÷ Σ Einwohner (Bonus in Teil C).
+
+Median Europa =
+CALCULATE ( MEDIAN ( fakt_zugfahrten[Fahrten pro Kopf] ), REMOVEFILTERS ( dim_land ) )
+// ✅ 13,3 (Slowakei) – in jeder Zeile gleich, weil der Länderfilter entfernt wird
+
+Abstand zum Median =
+[Fahrten pro Kopf] - [Median Europa]
+// ✅ Deutschland +21,8 · Griechenland −11,9
+
+Anzahl Länder =
+COUNTROWS ( fakt_zugfahrten )
+// ✅ 31 · hoch 9 · mittel 7 · niedrig 15
+
+Rang =
+IF (
+    NOT ISBLANK ( [Fahrten pro Kopf] ),
+    RANKX ( ALL ( dim_land[Land] ), [Fahrten pro Kopf], , DESC )
+)
+// ✅ Schweiz 1 · Deutschland 5
+
+Faktor Schweiz =
+VAR schweiz = CALCULATE ( [Fahrten pro Kopf], REMOVEFILTERS ( dim_land ), dim_land[Code] = "CH" )
+RETURN DIVIDE ( schweiz, [Fahrten pro Kopf] )
+// „Wie viel Mal so oft fährt die Schweiz Zug?"  ✅ Deutschland 1,65
+
+Ziel 2030 =
+CALCULATE ( AVERAGE ( ziele[Ziel] ), ziele[Jahr] = 2030 )
+// ✅ Deutschland 41,9 · Schweiz 69,1 · Gesamt 19,39 (Zielwerte sind ausgedacht)
+
+Lücke zum Ziel 2030 =
+[Ziel 2030] - [Fahrten pro Kopf]
+// ✅ Deutschland 6,8
+
+// ─── Teil B · SBB: Ein- und Aussteigende an Bahnhöfen (sbb_bahnhoefe, dim_kanton) ─────────
+
+Letztes Jahr =
+MAX ( sbb_bahnhoefe[Jahr] )
+
+Ein- und Aussteigende pro Tag =
+VAR jahr = [Letztes Jahr]
+RETURN CALCULATE ( SUM ( sbb_bahnhoefe[DTV] ), sbb_bahnhoefe[Jahr] = jahr )
+// Immer nur EIN Jahr summieren: DTV ist ein Tagesdurchschnitt, über Jahre addiert ergibt er Unsinn.
+// Ohne Jahres-Datenschnitt nimmt das Measure automatisch das neueste Jahr.
+
+Ein- und Aussteigende Vorjahr =
+VAR jahr = [Letztes Jahr]
+RETURN CALCULATE ( SUM ( sbb_bahnhoefe[DTV] ), REMOVEFILTERS ( sbb_bahnhoefe[Jahr] ), sbb_bahnhoefe[Jahr] = jahr - 1 )
+
+Δ Vorjahr % =
+DIVIDE ( [Ein- und Aussteigende pro Tag] - [Ein- und Aussteigende Vorjahr], [Ein- und Aussteigende Vorjahr] )
+// Bleibt leer, wenn es das Vorjahr im Datensatz nicht gibt (die SBB veröffentlicht nicht jedes Jahr).
+
+Werktagsfaktor =
+VAR jahr = [Letztes Jahr]
+RETURN DIVIDE (
+    CALCULATE ( SUM ( sbb_bahnhoefe[DWV] ), sbb_bahnhoefe[Jahr] = jahr ),
+    CALCULATE ( SUM ( sbb_bahnhoefe[DTV] ), sbb_bahnhoefe[Jahr] = jahr )
+)
+// > 1: werktags ist mehr los als im Schnitt aller Tage → Pendlerbahnhof. Nahe 1 oder darunter: Ausflugsziel.
+
+Anzahl Bahnhöfe =
+VAR jahr = [Letztes Jahr]
+RETURN CALCULATE ( DISTINCTCOUNT ( sbb_bahnhoefe[Bahnhof] ), sbb_bahnhoefe[Jahr] = jahr )
+
+// ─── Teil C · Eurostat: Fahrgäste je Land und Jahr (fakt_fahrgaeste) ─────────────────────
+
+Fahrgäste Mio =
+SUM ( fakt_fahrgaeste[Fahrgäste Mio] )
+// Über Jahre summieren ist hier richtig (Fahrgäste pro Jahr). Über Länder auch – aber nur ohne EU-Summenzeilen!
+
+Fahrgäste Vorjahr =
+VAR jahr = MAX ( fakt_fahrgaeste[Jahr] )
+RETURN CALCULATE ( [Fahrgäste Mio], REMOVEFILTERS ( fakt_fahrgaeste[Jahr] ), fakt_fahrgaeste[Jahr] = jahr - 1 )
+
+Δ Fahrgäste % =
+DIVIDE ( [Fahrgäste Mio] - [Fahrgäste Vorjahr], [Fahrgäste Vorjahr] )
+// Tipp: 2020 anschauen – Corona ist in jeder Linie zu sehen.
