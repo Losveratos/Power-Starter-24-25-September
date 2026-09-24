@@ -278,6 +278,46 @@ ein **echter Europa-Wert** aus – im Vergleich zum Durchschnitt der Länder (15
 
 ---
 
+## Extra · Von der Kreuztabelle zum Sternschema (Demo, 20 min)
+
+So kommen Daten oft aus Excel: **eine Zeile je Bahnhof, eine Spalte je Monat**, und Stadt, Bundesland und Größenklasse
+stehen in jeder Zeile mit dabei. Zum Lesen ist das bequem, zum Rechnen nicht:
+[`bahnhoefe_reisende_2025_kreuztabelle.csv`](Daten/1-Rohdaten/bahnhoefe_reisende_2025_kreuztabelle.csv)
+(96 Bahnhöfe, Reisende pro Monat 2025 – die Monatswerte sind **simuliert**, die Größenordnung je Bahnhof ist realistisch).
+
+```
+https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/05-Fall-Bahn/Daten/1-Rohdaten/bahnhoefe_reisende_2025_kreuztabelle.csv
+```
+
+**Woran man sieht, dass die Tabelle nicht normalisiert ist:**
+- **„Berlin" steht 22-mal in der Tabelle** – bei 11 Berliner Bahnhöfen je einmal als Stadt und als Bundesland. Ändert sich etwas, musst du es an vielen Stellen ändern.
+- **Stadt → Bundesland** hängt nicht vom Bahnhof ab, sondern von der Stadt (Hamburg ist immer Hamburg) – eine versteckte Abhängigkeit.
+- **Die Monate sind Spalten:** Ein neuer Monat braucht eine neue Spalte, und „Summe über alle Monate" oder „Filter auf Q1" geht nur umständlich.
+
+**Umbau in Power Query (drei Abfragen):**
+1. `roh_bahnhoefe` laden (**Daten abrufen → Web**, Adresse oben), **Laden aktivieren** ausschalten.
+2. `fakt_reisende`: **Rechtsklick → Verweis** → Stadt, Bundesland, Größenklasse entfernen → `Bahnhof` markieren →
+   **Andere Spalten entpivotieren** → `Attribut` in `Monat` (Typ Datum), `Wert` in `Reisende` (Ganze Zahl).
+3. `dim_bahnhof`: **Verweis** → nur Bahnhof, Stadt, Bundesland, Größenklasse behalten → **Duplikate entfernen**.
+4. Modellansicht: `fakt_reisende[Bahnhof]` → `dim_bahnhof[Bahnhof]` (n:1). Dazu eine Kalendertabelle an `Monat` – fertig ist der Stern.
+
+> ✅ **Kontrollpunkt:** `fakt_reisende` **1.152 Zeilen** (96 × 12) · Summe `Reisende` **2.906.495.000** ·
+> Januar **226.644.366** · Hamburg Hauptbahnhof 2025 **196.005.000** · `dim_bahnhof` **96 Zeilen**, 16 Bundesländer, 77 Städte ·
+> Größenklasse A 12 · B 27 · C 57 · stärkstes Bundesland **Berlin** mit 599.695.000.
+
+> 🆘 **Hängst du fest?**
+> - **Nur noch 96 Zeilen und eine riesige Zahl:** *Spalten entpivotieren* statt *Andere Spalten entpivotieren* – Schritt löschen, noch einmal.
+> - **Fehler in der Spalte `Reisende` (Text wie „Berlin" zwischen den Zahlen):** Stadt, Bundesland und Größenklasse wurden mit entpivotiert. Vorher entfernen – oder alle vier beschreibenden Spalten markieren und dann *Andere Spalten entpivotieren*.
+> - **Umlaute kaputt:** Dateiursprung **65001: Unicode (UTF-8)**.
+> - ⏭ **Überspringen:** [`07a`](Loesungen/PowerQuery/07a_kreuztabelle_bahnhoefe.pq) · [`07b`](Loesungen/PowerQuery/07b_fakt_reisende.pq) · [`07c`](Loesungen/PowerQuery/07c_dim_bahnhof.pq)
+
+> 📚 **Mehr dazu:** [Einsteiger-Guide · Datenmodell](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#model) ·
+> Microsoft Learn: [Sternschema](https://learn.microsoft.com/de-de/power-bi/guidance/star-schema) ·
+> [Spalten entpivotieren](https://learn.microsoft.com/de-de/power-query/unpivot-column) ·
+> [Duplikate](https://learn.microsoft.com/de-de/power-query/working-with-duplicates)
+
+---
+
 ## Für Trainer:innen
 
 - **Warum dieser Fall:** Bahn-Leute kennen die Fragen und die Stolperfallen der Zahlen (Umsteigende doppelt,

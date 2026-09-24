@@ -11,10 +11,13 @@ Aufruf aus dem Repo-Root: python3 _Werkzeuge/fall-bahn/daten_erzeugen.py
 import csv
 import json
 import statistics
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 FALL = ROOT / "05-Fall-Bahn" / "Daten"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bahnhoefe_kreuztabelle  # noqa: E402
 
 # Code, Land, Land (engl.), Region (UN-Gliederung), EU-Mitglied, Fahrten pro Kopf 2024
 LAENDER = [
@@ -138,6 +141,7 @@ def main():
                   "ziel_2030_durchschnitt": round(statistics.mean(ziele_2030.values()), 2),
                   "luecke_2030_deutschland": round(ziele_2030["DE"] - werte["DE"], 1)},
         "kantone": len(KANTONE),
+        "bahnhoefe_kreuztabelle": bahnhoefe_kreuztabelle.main(),
     }
     (FALL / "kontrollzahlen.json").write_text(json.dumps(k, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(k, ensure_ascii=False, indent=2))

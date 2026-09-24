@@ -65,5 +65,38 @@
     "ziel_2030_durchschnitt": 19.39,
     "luecke_2030_deutschland": 6.8
   },
-  "kantone": 26
+  "kantone": 26,
+  "bahnhoefe_kreuztabelle": {
+    "datei": "bahnhoefe_reisende_2025_kreuztabelle.csv",
+    "bahnhoefe": 96,
+    "zeilen_entpivotiert": 1152,
+    "reisende_pro_tag_summe": 7963000,
+    "reisende_2025_summe": 2906495000,
+    "reisende_je_monat": {
+      "2025-01": 226644366,
+      "2025-02": 216415479,
+      "2025-03": 246364455,
+      "2025-04": 241498918,
+      "2025-05": 254244431,
+      "2025-06": 246133460,
+      "2025-07": 245277491,
+      "2025-08": 232544517,
+      "2025-09": 246500090,
+      "2025-10": 253822252,
+      "2025-11": 243762896,
+      "2025-12": 253286645
+    },
+    "bundeslaender": 16,
+    "staedte": 77,
+    "groessenklassen": {
+      "A · Metropolknoten (ab 200.000/Tag)": 12,
+      "B · Großstadtbahnhof (50.000–199.999/Tag)": 27,
+      "C · Regionalbahnhof (unter 50.000/Tag)": 57
+    },
+    "hamburg_hbf_2025": 196005000,
+    "bundesland_top": [
+      "Berlin",
+      599695000
+    ]
+  }
 }
